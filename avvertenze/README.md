@@ -19,8 +19,12 @@ Controllare che la tensione della rete corrisponda alle specifiche del quadro sp
 
 ## All'accensione
 
-Se presente il relè di fase controllare che questo sia in fase (contatto di uscita chiuso),
-altrimenti girare due fasi della rete e ricontrollare (in caso di contatto aperto la scheda mcpx segnalerà un errore --- SEGNALARE NUMERO ERRORE --- sul display).
+Se è presente il relè di fase controllare che questo sia in fase (contatto di uscita chiuso),
+altrimenti girare due fasi della rete e ricontrollare (in caso di contatto aperto la scheda mcpx segnalerà un errore - errore "relè di fase aperto", numero 002 - sul display).
+
+Se è presente il  circuito PTC collegarlo ai morsetti PTC-PTC del quadro. La scheda mcpx è programmata per leggere una resistenza di 300/500 ohm su questi morsetti.
+In caso di valori inferiori verrà segnalato un errore di "ptc in corto circuito", invece per valori superiori un errore di "ptc aperto". Tale errore provoca il
+blocco dell'impianto.
 
 Mettere in fase (giusta rotazione motori trifase) il motore dell'argano, pompa, o porte.
 
@@ -52,5 +56,3 @@ Tutte le funzioni possono essere monitorate sul display e lo stato degli indutto
 Eseguire autotuning del motore (seguire istruzioni su manuale vvvf).
 
 __L'interruttore differenziale deve avere un valore non inferiore a 300ma (0,3A)__.
-
---- INSERIRE AVVERTENZE PTC IMPIANTI OLEO ---
