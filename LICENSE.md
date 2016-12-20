@@ -1,3 +1,5 @@
+# Licenza
+
 Copyright (C)  2016  Eca.
 
 Permission is granted to copy, distribute and/or modify this document
