@@ -41,11 +41,11 @@
         </tr>
         <tr align="center">
           <td align="center">6</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante</td>
+          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante (solo su impianti a manovra universale)</td>
         </tr>
         <tr align="center">
           <td align="center">7</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante +  freccie lampeggianti</td>
+          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante (solo su impianti a manovra universale) +  freccie lampeggianti</td>
         </tr>
       </table>
     </td>
