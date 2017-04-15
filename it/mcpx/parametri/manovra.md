@@ -28,26 +28,11 @@
           <td align="center">occupato lampeggiante</td>
         </tr>
         <tr align="center">
-          <td align="center">3</td>
-          <td align="center">freccie lampeggianti + occupato lampeggiante</td>
-        </tr>
-        <tr align="center">
           <td align="center">4</td>
           <td align="center">arrivo/prenotazioni lampeggianti</td>
         </tr>
-        <tr align="center">
-          <td align="center">5</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + freccie lampeggianti</td>
-        </tr>
-        <tr align="center">
-          <td align="center">6</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante (solo su impianti a manovra universale)</td>
-        </tr>
-        <tr align="center">
-          <td align="center">7</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante (solo su impianti a manovra universale) +  freccie lampeggianti</td>
-        </tr>
       </table>
+      <p>Sommando i valori si ottengono varie combinazioni di configurazione</p>
     </td>
   </tr>
   <tr>
@@ -59,7 +44,7 @@
       <table>
         <tr align="center">
           <td align="center">0</td>
-          <td align="center">Nessuna verifica della del risposta VVVF in bassa velocità, manutenzione effettuata in alta velocità (per impianti a 2 velocità o oledinamici), relè RFTC impostato come segnalazione fotocellula interrotta</td>
+          <td align="center">Nessuna verifica risposta VVVF in bassa velocità, manutenzione in alta (per impianti oleo e fune a due velocità), uscita RTFC impostata per interruzione fotocellula</td>
         </tr>
         <tr align="center">
           <td align="center">1</td>
@@ -70,26 +55,42 @@
           <td align="center">Effettua manutenzione in bassa velocità</td>
         </tr>
         <tr align="center">
-          <td align="center">3</td>
-          <td align="center">freccie lampeggianti + occupato lampeggiante</td>
+          <td align="center">4</td>
+          <td align="center">uscita RTFC impostata per segnalazione fuori servizio</td>
+        </tr>
+      </table>
+      <p>Sommando i valori si ottengono varie combinazioni di configurazione</p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">026</td>
+    <td align="center">da 0 a 15</td>
+    <td align="center">nessuna</td>
+    <td align="center">0</td>
+    <td align="center">
+      <table>
+        <tr align="center">
+          <td align="center">0</td>
+          <td align="center">Tutto escluso</td>
+        </tr>
+        <tr align="center">
+          <td align="center">1</td>
+          <td align="center">Fine-corsa apertura porte escluso</td>
+        </tr>
+        <tr align="center">
+          <td align="center">2</td>
+          <td align="center">Termico impianto fine/oleo o allarme VVVF escluso</td>
         </tr>
         <tr align="center">
           <td align="center">4</td>
-          <td align="center">arrivo/prenotazioni lampeggianti</td>
+          <td align="center">Termoresistenze motore escluse</td>
         </tr>
         <tr align="center">
-          <td align="center">5</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + freccie lampeggianti</td>
-        </tr>
-        <tr align="center">
-          <td align="center">6</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante</td>
-        </tr>
-        <tr align="center">
-          <td align="center">7</td>
-          <td align="center">arrivo/prenotazioni lampeggianti + occupato lampeggiante +  freccie lampeggianti</td>
+          <td align="center">8</td>
+          <td align="center">Relè controllo fasi escluso</td>
         </tr>
       </table>
+      <p>Sommando i valori si ottengono varie combinazioni di configurazione</p>
     </td>
   </tr>
 </table>

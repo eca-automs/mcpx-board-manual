@@ -1,0 +1,18 @@
+# Summary
+
+* [Licenza](/LICENSE.md)
+* [Introduzione](/README.md)
+* [Avvertenze](/avvertenze/README.md)
+* [Descrizione](/descrizione/README.md)
+* [Scheda mcpx](/mcpx/README.md)
+    * [Programmazione](/mcpx/programmazione/README.md)
+    * [Parametri](/mcpx/parametri/README.md)
+        * [Gestione manovra](/mcpx/parametri/manovra.md)
+        * [Temporizzazioni](/mcpx/parametri/temporizzazioni.md)
+    * [Errori](/mcpx/errori/README.md)
+        * [Elenco](/mcpx/errori/elenco.md)
+    * [Layout](/mcpx/layout.md)
+    * [Procedure](/mcpx/procedure/README.md)
+* [Schede periferiche](/periferiche/README.md)
+    * [Indirizzi](/periferiche/indirizzi.md)
+* [GNU Free Document License](/GNUFDL.md)
