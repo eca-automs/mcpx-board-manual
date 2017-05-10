@@ -27,5 +27,5 @@
 | 23  | Gestione chiavi in impianti con manovra prioritaria o pompieri/antincendio
 | 24 | Segnalazione presente da 0 a 15 in impianti con 16 fermate |
 | 25 | Segnalazione presente da 16 a 31 in impianti con 32 fermate |
-| 41 | Seriale cabina per induttori --- SPECIFICARE FUNZIONI ---|
-| 42 | Seriale cabina per segnalazioni -- SPECIFICARE SEGNALAZIONI --- | 
+| 41 | Seriale cabina per induttori --- SPECIFICARE FUNZIONI --- |
+| 42 | Seriale cabina per segnalazioni -- SPECIFICARE SEGNALAZIONI --- |
