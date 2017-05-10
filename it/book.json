@@ -1,7 +1,7 @@
 {
   "pluginsConfig": {
     "downloadpdf": {
-      "base": "/pdf/v1.3.0/m_it.pdf",
+      "base": "/pdf/v0.1.0/m_it.pdf",
       "label": "Scarica PDF"
     }
   }
