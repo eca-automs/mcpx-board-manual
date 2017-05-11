@@ -16,7 +16,7 @@
     * [Procedure](/mcpx/procedure/README.md)
 * [Schede PER16B-SMD](/periferiche/README.md)
     * [Indirizzi](/periferiche/indirizzi.md)
-    * [Layouts](/periferiche/layouts/README.md)
+    * [Layout](/periferiche/layouts/README.md)
         * [PER16B-SMD](/periferiche/layouts/per16b.md)
         * [PER16R-SMD](/periferiche/layouts/per16r.md)
 * [GNU Free Document License](/GNUFDL.md)

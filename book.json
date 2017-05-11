@@ -8,8 +8,8 @@
       "gitbookConfigURL": "http://localhost:8080/book.json",
       "options": [
         {
-          "value": "/v0.1.0/",
-          "text": "0.1.0"
+          "value": "/v0.0.0/",
+          "text": "Version 0.0.0"
         }
       ]
     }
