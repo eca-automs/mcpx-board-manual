@@ -1,4 +1,4 @@
-# Temporizzazioni
+# Gestione temporizzazioni
 
 ## Parametro 000
 

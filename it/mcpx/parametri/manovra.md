@@ -1,6 +1,6 @@
 # Gestione manovra
 
-## Parametro 024
+## Parametro 024 {#024}
 
 --------Breve descrizione parametro-----------
 
@@ -18,7 +18,7 @@ Valore|Funzione
 
 Sommando i valori si ottengono varie combinazioni di configurazione.
 
-## Parametro 025
+## Parametro 025 {#025}
 
 --------Breve descrizione parametro-----------
 
@@ -36,7 +36,7 @@ Valore|Funzione
 
 Sommando i valori si ottengono varie combinazioni di configurazione.
 
-## Parametro 026
+## Parametro 026 {#026}
 
 --------Breve descrizione parametro-----------
 
@@ -55,9 +55,9 @@ Valore|Funzione
 
 Sommando i valori si ottengono varie combinazioni di configurazione
 
-## Parametro 031
+## Parametro 031 {#031}
 
-Impostazione manovre speciali
+Impostazione manovre speciali.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -74,9 +74,9 @@ Valore|Funzione
 Questo parametro viene __azzerato__ quando si entra nel parametro __048__ o quando il parametro __043__ è impostato per impianto ad 1 velocità.
 
 
-## Parametro 032
+## Parametro 032 {#032}
 
-Gestione emendamento A3
+Gestione emendamento A3.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -95,9 +95,9 @@ Valore|Funzione
 
 Questo parametro viene __azzerato__ quando si entra nel parametro __043__.
 
-## Parametro 033
+## Parametro 033 {#033}
 
-Tipo display (gestito da periferica)
+Tipo display (gestito da periferica).
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -115,9 +115,9 @@ Valore|Funzione
 
 I parametri da __8__ a __13__ impostano __come__ quelli da __0__ a __5__ e in più impostano la periferica con indirizzo 16 per lavorare __come presente__.
 
-## Parametro 034
+## Parametro 034 {#034}
 
-Configurazione display segmenti
+Configurazione display segmenti.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -136,9 +136,9 @@ altri|Da implementare
 
 Questo parametro viene __azzerato__ quando si entra nel parametro __033__ ed è abilitato solo se il parametro __033__ è impostato per __display a segmenti__.
 
-## Parametro 035
+## Parametro 035 {#035}
 
-Configurazione costole mobili (CM1-CM2), fondo mobile (FM), sovraccarico (SVR)
+Configurazione costole mobili (CM1-CM2), fondo mobile (FM), sovraccarico (SVR).
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -159,9 +159,9 @@ Valore|Funzione
 
 Sommando i valori si ottengono varie combinazioni di configurazione.
 
-## Parametro 036
+## Parametro 036 {#036}
 
-Configurazione seriale cabina
+Configurazione seriale cabina.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -174,9 +174,9 @@ Valore|Funzione
 1|Seriale cabina senza induttori
 2|Seriale cabina e induttori
 
-## Parametro 041
+## Parametro 041 {#041}
 
-Configurazione comando gong in cabina
+Configurazione comando gong in cabina.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -194,4 +194,62 @@ Valore|Funzione
 6|Gong all'apertura 1 impulso in salita, 2 impulsi in discesa
 7|Gong al rallentamento 1 impulso in salita, 2 impulsi in discesa
 
-I valori __9__-__10__-__11__ impostano __come__ __1__-__2__-__3__ in più abilitano segnalazione direzione prossima partenza (FSX-FDX). I valori __13__-__14__-__15__ impostano come __5__-__6__-__7__ in più abilitano segnalazione prossima partenza (FSX-FDX). Se impostato impianto a prenotazione in batteria alla chiamata al piano viene attivato gong e accese entrambe le frecce per individuare quale ascensore aprirà le porte.
+I valori __9__-__10__-__11__ impostano __come__ __1__-__2__-__3__ in più abilitano segnalazione direzione prossima partenza (FSX-FDX).
+I valori __13__-__14__-__15__ impostano come __5__-__6__-__7__ in più abilitano segnalazione prossima partenza (FSX-FDX).
+Se impostato impianto a prenotazione in batteria alla chiamata al piano viene attivato gong e accese entrambe le frecce per individuare quale ascensore aprirà le porte.
+
+## Parametro 042 {#042}
+
+Configurazione chiamata al piano in impianto a prenotazione e configurazione
+impianto duplex zoppo (con una fermata in più o in meno tra master e slave).
+
+Per chiamata al piano si intende:
+*   l'utente preme il pulsante di chiamata / prenotazione di piano
+*   il quadro apre le porte di cabina
+*   l'utente entra in cabina
+*   il quadro comincia a chiudere le porte per ripartire
+*   se a questo punto viene premuto il pulsante della chiamata in cabina del piano corrente o il
+    pulsante esterno il quadro riapre le porte, cosa che non farebbe senza impostare la chiamata al piano o
+    interrompendo la fotocellula
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 5|nessuna|nessuna
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|Tutto escluso
+1|Master con un piano in più in basso
+2|Master con un piano in più in alto
+3|Come 1 e chiamata al piano attivata
+4|Come 2 e chiamata al piano attivata
+5|Chiamata al piano attivata
+
+La configurazione dei parametri dell'impianto __zoppo__ vengono __abilitati__ solo se il tipo di impianto è __impostato__ come __duplex__
+(---------link relativo all'impostazione qui--------) mentre quelli della __chiamata al piano__ solo se la manovra è a __prenotazione__
+(---------link relativo all'impostazione e spiegazione qui--------).
+
+## Parametro 043
+
+Tipo di impianto.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 23|nessuna|nessuna
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|Impianto a fune 1 velocità porte a battente (manuale)
+1|Impianto a fune 2 velocità porte a battente (manuale)
+2|Impianto a fune con VVVF porte a battente (manuale)
+3|Impianto oleodinamico con avviamento diretto porte a battente (manuale)
+4|Impianto oleodinamico con avviamento stella triangolo porte a battente (manuale)
+5|Impianto oleodinamico con avviamento soft-starter porte a battente (manuale)
+6|Impianto a fune 1 velocità porte automatiche 1 ingresso
+7|Impianto a fune 2 velocità porte automatiche 1 ingresso
+8|Impianto a fune con VVVF porte automatiche 1 ingresso
+9|Impianto oleodinamico con avviamento diretto porte automatiche 1 ingresso
+10|Impianto oleodinamico con avviamento stella triangolo porte automatiche 1 ingresso
+11|Impianto oleodinamico con avviamento soft-starter porte automatiche 1 ingresso

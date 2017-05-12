@@ -8,7 +8,7 @@
     * [Programmazione](/mcpx/programmazione/README.md)
     * [Parametri](/mcpx/parametri/README.md)
         * [Gestione manovra](/mcpx/parametri/manovra.md)
-        * [Temporizzazioni](/mcpx/parametri/temporizzazioni.md)
+        * [Gestione temporizzazioni](/mcpx/parametri/temporizzazioni.md)
     * [Errori](/mcpx/errori/README.md)
         * [Elenco](/mcpx/errori/elenco.md)
     * [Layout](/mcpx/layouts/README.md)
