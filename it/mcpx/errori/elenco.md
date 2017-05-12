@@ -549,3 +549,220 @@ Scaduto timer apertura porte di sicurezza.
 Il timer di sicurezza per l'apertura porte è un timer dalla durata fissa di 25 secondi che serve a fermare il comando di apertura porte nel caso in cui tutti i controlli hanno fallito.
 #### Cause
 #### Soluzioni
+
+## Codice 075 {#075}
+Il contatto di controllo del relè AP è rimasto chiuso per oltre 25 secondi.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 076 {#076}
+Il contatto di controllo del teleruttore DIS è rimasto chiuso per oltre 25 secondi.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 077 {#077}
+Il contatto di controllo del teleruttore SAL è rimasto chiuso per oltre 25 secondi.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 078 {#078}
+Il contatto di controllo del teleruttore P è rimasto chiuso per oltre 25 secondi.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 079 {#079}
+Il contatto di controllo del teleruttore PV è rimasto chiuso per oltre 25 secondi.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 082 {#082}
+Mancata risposta del VVVF all'avvio o in marcia.
+#### Descrizione
+Quando viene dato il comando di marcia al VVVF questo chiude un contatto N.O. (contatto OUT) per segnalare che
+ha accettato la richiesta e la marcia è partita. Questo contatto viene letto e, se alla
+partenza o in viaggio non è chiuso, viene segnalato questo errore e fermata la cabina.
+#### Cause
+#### Soluzioni
+
+## Codice 083 {#083}
+Induttori IS e ID chiusi in viaggio all'apertura del finecorsa di discesa FCD.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 084 {#084}
+Induttori IS e ID chiusi in viaggio all'apertura del finecorsa di salita FCS.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 085 {#085}
+Esauriti 10 tentativi di partenza con prenotazione.
+#### Descrizione
+Negli impianti a prenotazione la partenza viene tentata per 10 volte in attesa che eventuali situazioni
+che bloccano l'impianto si ripristino (tipo chiusura blocchi, contatto fotocellula / costola mobile etc)
+#### Cause
+#### Soluzioni
+
+## Codice 086 {#086}
+Peirferica 41 ferma per 200 millisecondi.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 087 {#087}
+Rimbalzo dei contatti di cabina alla partenza.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 088 {#088}
+Rimbalzo dei contatti dei blocchi alla partenza.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 089 {#089}
+Peirferica 41 ferma per 200 millisecondi durante ripescamento (impianto oleodinamico).
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 090 {#090}
+Sovraccarico inserito per più di 3 minuti e 20 secondi (impianto a prenotazione).
+#### Descrizione
+Se l'ingresso del sovraccarico rimane attivo per più di 3 minuti e 20 secondi in impianto a prenotazione viene dedotto che l'impianto
+non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+#### Cause
+#### Soluzioni
+
+## Codice 091 {#091}
+Ingresso costola mobile dell'ingresso 1 (CM1) inserito per più di 3 minuti e 20 secondi (impianto a prenotazione).
+#### Descrizione
+Se l'ingresso della contola mobile rimane attivo per più di 3 minuti e 20 secondi in impianto a prenotazione viene dedotto che l'impianto
+non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+#### Cause
+#### Soluzioni
+
+## Codice 092 {#092}
+Ingresso costola mobile dell'ingresso 2 (CM2) inserito per più di 3 minuti e 20 secondi (impianto a prenotazione).
+#### Descrizione
+Se l'ingresso della contola mobile rimane attivo per più di 3 minuti e 20 secondi in impianto a prenotazione viene dedotto che l'impianto
+non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+#### Cause
+#### Soluzioni
+
+## Codice 093 {#093}
+Contatto porte cabina in impianti con porte a battente aperto per più di 3 minuti e 20 secondi (impianto a prenotazione).
+#### Descrizione
+Se il contatto delle porte cabina rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
+non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+#### Cause
+#### Soluzioni
+
+## Codice 094 {#094}
+Contatto porte cabina in impianti con porte a battente aperto per più di 3 minuti e 20 secondi (impianto a prenotazione).
+#### Descrizione
+Se il contatto delle porte cabina rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
+non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+#### Cause
+#### Soluzioni
+
+## Codice 095 {#095}
+Relè di sicurezza aperto al piano (impianto oleodinamico).
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 096 {#096}
+Relè di sicurezza rimasto chiuso all'abbandono del piano (impianto oleodinamico).
+#### Descrizione
+Il contatto del relè di sicurezza è rimasto chiuso quando la cabina ha lasciato il piano in cui si trovava.
+La posizione della cabina riportata nell'errore in questo caso è quella del piano successivo o precedente a seconda che questa si
+sia mossa in salita o in discesa. Ad esempio, se viene segnalato l'errore al piano 5 e la cabina si è mossa in salita, l'errore si  è verificato
+al piano 4.
+#### Cause
+#### Soluzioni
+
+## Codice 097 {#097}
+Scaduto timer di 10 secondi che controlla lo stato dei teleruttori.
+#### Descrizione
+VEDERE CODICI ERRORI PRECEDENTI A QUESTO PER CONOSCERE CAUSA
+SE TELER NON ATTRAE IL COMANDO E'RIPETUTO PER 10" POI ERRORE
+GLI ERRORI IN MEMORIA PRIMA DI QUESTO DANNO IL MOTIVO ????????????????????????
+#### Cause
+#### Soluzioni
+
+## Codice 098 {#098}
+Il relè AP non si è attratto al comando di apertura porte.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 099 {#099}
+Il finecorsa di apertura porte è rimasto chiuso dopo la fine dell'apertura.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 100 {#100}
+Il relè AP si è attratto al compando di apertura ma l'operatore non ha aperto.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 101 {#101}
+La periferica 47 (controllo emedamento A3) è assente o guasta.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 102 {#102}
+La batteria di alimentazione del CEV e braccio per controllo emedamento A3 è guasta.
+#### Descrizione
+----Breve descrizione del contesto dell'errore------
+#### Cause
+#### Soluzioni
+
+## Codice 103 {#103}
+Scaduto tempo corsa per impianto a fune a 1 velocità.
+#### Descrizione
+La cabina non è arrivata al piano entro il tempo stabilito dal tempo corsa per
+impianto a 1 velocità.
+#### Cause
+*   induttore IND difettoso
+*   cavo di cabina difettoso
+*   accoppiamento piste magnetiche induttore errato
+
+#### Soluzioni
+
+## Codice 255 {#255}
+Scaduto il timer WDT (watch dog timer).
+#### Descrizione
+Questo timer interviene in caso il software rimanga bloccato resettando la scheda.
+#### Cause
+*   bug nel software
+
+#### Soluzioni
+*   contattare l'assistenza tecnica
