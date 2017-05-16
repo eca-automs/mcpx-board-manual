@@ -19,8 +19,11 @@ Può gestire sia impianti a fune che oleodinamici.
 PER16B-SMD è una scheda periferica che complementa MCPX2015-SMD con molte funzionalità, tipo:
 *   comando luminose varie
 *   ingressi per prenotazioni o chiamate
-*   usite per display vari
+*   comando di display di vario tipo
 
-Per impostare le varie funzioni disponibili, PER16B-SMD viene programmata da MCPX2015-SMD con un indirizzo specifico. 
+Per impostare le varie funzioni disponibili, PER16B-SMD viene programmata da MCPX2015-SMD con un indirizzo specifico.
 
-MCPX2015-SMD e PER16B-SMD comunicano tramite un bus seriale. Il numero massimo di periferiche che possono essere presenti sul bus è 32.
+MCPX2015-SMD e PER16B-SMD comunicano tramite un bus seriale. Il numero massimo di periferiche che possono essere presenti sul bus è 48.
+
+
+--mettere disegno collegamento generico con alimentazione a 24VDC---

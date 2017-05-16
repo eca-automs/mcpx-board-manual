@@ -2,8 +2,6 @@
 
 * [Licenza](/LICENSE.md)
 * [Introduzione](/README.md)
-* [Avvertenze](/avvertenze/README.md)
-* [Descrizione](/descrizione/README.md)
 * [Scheda MCPX2015-SMD](/mcpx/README.md)
     * [Programmazione](/mcpx/programmazione/README.md)
     * [Parametri](/mcpx/parametri/README.md)
