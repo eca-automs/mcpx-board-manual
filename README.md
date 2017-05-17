@@ -1,1 +1,1 @@
-# MCPX2015-SMD Manual
+# MCP2015X-SMD Manual

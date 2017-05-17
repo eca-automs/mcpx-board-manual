@@ -1,10 +1,10 @@
-# Scheda MCPX2015-SMD
+# Scheda MCP2015X-SMD
 
-<img src="../../res/mcpx-board-1.jpg" style="width: 200px;">
-<img src="../../res/mcpx-buttons.jpg" style="height: 266.5px;">
+<img src="../../res/mcpx-board-1.jpg" style="width: 200px; border-radius: 5%;">
+<img src="../../res/mcpx-buttons.jpg" style="height: 266.5px; border-radius: 5%;">
 
 
-Come già anticipato nell'introduzione, MCPX2015-SMD è la scheda madre del quadro elettrico mcpx.
+Come già anticipato nell'introduzione, MCP2015X-SMD è la scheda madre del quadro elettrico mcpx.
 
 Sotto al display LCD ci sono quattro pulsanti che permettono l'utilizzo dell'interfaccia utente:
 
@@ -16,6 +16,6 @@ SW|Muove il cursore dello schermo verso destra
 SET|Tasto di invio/conferma
 
 In base all'input dell'utente o allo stato dell'impianto vengono distinti 3 stati di funzionamento:
-*    MENU
-*    MANOVRA
-*    ERRORE
+*   MENU
+*   MANOVRA
+*   BLOCCO PER ERRORE
