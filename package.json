@@ -1,0 +1,22 @@
+{
+  "name": "mcpx-board-manual",
+  "version": "0.0.0",
+  "description": "The manual of the MCP2015X-SMD and  PER16B-SMD boards",
+  "scripts": {
+    "build-testing": "BOOK_ENV=testing node build/site.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/eca-automs/mcpx-board-manual.git"
+  },
+  "author": "Eca",
+  "license": "GNU-FDL",
+  "bugs": {
+    "url": "https://gitlab.com/eca-automs/mcpx-board-manual/issues"
+  },
+  "homepage": "https://gitlab.com/eca-automs/mcpx-board-manual#README",
+  "dependencies": {
+    "nodegit": "^0.18.3",
+    "semver": "^5.3.0"
+  }
+}

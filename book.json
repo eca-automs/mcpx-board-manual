@@ -5,7 +5,7 @@
       "base": "/pdf"
     },
     "versions": {
-      "gitbookConfigURL": "http://localhost:8080/book.json",
+      "gitbookConfigURL": "{{ URL }}/book.json",
       "options": [
         {
           "value": "/v0.0.0/",
