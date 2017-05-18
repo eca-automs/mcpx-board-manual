@@ -2,14 +2,14 @@
   "plugins": [ "versions", "downloadpdf"],
     "pluginsConfig": {
     "downloadpdf": {
-      "base": "/pdf"
+      "base": ""
     },
     "versions": {
-      "gitbookConfigURL": "{{ URL }}/book.json",
+      "gitbookConfigURL": "{{ BOOK_URL }}/book.json",
       "options": [
         {
-          "value": "/v0.0.0/",
-          "text": "Version 0.0.0"
+          "value": "",
+          "text": ""
         }
       ]
     }
