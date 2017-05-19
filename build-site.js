@@ -35,6 +35,7 @@ const glob = require('glob')
 const async = require('async')
 const mkdirp = require('mkdirp')
 const chalk = require('chalk')
+const os = require('os')
 
 /**
  * Builds the gitbook site.
@@ -138,7 +139,7 @@ function buildSite (cb) {
    */
   function _getReleases (cb) {
     function _getReleasesArchives (releases, cb) {
-      async.each(releases, _getReleaseFiles, function _onGotReleasesArchives (err, res) {
+      async.eachLimit(releases, os.cpus().length, _getReleaseFiles, function _onGotReleasesArchives (err, res) {
         return err ? cb(err) : cb(null, releases)
       })
     }
@@ -226,8 +227,6 @@ function buildSite (cb) {
               bookJson.pluginsConfig.downloadpdf.base = bookJson.pluginsConfig.downloadpdf.base.replace(bookFileNameTag, bookFileName)
               currentPdfFilePath = '{{ BOOK_PDF_URL }}/{{ BOOK_FILE_NAME }}.pdf'.replace(bookPdfUrlTag, pdfUrl)
               currentPdfFilePath = currentPdfFilePath.replace(bookFileNameTag, bookFileName)
-              console.log(bookJson)
-              console.log(currentPdfFilePath)
             } else {
               !pluginVersionsOptions.gitbookConfigURL && (pluginVersionsOptions.gitbookConfigURL = bookJson.pluginsConfig.versions.gitbookConfigURL.replace(bookUrlTag, bookUrl))
               bookJson.pluginsConfig.versions.gitbookConfigURL = pluginVersionsOptions.gitbookConfigURL
@@ -283,7 +282,6 @@ function buildSite (cb) {
           console.log(data.toString())
         })
         gb.on('close', (code) => {
-          console.error(`Gitbook install exited with code ${code}`)
           return code !== 0 ? cb(new Error(`Gitbook install had errors`)) : cb()
         })
       }
@@ -302,7 +300,6 @@ function buildSite (cb) {
           console.log(data.toString())
         })
         gb.on('close', (code) => {
-          console.log(`Gitbook build exited with code ${code}`)
           return code !== 0 ? cb(new Error(`Gitbook build had errors`)) : cb()
         })
       }
@@ -400,7 +397,7 @@ function buildSite (cb) {
       })
     }
 
-    async.each(releases, _buildBook, function _onBooksBuilt (err) {
+    async.eachLimit(releases, os.cpus().length, _buildBook, function _onBooksBuilt (err) {
       if (err) return cb(err)
       async.series([
         _symLinkLatestRelease,
@@ -438,7 +435,7 @@ buildSite(function _onSiteBuilt (err) {
     console.timeEnd('Build took')
     console.error(chalk.red(`An error occurred building the site: ${err}`))
   } else {
-    console.timeEnd('site')
+    console.timeEnd('Build took')
     console.log(chalk.green('Site built!'))
   }
 })
