@@ -32,7 +32,7 @@ const siteDir = './site'
 const execAsync = require('child_process').exec
 const spawnAsync = require('child_process').spawn
 const glob = require('glob')
-const async = require('async')
+const async = require('neo-async')
 const mkdirp = require('mkdirp')
 const chalk = require('chalk')
 const os = require('os')
@@ -325,7 +325,6 @@ function buildSite (cb) {
             console.log(data.toString())
           })
           gb.on('close', (code) => {
-            console.log(`Gitbook build exited with code ${code}`)
             return code !== 0 ? cb(errs) : cb()
           })
         }
