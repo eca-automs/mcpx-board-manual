@@ -34,6 +34,7 @@ const spawnAsync = require('child_process').spawn
 const glob = require('glob')
 const async = require('async')
 const mkdirp = require('mkdirp')
+const chalk = require('chalk')
 
 /**
  * Builds the gitbook site.
@@ -159,11 +160,13 @@ function buildSite (cb) {
       execAsync(gitTag, options, (err, stdout, stderr) => {
         if (err) return cb(err)
         let tags = stdout.split('\n').filter(line => line !== '')
+        if (!tags.length) return cb(new Error('No tags found.'))
         releases = tags.filter(item => semver.valid(item)).sort((a, b) => {
           let a1 = semver.clean(a)
           let b1 = semver.clean(b)
           return semver.gt(b1, a1)
         })
+        if (!releases.length) return cb(new Error('No releases found.'))
         return cb(null, releases)
       })
     }
@@ -428,10 +431,14 @@ function buildSite (cb) {
   })
 }
 
+console.log(chalk.green('Starting building site...'))
+console.time('Build took')
 buildSite(function _onSiteBuilt (err) {
   if (err) {
-    console.error(`An error occurred building the site: ${err}`)
+    console.timeEnd('Build took')
+    console.error(chalk.red(`An error occurred building the site: ${err}`))
   } else {
-    console.log('Site built!')
+    console.timeEnd('site')
+    console.log(chalk.green('Site built!'))
   }
 })
