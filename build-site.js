@@ -29,253 +29,409 @@ const fs = require('fs')
 const path = require('path')
 const tempDir = './temp'
 const siteDir = './site'
-const exec = require('child_process').execSync
 const execAsync = require('child_process').exec
 const spawnAsync = require('child_process').spawn
 const glob = require('glob')
 const async = require('async')
+const mkdirp = require('mkdirp')
 
-let url = process.env.BOOK_URL || 'localhost:8080'
-let bookUrlTag = '{{ BOOK_URL }}'
-let bookPdfUrlTag = '{{ BOOK_PDF_URL }}'
-let pluginVersionsOptions = {
-  gitbookConfigURL: null,
-  options: []
-}
+/**
+ * Builds the gitbook site.
+ * @param  {Function} cb - callback
+ */
+function buildSite (cb) {
+  /**
+   * Site url.
+   * @type {String}
+   */
+  let url = process.env.BOOK_URL || 'http://localhost:8080'
+  let bookFileName = process.env.BOOK_FILE_NAME || 'book'
+  /**
+   * String that will be substituted with the site url in the book.json files.
+   * @type {String}
+   */
+  let bookUrlTag = '{{ BOOK_URL }}'
 
-function onStart () {
-  try {
-    /** make the site root directory */
-    fs.mkdirSync(siteDir)
-  } catch (e) {
-    if (e.code !== 'EEXIST') throw e
-    cleanUpSiteData()
-    onStart()
+  /**
+   * String that will be substituted with the base url path for pdf download.
+   * @type {String}
+   */
+  let bookPdfUrlTag = '{{ BOOK_PDF_URL }}'
+  let bookFileNameTag = '{{ BOOK_FILE_NAME }}'
+  /**
+   * The configuration options of the versions plugin (it is stored only in the root book.json file)
+   * @type {Object}
+   */
+  let pluginVersionsOptions = {
+    gitbookConfigURL: null,
+    options: []
   }
-}
 
-function buildSite () {
-  return new Promise((resolve, reject) => {
-    onStart()
-    /**
-     * clean the old clone if present
-     */
-    cleanUpRepoData()
-    /**
-     * clone the repo in the repo
-     */
-    cloneRepo().then(() => {
-      return getReleases()
-    }).then((releases) => {
-      return buildBooks(releases)
-    }).then(resolve).catch(reject)
-  })
-}
-
-function cloneRepo () {
-  let gitClone = `git clone ./ ${tempDir}`
-  return new Promise((resolve, reject) => {
-    execAsync(gitClone, (err, stdout, stderr) => {
-      return err ? reject(err) : resolve()
+  /**
+   * Creates the temporary folder to store tar archives of the different book releases.
+   * @param  {Function} cb - callback
+   */
+  function _makeTemp (cb) {
+    fs.mkdir(tempDir, (err) => {
+      return err ? cb(err) : cb()
     })
-  })
-}
-
-function getReleases () {
-  return new Promise((resolve, reject) => {
-    let gitTag = `git tag`
-    let options = {
-      cwd: path.resolve(tempDir)
-    }
-    execAsync(gitTag, options, (err, stdout, stderr) => {
-      if (err) reject(err)
-      let tags = stdout.split('\n').filter(line => line !== '')
-      let releases = tags.filter(item => semver.valid(item)).sort((a, b) => {
-        let a1 = semver.clean(a)
-        let b1 = semver.clean(b)
-        return semver.gt(b1, a1)
-      })
-      resolve(releases)
-    })
-  })
-}
-
-function checkoutRelease (release) {
-  let gitCheckout = `git checkout ${release}`
-  let options = {
-    cwd: path.resolve(tempDir)
   }
-  return new Promise((resolve, reject) => {
-    execAsync(gitCheckout, options, (err, stdout, stderr) => {
-      return err ? reject(err) : resolve(release)
+
+  /**
+   * Removes the old site folder.
+   * @param  {Function} cb -  callback
+   * @return {[type]}      [description]
+   */
+  function _cleanUpSiteData (cb) {
+    let cmd = `rm -rf ${path.join(__dirname, siteDir)}`
+    execAsync(cmd, function _onSiteDataCleaned (err) {
+      if (err) {
+        if (err.code !== 'ENOENT') return cb(err)
+      }
+      return cb()
     })
-  })
-}
+  }
 
-function buildBook (release) {
-  let r = semver.clean(release)
+  /**
+   * Removes the temp directory containing the books archives.
+   * @param  {Function} cb - callback
+   */
+  function _cleanUpTempData (cb) {
+    let cmd = `rm -rf ${path.join(__dirname, tempDir)}`
+    execAsync(cmd, function _onRmTempDir (err) {
+      if (err) {
+        if (err.code !== 'ENOENT') return cb(err)
+      }
+      return cb()
+    })
+  }
 
-  function _compileBookJsonFiles () {
-    function _compileBookJson (file) {
-      console.log('compil')
-      return new Promise((resolve, reject) => {
-        let funcs = []
-
-        funcs.push(function _readFile (cb) {
-          fs.readFile(file, 'UTF8', (err, data) => {
-            return err ? cb(err) : cb(null, data)
+  /**
+   * Called at startup. Will clean the old site and temp data (if present).
+   * @param  {Function} cb - callback
+   */
+  function _onStart (cb) {
+    function _makeSiteDir (cb) {
+      fs.mkdir(siteDir, (err) => {
+        if (err) {
+          if (err.code !== 'EEXIST') return cb(err)
+          _cleanUpSiteData((err) => {
+            return err ? cb(err) : _onStart(cb)
           })
-        })
+        } else {
+          return cb()
+        }
+      })
+    }
+    async.series([
+      _makeSiteDir,
+      _cleanUpTempData
+    ], function _onStarted (err, res) {
+      return err ? cb(err) : cb()
+    })
+  }
 
-        funcs.push(function _compileData (fileContent, cb) {
-          console.log('c data', fileContent)
-          let bookUrl = `${url}`
-          /**
-           * If the name contains a slash it means it is a file inside a language folder,
-           * so i  just compile the download pdf link, otherwise it is the main book.json file.
-           */
-          if (/\//.test(file)) {
-            let pdfUrl = `${url}/pdf/${r}`
-            let newContent = fileContent.replace(bookPdfUrlTag, pdfUrl)
-            fs.writeFile(file, newContent, 'UTF8', (err) => {
-              return err ? cb(err) : cb(null, file)
+  /**
+   * Gets the book releases and makes tar archives for each one in the temp directory.
+   * @param  {Function} cb - callback
+   */
+  function _getReleases (cb) {
+    function _getReleasesArchives (releases, cb) {
+      async.each(releases, _getReleaseFiles, function _onGotReleasesArchives (err, res) {
+        return err ? cb(err) : cb(null, releases)
+      })
+    }
+
+    function _getReleaseFiles (release, cb) {
+      let gitArchive = `git archive --prefix=${release}/ ${release} -o ${path.join(path.resolve(tempDir), release)}.tar`
+      let options = {}
+      execAsync(gitArchive, options, (err, stdout, stderr) => {
+        return err ? cb(err) : cb()
+      })
+    }
+
+    function _getReleaseTags (cb) {
+      let gitTag = `git tag`
+      let options = {
+        cwd: path.resolve(tempDir)
+      }
+      let releases = []
+      execAsync(gitTag, options, (err, stdout, stderr) => {
+        if (err) return cb(err)
+        let tags = stdout.split('\n').filter(line => line !== '')
+        releases = tags.filter(item => semver.valid(item)).sort((a, b) => {
+          let a1 = semver.clean(a)
+          let b1 = semver.clean(b)
+          return semver.gt(b1, a1)
+        })
+        return cb(null, releases)
+      })
+    }
+
+    let funcs = [
+      _getReleaseTags,
+      _getReleasesArchives
+    ]
+    async.waterfall(funcs, function _onGotReleases (err, releases) {
+      return err ? cb(err) : cb(null, releases)
+    })
+  }
+
+  function _buildBooks (releases, cb) {
+    /**
+     * Builds a single book release.
+     * @param  {String}   release - the release string
+     * @param  {Function} cb      - callback
+     */
+    function _buildBook (release, cb) {
+      let r = semver.clean(release)
+      let currentPdfFilePath = null
+
+      function _untarArchive (cb) {
+        let tar = `tar -xf ${release}.tar`
+        let options = {
+          cwd: path.resolve(tempDir)
+        }
+        execAsync(tar, options, function _onExtracted (err, stdout, stderr) {
+          return err ? cb(err) : cb()
+        })
+      }
+
+      function _compileBookJsonFiles (cb) {
+        function _compileBookJson (file, cb) {
+          let fileContent = null
+          let bookJson = null
+
+          function _readFile (cb) {
+            fs.readFile(file, 'UTF8', (err, data) => {
+              fileContent = data
+              return err ? cb(err) : cb()
             })
-          } else {
+          }
+
+          function _compileData (cb) {
+            let bookUrl = `${url}`
+
             try {
-              let bookJson = JSON.parse(fileContent)
-              pluginVersionsOptions.gitbookConfigURL = bookJson.versions.gitbookConfigURL.replace(bookUrl, url)
-              pluginVersionsOptions.options.push({
-                value: `/${r}/`,
-                text: release
-              })
-              bookJson.versions = pluginVersionsOptions
-              console.log('askljdfalsdhf', bookJson)
-              return cb()
+              bookJson = JSON.parse(fileContent)
             } catch (e) {
               return cb(e)
             }
+            if (!bookJson.plugins) {
+              let pdfUrl = `/pdf/${r}`
+              bookJson.pluginsConfig.downloadpdf.base = bookJson.pluginsConfig.downloadpdf.base.replace(bookPdfUrlTag, pdfUrl)
+              bookJson.pluginsConfig.downloadpdf.base = bookJson.pluginsConfig.downloadpdf.base.replace(bookFileNameTag, bookFileName)
+              currentPdfFilePath = '{{ BOOK_PDF_URL }}/{{ BOOK_FILE_NAME }}.pdf'.replace(bookPdfUrlTag, pdfUrl)
+              currentPdfFilePath = currentPdfFilePath.replace(bookFileNameTag, bookFileName)
+              console.log(bookJson)
+              console.log(currentPdfFilePath)
+            } else {
+              !pluginVersionsOptions.gitbookConfigURL && (pluginVersionsOptions.gitbookConfigURL = bookJson.pluginsConfig.versions.gitbookConfigURL.replace(bookUrlTag, bookUrl))
+              bookJson.pluginsConfig.versions.gitbookConfigURL = pluginVersionsOptions.gitbookConfigURL
+              bookJson.pluginsConfig.versions.options = [
+                {
+                  value: `/${r}/`,
+                  text: r
+                }
+              ]
+            }
+            let newContent
+            try {
+              newContent = JSON.stringify(bookJson, null, '  ')
+            } catch (e) {
+              return cb(e)
+            }
+            fs.writeFile(file, newContent, 'UTF8', (err) => {
+              return err ? cb(err) : cb()
+            })
           }
-        })
 
-        async.waterfall(funcs, (err, res) => {
-          err ? reject(err) : resolve()
+          let funcs = [
+            _readFile,
+            _compileData
+          ]
+          async.series(funcs, (err, res) => {
+            return err ? cb(err) : cb(null, file)
+          })
+        }
+
+        let options = {
+          cwd: path.resolve(tempDir),
+          absolute: true
+        }
+        glob(`**/${release}/**/book.json`, options, (err, files) => {
+          if (err) return cb(err)
+          async.eachSeries(files, _compileBookJson, function _onBookJsonFilesCompiled (err, res) {
+            return err ? cb(err) : cb()
+          })
         })
+      }
+
+      function _gitbookInstall (cb) {
+        let args = ['install']
+        let options = {
+          cwd: path.resolve(path.join(tempDir, release))
+        }
+        let gb = spawnAsync('gitbook', args, options)
+        gb.on('error', function _onGitbookError (err) {
+          return cb(err)
+        })
+        gb.stdout.on('data', (data) => {
+          console.log(data.toString())
+        })
+        gb.on('close', (code) => {
+          console.error(`Gitbook install exited with code ${code}`)
+          return code !== 0 ? cb(new Error(`Gitbook install had errors`)) : cb()
+        })
+      }
+
+      function _gitbookSite (cb) {
+        let dest = path.join('../../', siteDir, r)
+        let args = ['build', '.', `${dest}`]
+        let options = {
+          cwd: path.resolve(path.join(tempDir, release))
+        }
+        let gb = spawnAsync('gitbook', args, options)
+        gb.on('error', function _onGitbookError (err) {
+          return cb(err)
+        })
+        gb.stdout.on('data', (data) => {
+          console.log(data.toString())
+        })
+        gb.on('close', (code) => {
+          console.log(`Gitbook build exited with code ${code}`)
+          return code !== 0 ? cb(new Error(`Gitbook build had errors`)) : cb()
+        })
+      }
+
+      function _gitbookPdf (cb) {
+        function _makeDir (cb) {
+          mkdirp(path.join(siteDir, 'pdf', r), (err) => {
+            return err ? cb(err) : cb()
+          })
+        }
+        function _genPdf (cb) {
+          let dest = path.join('../../', siteDir, currentPdfFilePath)
+          let args = ['pdf', '.', `${dest}`]
+          let options = {
+            cwd: path.resolve(path.join(tempDir, release))
+          }
+          let gb = spawnAsync('gitbook', args, options)
+          let errs = []
+          gb.on('error', function _onGitbookError (err) {
+            errs.push(err)
+          })
+          gb.stdout.on('data', (data) => {
+            console.log(data.toString())
+          })
+          gb.on('close', (code) => {
+            console.log(`Gitbook build exited with code ${code}`)
+            return code !== 0 ? cb(errs) : cb()
+          })
+        }
+
+        async.series([
+          _makeDir,
+          _genPdf
+        ], function _onPdfGenerated (err, res) {
+          return err ? cb(err) : cb()
+        })
+      }
+
+      let funcs = [
+        _untarArchive,
+        _compileBookJsonFiles,
+        _gitbookInstall,
+        _gitbookSite,
+        _gitbookPdf
+      ]
+      async.series(funcs, function _onBookBuilt (err, res) {
+        return err ? cb(err) : cb(null, release)
       })
     }
 
-    return new Promise((resolve, reject) => {
-      let options = {
-        cwd: path.resolve(tempDir),
-        absolute: true
-      }
-      let ps = []
-      glob('**/book.json', options, (err, files) => {
-        reject(err)
-        files.forEach((file) => {
-          console.log(file)
-          ps.push(_compileBookJson(file))
+    function _symLinkLatestRelease (cb) {
+      let latestRelease = path.resolve(path.join(siteDir, semver.clean(releases[0])))
+      let latest = path.resolve(path.join(siteDir, 'latest'))
+      fs.symlink(latestRelease, latest, (err) => {
+        return err ? cb(err) : cb()
+      })
+    }
+
+    function _publishRootBookJsonFile (cb) {
+      let source = path.resolve(path.join(tempDir, releases[0], 'book.json'))
+      let dest = path.resolve(path.join(siteDir, 'book.json'))
+      function _getBookJson (cb) {
+        fs.readFile(source, 'UTF8', (err, data) => {
+          return err ? cb(err) : cb(null, data)
         })
-        Promise.all(ps).then(resolve).catch(reject)
-      })
-    })
-  }
-
-  function _gitbookInstall () {
-    return new Promise((resolve, reject) => {
-      let args = ['install']
-      let options = {
-        cwd: path.resolve(tempDir)
       }
-      let gb = spawnAsync('gitbook', args, options)
-      gb.on('error', reject)
-      gb.stdout.on('data', (data) => {
-        console.log(data.toString())
-      })
-      gb.on('close', (code) => {
-        console.log(`Gitbook install exited with code ${code}`)
-        return code !== 0 ? reject(new Error(`Gitbook install had errors`)) : resolve()
-      })
-    })
-  }
-
-  function _gitbookSite () {
-    return new Promise((resolve, reject) => {
-      let dest = path.join('../', siteDir, r)
-      let args = ['build', '.', `${dest}`]
-      let options = {
-        cwd: path.resolve(tempDir)
+      function _publishFile (data, cb) {
+        let bookJson
+        let bookJsonContent
+        try {
+          bookJson = JSON.parse(data)
+          releases.forEach((release) => {
+            let r = semver.clean(release)
+            pluginVersionsOptions.options.push({
+              text: `${r}`,
+              value: `/${r}/`
+            })
+          })
+          bookJson.pluginsConfig.versions = pluginVersionsOptions
+          bookJsonContent = JSON.stringify(bookJson, null, '  ')
+        } catch (err) {
+          return cb(err)
+        }
+        fs.writeFile(dest, bookJsonContent, 'UTF8', (err) => {
+          return err ? cb(err) : cb()
+        })
       }
-      let gb = spawnAsync('gitbook', args, options)
-      gb.on('error', reject)
-      gb.stdout.on('data', (data) => {
-        console.log(data.toString())
+
+      let funcs = [
+        _getBookJson,
+        _publishFile
+      ]
+      async.waterfall(funcs, function _onBookJsonPublished (err, res) {
+        return err ? cb(err) : cb()
       })
-      gb.on('close', (code) => {
-        console.log(`Gitbook build exited with code ${code}`)
-        return code !== 0 ? reject(new Error(`Gitbook build had errors`)) : resolve()
+    }
+
+    async.each(releases, _buildBook, function _onBooksBuilt (err) {
+      if (err) return cb(err)
+      async.series([
+        _symLinkLatestRelease,
+        _publishRootBookJsonFile
+      ], function _onLastTouch (err, res) {
+        return err ? cb(err) : cb()
       })
     })
   }
 
-  function _gitbookPdf () {
-    return new Promise((resolve, reject) => {
-      let dest = path.join('../', siteDir, 'pdf', r)
-      let args = ['pdf', '.', `${dest}`]
-      let options = {
-        cwd: path.resolve(tempDir)
-      }
-      let gb = spawnAsync('gitbook', args, options)
-      gb.on('error', reject)
-      gb.stdout.on('data', (data) => {
-        console.log(data.toString())
-      })
-      gb.on('close', (code) => {
-        console.log(`Gitbook build exited with code ${code}`)
-        return code !== 0 ? reject(new Error(`Gitbook build had errors`)) : resolve()
-      })
+  /**
+   * Build site sequence.
+   * @type {Function[]}
+   */
+  let funcs = [
+    _onStart,
+    _makeTemp,
+    _getReleases,
+    _buildBooks
+  ]
+  async.waterfall(funcs, function _onSiteBuilt (err, res) {
+    let errs = []
+    if (err) errs.push(err)
+    _cleanUpTempData(function _onTempDataWiped (err) {
+      if (err) errs.push(err)
+      return errs.length ? cb(errs) : cb()
     })
-  }
-
-  return checkoutRelease(release).then(() => {
-    return _compileBookJsonFiles()
-  }).then(() => {
-    return _gitbookInstall()
-  }).then(() => {
-    return _gitbookSite()
   })
 }
 
-function buildBooks (releases) {
-  let p = Promise.resolve()
-  releases.forEach((release, index, array) => {
-    p = p.then(() => {
-      return buildBook(release)
-    })
-  })
-  return p
-}
-
-function cleanUpSiteData () {
-  try {
-    let cmd = `rm -rf ${path.join(__dirname, siteDir)}`
-    exec(cmd)
-  } catch (e) {
-    if (e.code !== 'ENOENT') throw e
+buildSite(function _onSiteBuilt (err) {
+  if (err) {
+    console.error(`An error occurred building the site: ${err}`)
+  } else {
+    console.log('Site built!')
   }
-}
-
-function cleanUpRepoData () {
-  try {
-    let cmd = `rm -rf ${path.join(__dirname, tempDir)}`
-    exec(cmd)
-  } catch (e) {
-    if (e.code !== 'ENOENT') throw e
-  }
-}
-
-buildSite().then((result) => {
-  cleanUpRepoData()
-}).catch((err) => {
-  console.error(err)
-  cleanUpRepoData()
 })

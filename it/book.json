@@ -1,7 +1,7 @@
 {
   "pluginsConfig": {
     "downloadpdf": {
-      "base": "{{ BOOK_PDF_URL }}/mcp2015x-manual_it.pdf",
+      "base": "{{ BOOK_PDF_URL }}/{{ BOOK_FILE_NAME }}_it.pdf",
       "label": "Scarica PDF"
     }
   }
