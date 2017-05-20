@@ -5,13 +5,8 @@
       "base": ""
     },
     "versions": {
-      "gitbookConfigURL": "{{ BOOK_URL }}/book.json",
-      "options": [
-        {
-          "value": "",
-          "text": ""
-        }
-      ]
+      "gitbookConfigURL": "/book.json",
+      "options": []
     }
   }
 }

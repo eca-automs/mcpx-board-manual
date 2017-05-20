@@ -18,7 +18,8 @@
  * │       ├── book-name_en.pdf
  * │       └── book-name_it.pdf
  * ├── 0.0.1
- * └── 0.0.2
+ * ├── 0.0.2
+ * └── book.json (root book.json file)
  * ```
  */
 
@@ -38,28 +39,14 @@ const chalk = require('chalk')
 const os = require('os')
 
 /**
- * Builds the gitbook site.
+ * Builds the gitbook site in the `site` directory of the
+ * repo.
+ * It will automatically:
+ * * get all the release tags (validity is checked with the semver module)
+ *
  * @param  {Function} cb - callback
  */
 function buildSite (cb) {
-  /**
-   * Site url.
-   * @type {String}
-   */
-  let url = process.env.BOOK_URL || 'http://localhost:8080'
-  let bookFileName = process.env.BOOK_FILE_NAME || 'book'
-  /**
-   * String that will be substituted with the site url in the book.json files.
-   * @type {String}
-   */
-  let bookUrlTag = '{{ BOOK_URL }}'
-
-  /**
-   * String that will be substituted with the base url path for pdf download.
-   * @type {String}
-   */
-  let bookPdfUrlTag = '{{ BOOK_PDF_URL }}'
-  let bookFileNameTag = '{{ BOOK_FILE_NAME }}'
   /**
    * The configuration options of the versions plugin (it is stored only in the root book.json file)
    * @type {Object}
