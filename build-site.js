@@ -48,16 +48,23 @@ const os = require('os')
  */
 function buildSite (cb) {
   /**
-   * The configuration options of the versions plugin (it is stored only in the root book.json file)
-   * @type {Object}
+   * This string will be replaced with the release string to build
+   * the download pdf link.
+   * @name buildSite~releaseTag
+   * @type {String}
    */
-  let pluginVersionsOptions = {
-    gitbookConfigURL: null,
-    options: []
-  }
+  let releaseTag = '{{ RELEASE }}'
+
+  /**
+   * The configuration of the paths and labels of the links for the different book releases.
+   * @name buildSite~pluginVersionsOptions
+   * @type {Object[]}
+   */
+  let pluginVersionsOptions = []
 
   /**
    * Creates the temporary folder to store tar archives of the different book releases.
+   * @name buildSite~_makeTemp
    * @param  {Function} cb - callback
    */
   function _makeTemp (cb) {
@@ -68,8 +75,8 @@ function buildSite (cb) {
 
   /**
    * Removes the old site folder.
+   * @name buildSite~_cleanUpSiteData
    * @param  {Function} cb -  callback
-   * @return {[type]}      [description]
    */
   function _cleanUpSiteData (cb) {
     let cmd = `rm -rf ${path.join(__dirname, siteDir)}`
@@ -83,6 +90,7 @@ function buildSite (cb) {
 
   /**
    * Removes the temp directory containing the books archives.
+   * @name buildSite~_cleanUpTempData
    * @param  {Function} cb - callback
    */
   function _cleanUpTempData (cb) {
@@ -97,6 +105,7 @@ function buildSite (cb) {
 
   /**
    * Called at startup. Will clean the old site and temp data (if present).
+   * @name buildSite~_onStart
    * @param  {Function} cb - callback
    */
   function _onStart (cb) {
@@ -122,6 +131,7 @@ function buildSite (cb) {
 
   /**
    * Gets the book releases and makes tar archives for each one in the temp directory.
+   * @name buildSite~_getReleases
    * @param  {Function} cb - callback
    */
   function _getReleases (cb) {
@@ -167,10 +177,16 @@ function buildSite (cb) {
       return err ? cb(err) : cb(null, releases)
     })
   }
-
+  /**
+   * Builds all the released books.
+   * @name buildSite~_buildBooks
+   * @param  {String[]}   releases - the book releases
+   * @param  {Function} cb - callback
+   */
   function _buildBooks (releases, cb) {
     /**
      * Builds a single book release.
+     * @name buildSite~_buildBooks~_buildBook
      * @param  {String}   release - the release string
      * @param  {Function} cb      - callback
      */
@@ -201,22 +217,15 @@ function buildSite (cb) {
           }
 
           function _compileData (cb) {
-            let bookUrl = `${url}`
-
             try {
               bookJson = JSON.parse(fileContent)
             } catch (e) {
               return cb(e)
             }
             if (!bookJson.plugins) {
-              let pdfUrl = `/pdf/${r}`
-              bookJson.pluginsConfig.downloadpdf.base = bookJson.pluginsConfig.downloadpdf.base.replace(bookPdfUrlTag, pdfUrl)
-              bookJson.pluginsConfig.downloadpdf.base = bookJson.pluginsConfig.downloadpdf.base.replace(bookFileNameTag, bookFileName)
-              currentPdfFilePath = '{{ BOOK_PDF_URL }}/{{ BOOK_FILE_NAME }}.pdf'.replace(bookPdfUrlTag, pdfUrl)
-              currentPdfFilePath = currentPdfFilePath.replace(bookFileNameTag, bookFileName)
+              bookJson.pluginsConfig.downloadpdf.base = bookJson.pluginsConfig.downloadpdf.base.replace(releaseTag, r)
+              currentPdfFilePath = bookJson.pluginsConfig.downloadpdf.base
             } else {
-              !pluginVersionsOptions.gitbookConfigURL && (pluginVersionsOptions.gitbookConfigURL = bookJson.pluginsConfig.versions.gitbookConfigURL.replace(bookUrlTag, bookUrl))
-              bookJson.pluginsConfig.versions.gitbookConfigURL = pluginVersionsOptions.gitbookConfigURL
               bookJson.pluginsConfig.versions.options = [
                 {
                   value: `/${r}/`,
@@ -336,6 +345,11 @@ function buildSite (cb) {
       })
     }
 
+    /**
+     * Symkinks the latest book release with the directory named 'latest'.
+     * @name buildSite~_symLinkLatestRelease
+     * @param  {Function} cb - callback
+     */
     function _symLinkLatestRelease (cb) {
       let latestRelease = path.resolve(path.join(siteDir, semver.clean(releases[0])))
       let latest = path.resolve(path.join(siteDir, 'latest'))
@@ -344,6 +358,11 @@ function buildSite (cb) {
       })
     }
 
+    /**
+     * Copies the root book.json file in the root of the site.
+     * @name buildSite~_publishRootBookJsonFile
+     * @param  {Function} cb - callback
+     */
     function _publishRootBookJsonFile (cb) {
       let source = path.resolve(path.join(tempDir, releases[0], 'book.json'))
       let dest = path.resolve(path.join(siteDir, 'book.json'))
@@ -359,12 +378,12 @@ function buildSite (cb) {
           bookJson = JSON.parse(data)
           releases.forEach((release) => {
             let r = semver.clean(release)
-            pluginVersionsOptions.options.push({
+            pluginVersionsOptions.push({
               text: `${r}`,
               value: `/${r}/`
             })
           })
-          bookJson.pluginsConfig.versions = pluginVersionsOptions
+          bookJson.pluginsConfig.versions.options = pluginVersionsOptions
           bookJsonContent = JSON.stringify(bookJson, null, '  ')
         } catch (err) {
           return cb(err)

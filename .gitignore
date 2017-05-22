@@ -18,7 +18,3 @@ _book
 
 temp
 site
-app/public/*
-!/app/public/index.html
-!/app/public/css
-!/app/public/js
