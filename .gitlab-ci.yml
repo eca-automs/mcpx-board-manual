@@ -13,7 +13,7 @@ before_script:
   - apt-get update
   - apt-get install calibre
 
-pages:
+build-books:
   stage: build-books
   script:
     - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
