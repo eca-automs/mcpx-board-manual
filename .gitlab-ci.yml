@@ -1,0 +1,23 @@
+image: node:6.10.0
+
+stages:
+  - build-books
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install gitbook-cli -g
+  - gitbook fetch latest
+  - npm i
+  - apt-get update
+  - apt-get install calibre
+
+pages:
+  stage: build-books
+  script:
+    - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
+  only:
+    - master
+    - develop
+    - tags
