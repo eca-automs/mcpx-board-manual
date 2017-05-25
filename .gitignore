@@ -18,3 +18,5 @@ _book
 
 temp
 site
+
+*.log
