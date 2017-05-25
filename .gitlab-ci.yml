@@ -4,10 +4,6 @@ stages:
   - prepare
   - build-books
 
-cache:
-  paths:
-    - node_modules/
-
 install:
   stage: prepare
   script:
