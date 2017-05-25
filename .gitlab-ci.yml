@@ -1,19 +1,28 @@
-image: node:6.10.0
+image: node:6.10.2
 
 stages:
+  - prepare
   - build-books
+
 cache:
   paths:
     - node_modules/
 
-before_script:
-  - apt-get update
-  - apt-get install calibre -y
-  - npm install gitbook-cli -g
-  - gitbook fetch latest
-  - npm i
+install:
+  stage:
+    - prepare
+  script:
+    - apt-get update
+    - apt-get install calibre -y
+    - npm install gitbook-cli -g
+    - gitbook fetch latest
+    - npm i
+  only:
+    - master
+    - develop
+    - tags
 
-build-books:
+build:
   stage: build-books
   script:
     - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
