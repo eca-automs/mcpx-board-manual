@@ -7,11 +7,11 @@ cache:
     - node_modules/
 
 before_script:
+  - apt-get update
+  - apt-get install calibre -y
   - npm install gitbook-cli -g
   - gitbook fetch latest
   - npm i
-  - apt-get update
-  - apt-get install calibre -y
 
 build-books:
   stage: build-books
