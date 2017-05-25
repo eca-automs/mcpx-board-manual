@@ -9,8 +9,7 @@ cache:
     - node_modules/
 
 install:
-  stage:
-    - prepare
+  stage: prepare
   script:
     - apt-get update
     - apt-get install calibre -y
