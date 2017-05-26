@@ -10,14 +10,24 @@ before_script:
   - gitbook fetch latest
   - npm i
 
-build-books:
+build-production:
   stage: build-books
   script:
     - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
+    - echo "Will trigger mcpx-board-manual-site build...."
   artifacts:
     paths:
       - site
   only:
     - master
+
+build-testing:
+  stage: build-books
+  script:
+    - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
+    - echo "Will trigger mcpx-board-manual-site build...."
+  artifacts:
+    paths:
+      - site
+  only:
     - develop
-    - tags
