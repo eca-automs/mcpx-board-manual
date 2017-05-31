@@ -1,6 +1,6 @@
 {
   "name": "mcpx-board-manual",
-  "version": "0.0.0",
+  "version": "0.0.0-aplha.0",
   "description": "The manual of the MCP2015X-SMD and  PER16B-SMD boards",
   "scripts": {
     "build-site": "./node_modules/.bin/gs"
