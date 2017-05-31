@@ -1,33 +1,44 @@
-image: node:6.10.2
-
 stages:
-  - build-books
+  - build
+  - deploy
 
-before_script:
-  - apt-get update
-  - apt-get install calibre -y
-  - npm install gitbook-cli -g
-  - gitbook fetch latest
-  - npm i
-
-build-production:
-  stage: build-books
-  script:
-    - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
-    - echo "Will trigger mcpx-board-manual-site build...."
-  artifacts:
-    paths:
-      - site
-  only:
-    - master
+# build-production:
+#   stage: build-books
+#   script:
+#     - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
+#     - echo "Will trigger mcpx-board-manual-site build...."
+#   artifacts:
+#     paths:
+#       - site
+#   only:
+#     - master
 
 build-testing:
-  stage: build-books
+  image: node:6.10.2
+  stage: build
   script:
+    - apt-get update
+    - apt-get install calibre -y
+    - npm install gitbook-cli -g
+    - gitbook fetch latest
+    - npm i
     - DEBUG=gs BOOK_FILE_NAME=mcp2015x npm run build-site
     - echo "Will trigger mcpx-board-manual-site build...."
   artifacts:
     paths:
       - site
   only:
-    - develop
+    - /^v\d+\.\d+\.\d+-(alpha|beta|rc)\.\d+$/
+  except:
+    - branches
+
+deploy-testing:
+  stage: deploy
+  script:
+    - apt-get update
+    - apt-get install curl -y
+    - curl -X POST -F token=$TRIGGER_TOKEN -F ref=$SITE_VERSION https://gitlab.com/api/v4/projects/3354326/trigger/pipeline
+  only:
+    - /^v\d+\.\d+\.\d+-(alpha|beta|rc)\.\d+$/
+  except:
+    - branches
