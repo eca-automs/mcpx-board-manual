@@ -28,9 +28,7 @@ build-testing:
     paths:
       - site
   only:
-    - /^v\d+\.\d+\.\d+-(alpha|beta|rc)\.\d+$/
-  except:
-    - branches
+    - develop
 
 deploy-testing:
   stage: deploy
@@ -39,6 +37,4 @@ deploy-testing:
     - apt-get install curl -y
     - curl -X POST -F token=$TRIGGER_TOKEN -F ref=$SITE_VERSION https://gitlab.com/api/v4/projects/3354326/trigger/pipeline
   only:
-    - /^v\d+\.\d+\.\d+-(alpha|beta|rc)\.\d+$/
-  except:
-    - branches
+    - develop
