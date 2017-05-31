@@ -35,6 +35,6 @@ deploy-testing:
   script:
     - apt-get update
     - apt-get install curl -y
-    - curl -X POST -F token=$TRIGGER_TOKEN -F ref=$SITE_VERSION https://gitlab.com/api/v4/projects/3354326/trigger/pipeline
+    - curl -X POST -F token=$TRIGGER_TOKEN -F ref=develop https://gitlab.com/api/v4/projects/3354326/trigger/pipeline
   only:
     - develop
