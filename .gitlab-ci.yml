@@ -22,7 +22,7 @@ build-testing:
     - npm install gitbook-cli -g
     - gitbook fetch latest
     - npm i
-    - DEBUG=gs BOOK_PRERELEASES=true BOOK_FILE_NAME=mcp2015x BOOK_BASE_URL=manuals/mcp2015x PDF_BASE_URL=manuals/mcp2015x npm run build-site
+    - DEBUG=gs BOOK_PRERELEASES=true BOOK_FILE_NAME=/mcp2015x BOOK_BASE_URL=manuals/mcp2015x PDF_BASE_URL=/manuals/mcp2015x npm run build-site
   artifacts:
     paths:
       - site
