@@ -1,7 +1,7 @@
 {
   "pluginsConfig": {
     "downloadpdf": {
-      "base": "/pdf/{{ RELEASE }}",
+      "base": "{{ PDF_BASE_URL }}pdf/{{ RELEASE }}",
       "label": "Scarica PDF",
       "multilingual": true
     }
