@@ -1,9 +1,10 @@
 {
   "name": "mcpx-board-manual",
-  "version": "0.0.0-alpha.5",
+  "version": "0.0.0-alpha.0",
   "description": "The manual of the MCP2015X-SMD and  PER16B-SMD boards",
   "scripts": {
-    "build-site": "./node_modules/.bin/gs"
+    "build-site": "./node_modules/.bin/gs",
+    "changelog": "conventional-changelog -p atom -i CHANGELOG.md -s"
   },
   "repository": {
     "type": "git",
