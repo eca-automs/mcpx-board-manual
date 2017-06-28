@@ -144,6 +144,8 @@ Quando viene impostato un piano come corto, il rallentamento prima della fermata
 la pista del piano precedente.
 L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
 
+Quando il timer è attivo, sul display viene visualizzata la voce `atm1` al posto di `occ`.
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.01 secondi
@@ -155,6 +157,8 @@ Ritardo rallentamento alla fermata relativo al piano corto 3.
 Quando viene impostato un piano come corto, il rallentamento prima della fermata viene effettuato con
 la pista del piano precedente.
 L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm2` al posto di `occ`.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -168,6 +172,8 @@ Quando viene impostato un piano come corto, il rallentamento prima della fermata
 la pista del piano precedente.
 L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
 
+Quando il timer è attivo, sul display viene visualizzata la voce `atm3` al posto di `occ`.
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.01 secondi
@@ -179,6 +185,8 @@ Ritardo rallentamento alla fermata relativo al piano corto 5.
 Quando viene impostato un piano come corto, il rallentamento prima della fermata viene effettuato con
 la pista del piano precedente.
 L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm4` al posto di `occ`.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -192,6 +200,8 @@ In impianti veloci dove le piste di rallentamento sono molto distanti da quelle 
 il tempo impostato in questo parametro ritarda il comando di rallentamento (un volta incontrata la pista relativa) quando viene effettuata  una
 corsa tra due piani adiacenti.
 
+Quando il timer è attivo, sul display viene visualizzata la voce `atm5` al posto di `occ`.
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.01 secondi
@@ -204,6 +214,8 @@ In impianti veloci dove le piste di rallentamento sono molto distanti da quelle 
 il tempo impostato in questo parametro ritarda il comando di rallentamento (un volta incontrata la pista relativa) quando viene effettuata  una
 corsa tra due piani adiacenti.
 
+Quando il timer è attivo, sul display viene visualizzata la voce `atm6` al posto di `occ`.
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.01 secondi
@@ -214,6 +226,8 @@ Ritardo rallentamento alla partenza relativo al piano corto 2.
 
 Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
 il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `at27` al posto di `occ`.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -226,6 +240,8 @@ Ritardo rallentamento alla partenza relativo al piano corto 3.
 Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
 il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro
 
+Quando il timer è attivo, sul display viene visualizzata la voce `at28` al posto di `occ`.
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
@@ -237,6 +253,8 @@ Ritardo rallentamento alla partenza relativo al piano corto 4.
 Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
 il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro
 
+Quando il timer è attivo, sul display viene visualizzata la voce `at29` al posto di `occ`.
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
@@ -247,6 +265,8 @@ Ritardo rallentamento alla partenza relativo al piano corto 5.
 
 Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
 il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro
+
+Quando il timer è attivo, sul display viene visualizzata la voce `at30` al posto di `occ`.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
