@@ -35,6 +35,7 @@ Valore impostato|Effetto
 S|La manovra da pulsanti è attiva
 N|La manvora da pulsanti non è attiva
 
+--- Inserire spiegazione funzionamento manovra da pulsanti con foto ---
 ## Reset errore A3 (reset errore a3) {#res-err-a3}
 
 <img src="../../../../../res/menu-manovra-reset-err-a3.jpg" style="width: 300px; border-radius: 5%;">

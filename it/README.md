@@ -1,7 +1,7 @@
 # Introduzione
 
 MCP2015X-SMD è la scheda madre del quadro elettrico mcpx e gestisce tutte le funzioni principali di gestione della manovra
-del'impianto elevatore.
+dell'impianto elevatore.
 Il numero di parametri di cui è fornita permettono una ampia libertà di configurazione, mentre la diagnostica guasti permette di concoscere esattamente la situazione in cui
 si trovava la cabina al momento di un errore.
 
@@ -21,9 +21,10 @@ PER16B-SMD è una scheda periferica che complementa MCP2015X-SMD con molte funzi
 *   ingressi per prenotazioni o chiamate
 *   comando di display di vario tipo
 
-Per impostare le varie funzioni disponibili, PER16B-SMD viene programmata da MCP2015X-SMD con un indirizzo specifico.
+Per impostare le varie funzioni disponibili, PER16B-SMD viene programmata con un indirizzo specifico (vedi lista [indirizzi e funzioni](periferiche/indirizzi.md)).
 
 MCP2015X-SMD e PER16B-SMD comunicano tramite un bus seriale. Il numero massimo di periferiche che possono essere presenti sul bus è 48.
 
+Per il corretto funzionamento è necessario che sul bus sia collegata almeno una periferica che gestisca le chiamate dell'impianto.
 
 --mettere disegno collegamento generico con alimentazione a 24VDC---
