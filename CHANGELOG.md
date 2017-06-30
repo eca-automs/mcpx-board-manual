@@ -1,3 +1,15 @@
+<a name="0.0.0-alpha.1"></a>
+# 0.0.0-alpha.1 (2017-06-30)
+
+* Aggiunte spiegazioni temporizzazioni piani corti e normali in impianti veloci ([9fae489](https://gitlab.com/eca-automs/mcpx-board-manual/commit/9fae489))
+* Aggiunte voci visualizzate su display all'attivazione dei timer dei piani corti e normail in impiant ([fcef351](https://gitlab.com/eca-automs/mcpx-board-manual/commit/fcef351))
+* Collegate spiegazioni parametri piani corti con temporizzazioni. ([5446210](https://gitlab.com/eca-automs/mcpx-board-manual/commit/5446210))
+* Piccoli fix. ([2bf7307](https://gitlab.com/eca-automs/mcpx-board-manual/commit/2bf7307))
+* Removed atom preset from changelog generation. ([971bd84](https://gitlab.com/eca-automs/mcpx-board-manual/commit/971bd84))
+* Scritta prima stesura elenco comandi del menu manovra. ([2ed47c4](https://gitlab.com/eca-automs/mcpx-board-manual/commit/2ed47c4))
+
+
+
 <a name="0.0.0-alpha.0"></a>
 # 0.0.0-alpha.0 (2017-06-26)
 
