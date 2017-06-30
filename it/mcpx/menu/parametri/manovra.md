@@ -1375,15 +1375,82 @@ Gestione tipo di corsa tra piano 0 e 1.
 
 Per tipo di corsa si intende lo spazio che c'è tra i due piani.
 
-Vengono gestite 8 tipologie:
-*   piano corto tipo 1 ????
-*   piano corto tipo 2 ????
-*   piano corto tipo 3 ????
-*   piano corto tipo 4 ????
-*   piano corto tipo 5 ????
-*   piano normale ????
-*   piano lungo tipo 1 ????
-*   piano lungo tipo 2 ????
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+#### Gestione tipi di piani diversi {#gest-piani}
+
+Vengono gestite 8 tipologie che vengono identificate con numeri progressivi.
+
+Si ha la possibiltà di gestire 5 tipi di piano corto diversi e 2 tipi di paino lunghi diversi (per impianti veloci).
+
+Numero|Tipo piano
+---|---
+0|normale
+1|corto 1
+2|corto 2
+3|corto 3
+4|corto 4
+5|corto 5
+6|lungo 1
+7|lungo 2
+
+###### Piano normale
+
+Piano che non necessita di gestione particolare.
+
+###### Piano corto 1
+
+Piano con corsa breve.
+
+###### Piano corto 2
+
+Piano con corsa breve. Il rallentamento alla fermata viene regolato con il parametro [017](temporizzazioni.md/#017),
+mentre quello alla partenza dal parametro [027](temporizzazioni.md/#027).
+
+###### Piano corto 3
+
+Piano con corsa breve. Il rallentamento alla fermata viene regolato con il parametro [018](temporizzazioni.md/#018),
+mentre quello alla partenza dal parametro [028](temporizzazioni.md/#028).
+
+###### Piano corto 4
+
+Piano con corsa breve. Il rallentamento alla fermata viene regolato con il parametro [019](temporizzazioni.md/#019),
+mentre quello alla partenza dal parametro [029](temporizzazioni.md/#029).
+
+###### Piano corto 5
+
+Piano con corsa breve. Il rallentamento alla fermata viene regolato con il parametro [020](temporizzazioni.md/#020),
+mentre quello alla partenza dal parametro [030](temporizzazioni.md/#030).
+
+###### Piano lungo 1
+
+Piano con corsa lunga (impianti veloci). Il ritardo di rallentamento viene regolato dal parametro [021](temporizzazioni.md/#021).
+
+###### Piano lungo 2
+
+Piano con corsa lunga (impianti veloci). Il ritardo di rallentamento viene regolato dal parametro [021](temporizzazioni.md/#021).
+
+## Parametro 111 {#111}
+
+Gestione tipo di corsa tra piano 1 e 2.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -1394,157 +1461,770 @@ Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate 
 #### Funzioni
 Valore|Funzione
 ---|---
-0|Piano normale
-1|Piano corto tipo 1 senza timer.
-2|CORTO TIPO 2 + TIMER 1 PAR 17 + COMPENS PAR 27.
-3|CORTO TIPO 3 + TIMER 2 PAR 18 + COMPENS PAR 28.
-4|CORTO TIPO 4 + TIMER 3 PAR 19 + COMPENS PAR 29.
-5|CORTO TIPO 5 + TIMER 4 PAR 20 + COMPENS PAR 30.
-6|LUNGO TIPO 1 + TIMER 5 PAR 21.
-7|LUNGO TIPO 2 + TIMER 6 PAR 22.
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
 
-PRINCIPIO DI CONFIGURAZIONE:
-
-PIANO CORTO SUCCESSIVO A PIANO NORMALE: COMANDO
-RALLENT SU PISTA RALL PIANO NORMALE - SE CORTO TIPO 1
-INIZIA RALL-IGNORA FERMATA PIANO NORMALE E FERMA AL
-CORTO SUCCESSIVO / SE CORTO TIPO 2-3-4-5 RITARDA RALL
-SECONDO VALORE TIMER RELATIVO SE CONFIGURATO /
-SE PIU' PIANI CORTI CONSECUTIVI RITARDO RALL = SOMMA
-TIMER RELATIVI / LA PARTENZA DI UN PIANO CORTO TIPO 1
-E' IN BASSA -TIPO2-3-4-5 AVVIA IN ALTA E CAMBIO IN BASSA
-ALLA FINE TIMER RELATIVO - TIMER POTREBBE ESSERE BREVE
-PERCHE' IMPOSTATO A VELOC DI REGIME - USARE PARAM DI
-COMPENSAZIONE PER AUMENTARE RITARDO TIMER DI UNA
-QUOTA FISSA PER LA PARTENZA
-SE TRE PIANI CORTI CONSECUTIVI RALL AL 1°PIANO DEI TRE
-CON SOMMA DI 2 TIMER RELATIVI SE INSERITI
-PIANO LUNGO: IMPIANTI VELOCI RALL REGOLATO DA VELOC
-DI REGIME - SE PARTENZA PIANO SUCCESSIVO IL RALL VIENE
-ESEGUITO SUBITO - PER EVITARE INSERIRE TIMER RELATIVO
-PER RITARDARE RALL ED AVERE UN GIUSTO SPAZIO DI RALL
-/SE IMPOSTATO 1VEL TUTTI CORTI AZZERATI (NON GESTITI)
-/ SE PRENOTAZIONE IMPOSTARE SOLO 0-6-7 (NO CORTI).
-
-## Parametro 111 {#111}
-
-Gestione tipo di corsa tra piano 1 e 2.
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 112 {#112}
 
 Gestione tipo di corsa tra piano 2 e 3.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 113 {#113}
 
 Gestione tipo di corsa tra piano 3 e 4.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 114 {#114}
 
 Gestione tipo di corsa tra piano 4 e 5.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 115 {#115}
 
 Gestione tipo di corsa tra piano 5 e 6.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 116 {#116}
 
 Gestione tipo di corsa tra piano 6 e 7.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 117 {#117}
 
 Gestione tipo di corsa tra piano 7 e 8.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 118 {#118}
 
 Gestione tipo di corsa tra piano 8 e 9.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 119 {#119}
 
 Gestione tipo di corsa tra piano 9 e 10.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 120 {#120}
 
 Gestione tipo di corsa tra piano 10 e 11.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 121 {#121}
 
 Gestione tipo di corsa tra piano 11 e 12.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 122 {#122}
 
 Gestione tipo di corsa tra piano 12 e 13.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 123 {#123}
 
 Gestione tipo di corsa tra piano 13 e 14.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 124 {#124}
 
 Gestione tipo di corsa tra piano 14 e 15.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 125 {#125}
 
 Gestione tipo di corsa tra piano 15 e 16.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 126 {#126}
 
 Gestione tipo di corsa tra piano 16 e 17.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 127 {#127}
 
 Gestione tipo di corsa tra piano 17 e 18.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 128 {#128}
 
 Gestione tipo di corsa tra piano 18 e 19.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 129 {#129}
 
 Gestione tipo di corsa tra piano 19 e 20.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 130 {#130}
 
 Gestione tipo di corsa tra piano 20 e 21.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 131 {#131}
 
 Gestione tipo di corsa tra piano 21 e 22.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 132 {#132}
 
 Gestione tipo di corsa tra piano 22 e 23.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 133 {#133}
 
 Gestione tipo di corsa tra piano 23 e 24.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 134 {#134}
 
 Gestione tipo di corsa tra piano 24 e 25.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 135 {#135}
 
 Gestione tipo di corsa tra piano 25 e 26.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 136 {#136}
 
 Gestione tipo di corsa tra piano 26 e 27.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 137 {#137}
 
 Gestione tipo di corsa tra piano 27 e 28.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 138 {#138}
 
 Gestione tipo di corsa tra piano 28 e 29.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 139 {#139}
 
 Gestione tipo di corsa tra piano 29 e 30.
 
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
+
 ## Parametro 140 {#140}
 
 Gestione tipo di corsa tra piano 30 e 31.
+
+Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 7|nessuna|nessuna
+
+Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
+
+#### Funzioni
+Valore|Funzione
+---|---
+0|piano normale
+1|piano corto tipo 1
+2|piano corto tipo 2
+3|piano corto tipo 3
+4|piano corto tipo 4
+5|piano corto tipo 5
+6|piano lungo tipo 1
+7|piano lungo tipo 2
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 141 {#141}
 
