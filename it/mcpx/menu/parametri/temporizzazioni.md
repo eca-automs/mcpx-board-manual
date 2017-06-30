@@ -138,7 +138,15 @@ da 0 a 6000|secondo|0.01 secondi
 
 ## Parametro 017 {#017}
 
-Ritardo 'T1' ----------.
+Ritardo rallentamento alla fermata relativo al piano corto 2.
+
+Quando viene impostato un piano come corto, il rallentamento prima della fermata viene effettuato con
+la pista del piano precedente.
+L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm1` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -146,7 +154,15 @@ da 0 a 6000|secondo|0.01 secondi
 
 ## Parametro 018 {#018}
 
-Ritardo 'T2' ----------.
+Ritardo rallentamento alla fermata relativo al piano corto 3.
+
+Quando viene impostato un piano come corto, il rallentamento prima della fermata viene effettuato con
+la pista del piano precedente.
+L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm2` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -154,7 +170,15 @@ da 0 a 6000|secondo|0.01 secondi
 
 ## Parametro 019 {#019}
 
-Ritardo 'T3' ----------.
+Ritardo rallentamento alla fermata relativo al piano corto 4.
+
+Quando viene impostato un piano come corto, il rallentamento prima della fermata viene effettuato con
+la pista del piano precedente.
+L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm3` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -162,7 +186,15 @@ da 0 a 6000|secondo|0.01 secondi
 
 ## Parametro 20 {#020}
 
-Ritardo 'T4' ----------.
+Ritardo rallentamento alla fermata relativo al piano corto 5.
+
+Quando viene impostato un piano come corto, il rallentamento prima della fermata viene effettuato con
+la pista del piano precedente.
+L'avvio del rallentamento viene regolato in base al valore impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm4` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -170,7 +202,15 @@ da 0 a 6000|secondo|0.01 secondi
 
 ## Parametro 021 {#021}
 
-Ritardo 'T5' ----------.
+Ritardo rallentamento relativo al piano lungo 1.
+
+In impianti veloci dove le piste di rallentamento sono molto distanti da quelle di fermata,
+il tempo impostato in questo parametro ritarda il comando di rallentamento (un volta incontrata la pista relativa) quando viene effettuata  una
+corsa tra due piani adiacenti.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm5` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -178,7 +218,15 @@ da 0 a 6000|secondo|0.01 secondi
 
 ## Parametro 022 {#022}
 
-Ritardo 'T6' ----------.
+Ritardo relativo al piano lungo 2.
+
+In impianti veloci dove le piste di rallentamento sono molto distanti da quelle di fermata,
+il tempo impostato in questo parametro ritarda il comando di rallentamento (un volta incontrata la pista relativa) quando viene effettuata  una
+corsa tra due piani adiacenti.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `atm6` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -186,35 +234,61 @@ da 0 a 6000|secondo|0.01 secondi
 
 ## Parametro 027 {#027}
 
-Compensazione 'T1' ----.
+Ritardo rallentamento alla partenza relativo al piano corto 2.
+
+Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
+il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro.
+
+Quando il timer è attivo, sul display viene visualizzata la voce `at27` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 255|millisecondi|10 millisecondi
+da 0 a 255|millisecondi|100 millisecondi
 
 ## Parametro 028 {#028}
 
-Compensazione 'T2' ----.
+Ritardo rallentamento alla partenza relativo al piano corto 3.
+
+Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
+il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro
+
+Quando il timer è attivo, sul display viene visualizzata la voce `at28` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 255|millisecondi|10 millisecondi
+da 0 a 255|millisecondi|100 millisecondi
 
 ## Parametro 029 {#029}
 
-Compensazione 'T3' ----.
+Ritardo rallentamento alla partenza relativo al piano corto 4.
+
+Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
+il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro
+
+Quando il timer è attivo, sul display viene visualizzata la voce `at29` al posto di `occ`.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 255|millisecondi|10 millisecondi
+da 0 a 255|millisecondi|100 millisecondi
 
 ## Parametro 030 {#030}
 
-Compensazione 'T4' ----.
+Ritardo rallentamento alla partenza relativo al piano corto 5.
+
+Quando viene impostato un piano come corto, quando si fa una partenza da questo piano a quello vicino (corsa ridotta),
+il comando di rallentamento non viene gestito con le piste, ma viene ritardato con il tempo impostato in questo parametro
+
+Quando il timer è attivo, sul display viene visualizzata la voce `at30` al posto di `occ`.
+
+Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#gest-piani) per avere informazioni aggiuntive.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 255|millisecondi|10 millisecondi
+da 0 a 255|millisecondi|100 millisecondi
 
 ## Parametro 039 {#039}
 

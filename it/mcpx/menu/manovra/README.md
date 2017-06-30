@@ -1,4 +1,4 @@
-# Menu - manovra
+# Manovra
 
 In questa voce si trovano dei comandi che permettono di cambiare il comportamento del quadro,
 resettare situazioni di blocco oppure effettuare procedure particolari.
