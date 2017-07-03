@@ -37,3 +37,5 @@ deploy-testing:
     - curl -X POST -F token=$TRIGGER_TOKEN -F ref=develop https://gitlab.com/api/v4/projects/3354326/trigger/pipeline
   only:
     - develop
+  environment:
+    name: testing
