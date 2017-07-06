@@ -11,4 +11,4 @@ Questa presenta 4 voci:
 *   CONNESSIONI
 
 Premendo il tasto UP si muove il cursore lungo le varie voci, premendo il tasto SET si entra
-nella voce selezionata.
+nella voce selezionata, premendo il tasto MENU si esce dal menu stesso.

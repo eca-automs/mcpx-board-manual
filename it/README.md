@@ -28,3 +28,16 @@ MCP2015X-SMD e PER16B-SMD comunicano tramite un bus seriale. Il numero massimo d
 Per il corretto funzionamento è necessario che sul bus sia collegata almeno una periferica che gestisca le chiamate dell'impianto.
 
 --mettere disegno collegamento generico con alimentazione a 24VDC---
+
+Per impianti collegati in batteria (duplex, triplex etc) e/o comunicazione con scheda esterna per telecontrollo o altre applicazioni MCP2015X-SMD usa un altro bus seriale dedicato.
+
+In totale vengono utilizzati quindi 2 bus seriali:
+
+* uno "locale" che gestisce la comunicazione interna tra quadro e periferiche
+* uno "esterno" che gestisce la comunicazione con altri quadri o altre schede
+
+## Firmware
+
+Il nome del firmware presente sulle schede è `P`.
+
+--- Inserire descrizione funzioni firmware, introdurre il fatto che non gestisce impianto seriale completo. ---
