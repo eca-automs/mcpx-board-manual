@@ -51,6 +51,11 @@ Tensione 48VDC di manovra assente.
 
 ## Codice 008 {#008}
 Contatto extracorsa aperto.
+
+Relativo solo ad impianto oleodinameci.
+
+Questo errore provoca il blocco dell'impianto.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
 #### Cause
@@ -71,14 +76,15 @@ Contatti 5-6-7 catena sicurezze aperti.
 #### Soluzioni
 
 ## Codice 011 {#011}
-Contatto preliminari aperto.
+Contatto preliminari aperto durante il viaggio.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
 #### Cause
 #### Soluzioni
 
 ## Codice 012 {#012}
-Contatto portine aperto.
+Contatto portine aperto durante il viaggio.
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
 #### Cause
