@@ -1,3 +1,16 @@
+<a name="0.0.0-alpha.2"></a>
+# 0.0.0-alpha.2 (2017-07-07)
+
+* Aggiunta spiegazione chiamate da pulsanti. ([209452e](https://gitlab.com/eca-automs/mcpx-board-manual/commit/209452e))
+* Menzionato testing environment in fase di deployment. ([e83a337](https://gitlab.com/eca-automs/mcpx-board-manual/commit/e83a337)), closes [#12](https://gitlab.com/eca-automs/mcpx-board-manual/issues/12)
+* Prima stesura descrizione funzionamento in modalità manovra ([bc2e2d3](https://gitlab.com/eca-automs/mcpx-board-manual/commit/bc2e2d3))
+* Prima stesura sezione "blocco per errore", aggiunti capitoli per comunicazioni seriali ([6d4e277](https://gitlab.com/eca-automs/mcpx-board-manual/commit/6d4e277))
+* Scritta introduzione generica per layout scheda MCP2015X-SMD ([8e0a64e](https://gitlab.com/eca-automs/mcpx-board-manual/commit/8e0a64e))
+* Sezione ERRORI ([3316856](https://gitlab.com/eca-automs/mcpx-board-manual/commit/3316856))
+* Spiegazione sezione connessioni menu manovra. ([d8c262c](https://gitlab.com/eca-automs/mcpx-board-manual/commit/d8c262c))
+
+
+
 <a name="0.0.0-alpha.1"></a>
 # 0.0.0-alpha.1 (2017-06-30)
 
