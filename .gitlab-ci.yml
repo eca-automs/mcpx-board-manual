@@ -19,7 +19,7 @@ build-testing:
   script:
     - apt-get update
     - apt-get install calibre -y
-    - npm install gitbook-cli -g
+    - npm install gitbook-cli@2.3.0 -g
     - gitbook fetch latest
     - npm i
     - DEBUG=gs BOOK_PRERELEASES=true BOOK_FILE_NAME=$BOOK_FILE_NAME BOOK_BASE_URL=$BASE_URL PDF_BASE_URL=$BASE_URL npm run build-site
