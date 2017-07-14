@@ -1,3 +1,12 @@
+<a name="0.0.0-alpha.3"></a>
+# 0.0.0-alpha.3 (2017-07-14)
+
+* Aggiunta copertina e aggiornata licenza. ([a0f18f3](https://gitlab.com/eca-automs/mcpx-board-manual/commit/a0f18f3))
+* Capitolo periferiche ([c117a76](https://gitlab.com/eca-automs/mcpx-board-manual/commit/c117a76))
+* Prima stesura capitolo delle connessioni seriali. ([c369680](https://gitlab.com/eca-automs/mcpx-board-manual/commit/c369680))
+
+
+
 <a name="0.0.0-alpha.2"></a>
 # 0.0.0-alpha.2 (2017-07-07)
 
