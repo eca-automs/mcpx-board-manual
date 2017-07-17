@@ -754,13 +754,12 @@ La batteria di alimentazione del CEV e braccio per controllo emedamento A3 è gu
 ## Codice 103 {#103}
 Scaduto tempo corsa per impianto a fune a 1 velocità.
 #### Descrizione
-La cabina non è arrivata al piano entro il tempo stabilito dal tempo corsa per
-impianto a 1 velocità.
+Dopo il comando di fermata sulla prima pista, la cabina non è arrivata al piano.
 #### Cause
-*   induttore IND difettoso
+*   induttore ID o IS difettoso
 *   cavo di cabina difettoso
 *   accoppiamento piste magnetiche induttore errato
-
+*   disturbi elettromagnetici
 #### Soluzioni
 
 ## Codice 255 {#255}

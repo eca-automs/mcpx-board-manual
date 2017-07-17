@@ -14,7 +14,7 @@ Ritardo comando apertura porte.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.1 secondi
+da 0.5 a 25.5|secondo|0.1 secondi
 
 ## Parametro 002 {#002}
 
@@ -22,7 +22,7 @@ Durata comando apertura porte.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.1 secondi
+da 0 a 25.5|secondo|0.1 secondi
 
 ## Parametro 003 {#003}
 
@@ -68,6 +68,10 @@ da 0 a 6000|secondo|0.1 secondi
 
 Tempo avvio stazionamento a porte chiuse (il comando di chiusura porte viene dato dopo il tempo impostato).
 
+Cambiandolo, __in automatico tutti i parametri da 050 ad 081 vengono impostati__ a con un valore da 4 a 6, oppure 8 a seconda del valore impostato precendentemente nel parametro. Riportando a zero il parametro 8 tutti i parametri da 50 ad 81 vengono impostati ad un valore tra 1 e 3, oppure 7.
+
+Vedi [i parametri di apertura ai piani](./manovra.md#050).
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
@@ -82,7 +86,7 @@ da 0 a 6000|secondo|0.1 secondi
 
 ## Parametro 010 {#010}
 
---------Breve descrizione parametro-----------
+Ritardo dopo il quale viene attivata uscita FTC se fotocellula interrotta (vedi [parametro 025](./manovra.md#025)).
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -90,19 +94,18 @@ da 0 a 6000|secondo|0.1 secondi
 
 ## Parametro 011 {#011}
 
---------Breve descrizione parametro-----------
+Ritardo inserimento resistenza di avviamento motore per impianto a fune 2 velocità.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.1 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 012 {#012}
 
---------Breve descrizione parametro-----------
-
+Ritardo inserimento resistenza di passaggio in bassa velocità per impianto a fune 2 velocità.
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.1 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 013 {#013}
 
@@ -110,7 +113,7 @@ Ritardo attrazione relè PV alla partenza in impianti oleodinamici (permette par
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 014 {#014}
 
@@ -118,7 +121,7 @@ Tempo bassa velocità.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 015 {#015}
 
@@ -126,7 +129,7 @@ Ritardo fermata in salita (il ritardo viene applicato alla chiusura degli indutt
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 016 {#016}
 
@@ -134,7 +137,7 @@ Ritardo fermata in discesa (il ritardo viene applicato alla chiusura degli indut
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 017 {#017}
 
@@ -150,7 +153,7 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 018 {#018}
 
@@ -166,7 +169,7 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 019 {#019}
 
@@ -182,7 +185,7 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 20 {#020}
 
@@ -198,7 +201,7 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 021 {#021}
 
@@ -214,7 +217,7 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 022 {#022}
 
@@ -230,7 +233,7 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 6000|secondo|0.01 secondi
+da 0 a 600|secondo|0.01 secondi
 
 ## Parametro 027 {#027}
 
@@ -293,6 +296,8 @@ da 0 a 255|millisecondi|100 millisecondi
 ## Parametro 039 {#039}
 
 Ritardo scambio teleruttore stella con triangolo (in impianti oleodinamici con avviamento stella-triangolo).
+Al momento in cui cade il teleruttore di `stella`, viene aspettato il tempo impostato nel parametro prima di attrarre
+il teleruttore di `triangolo`.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---

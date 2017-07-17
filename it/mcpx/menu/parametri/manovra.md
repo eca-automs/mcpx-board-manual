@@ -2,7 +2,7 @@
 
 ## Parametro 024 {#024}
 
---------Breve descrizione parametro-----------
+Segnalazioni occupato, arrivo/prenotato, freccie.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -20,7 +20,8 @@ Sommando i valori si ottengono varie combinazioni di configurazione.
 
 ## Parametro 025 {#025}
 
---------Breve descrizione parametro-----------
+Velocità manutenzione in impianti oleodinamici e a fune senza VVVF,
+feedback VVVF in impianti a fune con VVVF, impostazione uscita FTC (pin 27 [vedi layout](../../layouts/mcpx.md)).
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -29,16 +30,18 @@ da 0 a 7|nessuna|nessuna
 #### Funzioni
 Valore|Funzione
 ---|---
-0|Nessuna verifica risposta VVVF in bassa velocità, manutenzione in alta (per impianti oleo e fune a due velocità), uscita RTFC impostata per interruzione fotocellula
+0|Tutto escluso
 1|Verifica risposta del VVVF in bassa velocità
-2|Effettua manutenzione in bassa velocità
-4|Uscita RTFC????? impostata per segnalazione fuori servizio
+2|Effettua manutenzione in bassa velocità (solo impianti a fune 2 velocità e oleodinamici)
+4|Uscita FTC (pin 27 [vedi layout](../../layouts/mcpx.md)) impostata per segnalazione fuori servizio
 
 Sommando i valori si ottengono varie combinazioni di configurazione.
 
+L'uscita FTC di default segnala che la fotocellula è rimasta interrotta per più di 1 minuto.
+
 ## Parametro 026 {#026}
 
---------Breve descrizione parametro-----------
+Finecorsa apertura porte, termico motore, termoresistenza motore, relè controllo fasi.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -50,7 +53,7 @@ Valore|Funzione
 0|Tutto escluso
 1|Fine-corsa apertura porte escluso
 2|Termico impianto fine/oleo o allarme VVVF escluso
-4|uscita RTFC impostata per segnalazione fuori servizio
+4|Termoresistenza motore (PTC) esclusi (pin 43 [vedi layout](../../layouts/mcpx.md))
 8|Relè controllo fasi escluso
 
 Sommando i valori si ottengono varie combinazioni di configurazione
@@ -92,6 +95,13 @@ Valore|Funzione
 4|Impianto a fune: controllo contatti N.C. su freni separati
 5|Impianto a fune: controllo contatti N.O. su cev / freno emergenza
 6|Impianto a fune: controllo contatti N.C. su cev / freno emergenza
+7|Controllo batterie dispositivo CEV A3
+8|Come 1 ed in più controllo batterie dispositivo CEV A3
+9|Come 2 ed in più controllo batterie dispositivo CEV A3
+10|Come 3 ed in più controllo batterie dispositivo CEV A3
+11|Come 4 ed in più controllo batterie dispositivo CEV A3
+12|Come 5 ed in più controllo batterie dispositivo CEV A3
+13|Come 6 ed in più controllo batterie dispositivo CEV A3
 
 Questo parametro viene __azzerato__ quando si entra nel parametro __043__.
 
@@ -209,8 +219,7 @@ Per chiamata al piano si intende:
 *   l'utente entra in cabina
 *   il quadro comincia a chiudere le porte per ripartire
 *   se a questo punto viene premuto il pulsante della chiamata in cabina del piano corrente o il
-    pulsante esterno il quadro riapre le porte, cosa che non farebbe senza impostare la chiamata al piano o
-    interrompendo la fotocellula
+    pulsante esterno il quadro riapre le porte, cosa che non farebbe senza impostare la chiamata al piano
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -225,10 +234,14 @@ Valore|Funzione
 3|Come 1 e chiamata al piano attivata
 4|Come 2 e chiamata al piano attivata
 5|Chiamata al piano attivata
+6|Da aggiungere
+7|Da aggiungere
+8|Da aggiungere
+9|Da aggiungere
 
 La configurazione dei parametri dell'impianto __zoppo__ vengono __abilitati__ solo se il tipo di impianto è __impostato__ come __duplex__
-(---------link relativo all'impostazione qui--------) mentre quelli della __chiamata al piano__ solo se la manovra è a __prenotazione__
-(---------link relativo all'impostazione e spiegazione qui--------).
+(vedi [parametro 48](#048)) mentre quelli della __chiamata al piano__ solo se la manovra è a __prenotazione__
+(vedi [parametro 48](#048)).
 
 ## Parametro 043 {#043}
 
@@ -268,30 +281,10 @@ Valore|Funzione
 
 ## Parametro 044 {#044}
 
-Tipo di manovra a prenotazione.
+Opzioni aggiuntive per impianti a prenotazione in batteria.
 
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 170|nessuna|nessuna
+Da implementare.
 
-#### Funzioni
-Valore|Funzione
----|---
-0|SIMPLEX-MASTER-SLAVE 2-3-4 SALITA-DISCESA????
-1|Manovra simplex solo salita, quadro impostato come master
-2|Manovra simplex solo discesa, quadro impostato come master
-4|Manovra in batteria (duplex, triplex etc) solo salita, quadro impostato come slave 2
-8|Manovra in batteria (duplex, triplex etc) solo discesa, quadro impostato come slave 2
-16|Manovra in batteria (duplex, triplex etc) solo salita, quadro impostato come slave 3
-32|Manovra in batteria (duplex, triplex etc) solo discesa, quadro impostato come slave 3
-64|Manovra in batteria (duplex, triplex etc) solo salita, quadro impostato come slave 4
-128|Manovra in batteria (duplex, triplex etc) solo discesa, quadro impostato come slave 4
-
-COME SLAVE IMPOSTARE SOLO I RELATIVI VALORI
-COME SIMPLEX IMPOSTARE SOLO I RELATIVI VALORI
-COME MASTER IMPOSTARE SOMME VALORI PER MASTER COME
-SI DESIDERA + STESSI VALORI IMPOSTATI AGLI SLAVE
-QUANDO SI ENTRA IN PARAM 48 QUESTO VIENE AZZERATO???????????????
 
 ## Parametro 045 {#045}
 
@@ -308,7 +301,6 @@ da 0 a 31|nessuna|nessuna
 #### Funzioni
 Valore|Funzione
 ---|---
-0|0 fermate ??????????
 1|2 fermate
 2|3 fermate
 3|4 fermate
@@ -345,7 +337,7 @@ Nel conteggio del numero di fermate lo zero viene cosiderato il piano estremo ba
 La relazione tra numero di fermate e numero da impostare nel parametro è:
 
 ```
-numero fermate = numero da impostare + 1
+numero fermate da impostare = numero fermate - 1
 ```
 
 ## Parametro 047 {#047}
@@ -394,40 +386,55 @@ Valore|Funzione
 30|Ritorno al piano 30
 31|Ritorno al piano 31
 
-Nel conteggio del numero del piano lo zero viene cosiderato il piano estremo basso.
+Nel conteggio del numero del piano lo zero viene considerato il piano estremo basso.
 
 ## Parametro 048 {#048}
 
-Tipo di comunicazione.
+Tipo di manovra e abilitazione comunicazione con scheda esterna per telecontrollo o
+altra applicazioni (vedi [comunicazioni seriali](../../../bus_seriali/README.md/#bus-esterno)).
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 12???????|nessuna|nessuna
+da 0 a 12|nessuna|nessuna
 
 #### Funzioni
 Valore|Funzione
 ---|---
-0|NO COMUNICAZIONE ESTERNA NORMALE(UNIVERSALE) ??????????
-1|NO COMUNICAZIONE ESTERNA SIMPLEX ??????????
-2|NO COMUNICAZIONE ESTERNA DUPLEX ??????????
-3|NO COMUNICAZIONE ESTERNA TRIPLEX ??????????
-4|NO COMUNICAZIONE ESTERNA QUADRUPLEX ??????????
-5|NO COMUNICAZIONE ESTERNA SLAVE 2 ??????????
-6|NO COMUNICAZIONE ESTERNA SLAVE 3 ??????????
-7|NO COMUNICAZIONE ESTERNA SLAVE 4 ??????????
-8|SI COMUNICAZIONE ESTERNA NORMALE(UNIVERSALE) ???????????
-9|SI COMUNICAZIONE ESTERNA SIMPLEX ???????????
-10|SI COMUNICAZIONE ESTERNA DUPLEX ???????????
-12|SI COMUNICAZIONE ESTERNA TRIPLEX ???????????
-13|SI COMUNICAZIONE ESTERNA QUADRUPLEX ???????????
+0|Manovra universale senza comunicazione esterna
+1|Manovra simplex senza comunicazione esterna
+2|Manovra duplex (va impostato solo nel quadro master) senza comunicazione esterna
+3|Manovra triplex (va impostato solo nel quadro master) senza comunicazione esterna
+4|Manovra quadruplex (va impostato solo nel quadro master) senza comunicazione esterna
+5|Quadro impostato come slave 2 (in impianto duplex, triplex o qudruplex) senza comunicazione esterna
+6|Quadro impostato come slave 3 (in impianto triplex o qudruplex) senza comunicazione esterna
+7|Quadro impostato come slave 4 (in impianto qudruplex) senza comunicazione esterna
+8|Manovra universale con comunicazione esterna
+9|Manovra simplex con comunicazione esterna
+10|Manovra duplex (va impostato solo nel quadro master) con comunicazione esterna
+11|Manovra triplex (va impostato solo nel quadro master) con comunicazione esterna
+12|Manovra quadruplex (va impostato solo nel quadro master) con comunicazione esterna
+
+###### Collegamento impianti in batteria
+
+* un quadro va impostato come master (è il quadro che gestisce tutti gli altri) impostando il parametro con un valore da 2 a 4 oppure da 10 a 14
+* gli altri quadri vanno impostati come slave (vengono gestiti dal master) impostando il parametro con un valore da 5 a 7
+
+Gli slave vanno impostati con dei valori precisi a seconda che l'impianto sia duplex, triplex o quadruplex.
+
+Impianto|Valori slave
+---|---
+duplex|solo `5` (slave 2), in questa configurazione il master cerca slave con indirizzo `2`
+triplex|`5-6` (slave 2, slave 3), in questa configurazione il master cerca slave con indirizzo `2` e `3`
+quadruplex|`5-6-7` (slave 2, slave 3, slave 4), in questa configurazione il master cerca slave con indirizzo `2`, `3` e `4`
+
 
 ## Parametro 049 {#049}
 
 Non usato.
 
-## Parametro 050 {#050}
+## Parametri da 050 a 081 {#050}
 
-Gestione apertura porte e stazionamento a porte chiuse al piano 0.
+Gestione apertura porte e stazionamento a porte chiuse al piano 0, 1, 2, 3 ... 31.
 
 Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
 
@@ -439,7 +446,7 @@ da 0 a 8|nessuna|nessuna
 #### Funzioni
 Valore|Funzione
 ---|---
-0|Tutto escluso ??????
+0|Tutto escluso
 1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
 2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
 3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
@@ -451,811 +458,7 @@ Valore|Funzione
 
 Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
 
-## Parametro 051 {#051}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 1.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 052 {#052}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 2.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 053 {#053}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 3.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 054 {#054}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 4.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 055 {#055}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 5.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 056 {#056}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 6.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 057 {#057}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 7.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 058 {#058}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 8.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 059 {#059}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 9.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 060 {#060}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 10.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 061 {#061}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 11.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 062 {#062}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 12.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 063 {#063}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 13.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 064 {#064}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 14.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 065 {#065}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 15.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 066 {#066}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 16.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 067 {#067}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 17.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 068 {#068}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 18.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 069 {#069}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 19.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 070 {#070}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 20.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 071 {#071}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 21.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 072 {#072}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 22.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 073 {#073}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 23.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 074 {#074}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 24.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 075 {#075}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 25.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 076 {#076}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 26.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 077 {#077}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 27.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 078 {#078}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 28.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 079 {#079}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 29.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 080 {#080}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 30.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
-
-## Parametro 081 {#081}
-
-Gestione apertura porte e stazionamento a porte chiuse al piano 31.
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 8|nessuna|nessuna
-
-
-#### Funzioni
-Valore|Funzione
----|---
-0|Tutto escluso ??????
-1|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è disattivato.
-2|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è disattivato.
-3|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è disattivato.
-4|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1. Lo stazionamento a porte chiuse è attivato.
-5|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 2. Lo stazionamento a porte chiuse è attivato.
-6|Gestisce 1 ingresso, oppure 2 ingressi alternati con selezione del lato 1 e del lato 2. Lo stazionamento a porte chiuse è attivato.
-7|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è disattivato.
-8|Gestisce 2 ingressi selettivi. Lo stazionamento a porte chiuse è attivato.
-
-Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
+Per attivare lo stazionamento a porte chiuse bisogna inoltre __impostare un tempo diverso da zero nel [parametro 008](./temporizzazioni.md#008)__. Cambiandolo, __in automatico tutti i parametri da 050 ad 081 vengono impostati__ a con un valore da 4 a 6, oppure 8 a seconda del valore impostato precendentemente nel parametro. Riportando a zero il parametro 8 tutti i parametri da 050 ad 081 vengono impostati ad un valore tra 1 e 3, oppure 7.
 
 ## Parametro 082 {#082}
 
@@ -1369,11 +572,46 @@ Non usato.
 
 Non usato.
 
-## Parametro 110 {#110}
+## Parametri da 110 a 140 {#110}
 
-Gestione tipo di corsa tra piano 0 e 1.
+Gestione tipo di corsa tra piano 0 e 1, 1 e 2, 2 e 3 ... 30 e 31.
 
 Per tipo di corsa si intende lo spazio che c'è tra i due piani.
+
+###### Corrispondenza piani - parametro
+Numero parametro|piani
+---|---
+110|corsa tra 0 e 1
+111|corsa tra 1 e 2
+112|corsa tra 2 e 3
+113|corsa tra 3 e 4
+114|corsa tra 4 e 5
+115|corsa tra 5 e 6
+116|corsa tra 6 e 7
+117|corsa tra 7 e 8
+118|corsa tra 8 e 9
+119|corsa tra 9 e 10
+120|corsa tra 10 e 11
+121|corsa tra 11 e 12
+122|corsa tra 12 e 13
+123|corsa tra 13 e 14
+124|corsa tra 14 e 15
+125|corsa tra 15 e 16
+126|corsa tra 16 e 17
+127|corsa tra 17 e 18
+128|corsa tra 18 e 19
+129|corsa tra 19 e 20
+130|corsa tra 20 e 21
+131|corsa tra 21 e 22
+132|corsa tra 22 e 23
+133|corsa tra 23 e 24
+134|corsa tra 24 e 25
+135|corsa tra 25 e 26
+136|corsa tra 26 e 27
+137|corsa tra 27 e 28
+138|corsa tra 28 e 29
+139|corsa tra 29 e 30
+140|corsa tra 30 e 31
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
@@ -1393,11 +631,15 @@ Valore|Funzione
 6|piano lungo tipo 1
 7|piano lungo tipo 2
 
+
+--- INSERIRE DIAGRAMMA/SPIEGAZIONE INDUUTORE IAUX PER PIANI CORTI ESTREMI ---
+
+
 #### Gestione tipi di piani diversi {#gest-piani}
 
 Vengono gestite 8 tipologie che vengono identificate con numeri progressivi.
 
-Si ha la possibiltà di gestire 5 tipi di piano corto diversi e 2 tipi di paino lunghi diversi (per impianti veloci).
+Si ha la possibiltà di gestire 5 tipi di piano corto diversi e 2 tipi di piano lunghi diversi (per impianti veloci).
 
 Numero|Tipo piano
 ---|---
@@ -1446,785 +688,6 @@ Piano con corsa lunga (impianti veloci). Il ritardo di rallentamento viene regol
 
 Piano con corsa lunga (impianti veloci). Il ritardo di rallentamento viene regolato dal parametro [021](temporizzazioni.md/#021).
 
-## Parametro 111 {#111}
-
-Gestione tipo di corsa tra piano 1 e 2.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 112 {#112}
-
-Gestione tipo di corsa tra piano 2 e 3.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 113 {#113}
-
-Gestione tipo di corsa tra piano 3 e 4.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 114 {#114}
-
-Gestione tipo di corsa tra piano 4 e 5.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 115 {#115}
-
-Gestione tipo di corsa tra piano 5 e 6.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 116 {#116}
-
-Gestione tipo di corsa tra piano 6 e 7.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 117 {#117}
-
-Gestione tipo di corsa tra piano 7 e 8.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 118 {#118}
-
-Gestione tipo di corsa tra piano 8 e 9.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 119 {#119}
-
-Gestione tipo di corsa tra piano 9 e 10.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 120 {#120}
-
-Gestione tipo di corsa tra piano 10 e 11.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 121 {#121}
-
-Gestione tipo di corsa tra piano 11 e 12.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 122 {#122}
-
-Gestione tipo di corsa tra piano 12 e 13.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 123 {#123}
-
-Gestione tipo di corsa tra piano 13 e 14.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 124 {#124}
-
-Gestione tipo di corsa tra piano 14 e 15.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 125 {#125}
-
-Gestione tipo di corsa tra piano 15 e 16.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 126 {#126}
-
-Gestione tipo di corsa tra piano 16 e 17.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 127 {#127}
-
-Gestione tipo di corsa tra piano 17 e 18.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 128 {#128}
-
-Gestione tipo di corsa tra piano 18 e 19.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 129 {#129}
-
-Gestione tipo di corsa tra piano 19 e 20.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 130 {#130}
-
-Gestione tipo di corsa tra piano 20 e 21.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 131 {#131}
-
-Gestione tipo di corsa tra piano 21 e 22.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 132 {#132}
-
-Gestione tipo di corsa tra piano 22 e 23.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 133 {#133}
-
-Gestione tipo di corsa tra piano 23 e 24.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 134 {#134}
-
-Gestione tipo di corsa tra piano 24 e 25.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 135 {#135}
-
-Gestione tipo di corsa tra piano 25 e 26.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 136 {#136}
-
-Gestione tipo di corsa tra piano 26 e 27.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 137 {#137}
-
-Gestione tipo di corsa tra piano 27 e 28.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 138 {#138}
-
-Gestione tipo di corsa tra piano 28 e 29.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 139 {#139}
-
-Gestione tipo di corsa tra piano 29 e 30.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
-
-## Parametro 140 {#140}
-
-Gestione tipo di corsa tra piano 30 e 31.
-
-Per tipo di corsa si intende lo spazio che c'è tra i due piani.
-
-Valori|Unità di misura|Risoluzione
----|---|---
-da 0 a 7|nessuna|nessuna
-
-Vedere i parametri [046 e 047](#046) per vedere come vengono contate le fermate ed i piani.
-
-#### Funzioni
-Valore|Funzione
----|---
-0|piano normale
-1|piano corto tipo 1
-2|piano corto tipo 2
-3|piano corto tipo 3
-4|piano corto tipo 4
-5|piano corto tipo 5
-6|piano lungo tipo 1
-7|piano lungo tipo 2
-
-Fare riferimento alla spiegazione sulla [gestione di piani diversi](#gest-piani).
 
 ## Parametro 141 {#141}
 
@@ -2248,7 +711,7 @@ Questa password blocca l'accesso alla sezione `MANOVRA` del menù ed è composta
 
 Numero corse massimo dell'impianto.
 
-Al raggiungimento di questo limite l'impianto viene bloccato.??????????????????????????????????
+Al raggiungimento di questo limite l'impianto viene bloccato.
 
 ## Parametro 145 {#145}
 
@@ -2277,7 +740,7 @@ Non usato.
 
 ## Parametro 151 {#151}
 
-Numero dell'impianto (matricola) ??????.
+Numero dell'impianto (matricola).
 
 Non è possibile modificarlo.
 
@@ -2299,6 +762,13 @@ Versione firmware.
 
 Non è possibile modificarlo.
 
-## Parametro 155 {#155}
+Il valore rappresesenta nome e versione del firmware, ad esempio:
 
-Codici di sicurezza per sblocco emergenza ?????????????????????????
+```
+P000029
+```
+
+indica il firmware con nome `P` e versione 0.0.29.
+
+Il primo carattere indica il nome, le 3 coppie di caratteri che seguono indicano ognuna un campo
+della versione in [semver](http://semver.org/lang/it/)

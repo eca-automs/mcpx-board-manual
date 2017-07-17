@@ -26,3 +26,5 @@ Premendo il tasto UP compare a schermo il cursore che permette la selezione del 
 
 Premendo SET il valore viene memorizzato e il comando viene attuato. La voce visualizzata a schermo ritorna alla
 situazione iniziale.
+
+A seguire l'elenco dei comandi disponibili.
