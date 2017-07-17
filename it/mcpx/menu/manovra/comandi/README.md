@@ -6,7 +6,8 @@ Di seguito viene riportato l'elenco dei comandi disponibili e le loro funzioni.
 
 <img src="../../../../../res/menu-manovra-voce-esempio-1.jpg" style="width: 300px; border-radius: 5%;">
 
-Esclusione apertura delle porte.
+Esclusione apertura delle porte. Può risultare utile usare questo comando nel caso in cui si vuole fare delle prove
+ed impedire l'accesso in cabina agli utenti.
 
 Valore impostato|Effetto
 --|--
@@ -18,6 +19,7 @@ N|Le porte vengono comandate normalmente
 <img src="../../../../../res/menu-manovra-tuning.jpg" style="width: 300px; border-radius: 5%;">
 
 Attrae i teleruttori di marcia per preparazione alla procedura di tuning del vvvf.
+Le __serie devono essere chiuse__ affinchè il comando funzioni.
 
 Valore impostato|Effetto
 --|--
@@ -30,12 +32,27 @@ N|I teleruttori cadono
 
 Abilita il comando di movimento in manovra tramite i pulsanti UP e SW della scheda.
 
+La stessa funzione si può ottenere spostando lo switch in dotazione sul quadro in `manutenzione` ed usare
+i pulsanti UP e SW per manovrare l'impianto.
+
 Valore impostato|Effetto
 --|--
 S|La manovra da pulsanti è attiva
 N|La manvora da pulsanti non è attiva
 
---- Inserire spiegazione funzionamento manovra da pulsanti con foto ---
+Una volta impostato il parametro, una volta usciti dal menu si vedrà lampeggiare a scermo la scritta `manovra da pulsanti`
+
+<img src="../../../../../res/manutenzione1.jpg" style="width: 300px; border-radius: 5%;">
+
+A questo punto premendo UP si manda la cabina in salita, premendo SW in discesa.
+
+Spostando lo switch del quadro invece, a schermo si vedrà scritto `mn` e `FS` nella pagina di stato del quadro
+(vedi [modailtà manovra](../../manovra/README.md))
+
+<img src="../../../../../res/manutenzione2.jpg" style="width: 300px; border-radius: 5%;">
+
+e si potrà spostare la cabina alla stessa maniera.
+
 ## Reset errore A3 (reset errore a3) {#res-err-a3}
 
 <img src="../../../../../res/menu-manovra-reset-err-a3.jpg" style="width: 300px; border-radius: 5%;">
