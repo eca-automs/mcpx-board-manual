@@ -42,4 +42,7 @@ Una spiegazione più dettagliata viene data nel capitolo ["Comunicazioni seriali
 
 Il nome del firmware presente sulle schede è `P`.
 
+Le versioni compatibili con questo manuale sono dalla 0.0.30 in poi.
+Vedi parametro [154](./mcpx/menu/parametri/manovra.md#154) per controllare la versione del firmware, il valore dovrebbe essere almeno `P000030`.
+
 Permette la gestione della cabina in seriale e parallelo e del vano in parallelo, ma non permette una gestione in seriale di tutto l'impianto.

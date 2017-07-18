@@ -2,135 +2,305 @@
 
 ## Codice 001 {#001}
 Contatto relè di fase aperto.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il relè di fase è presente sui quadri in impianti a fune senza VVVF e oleodinamici. Controlla le fasi della rete di alimentazione. Nel caso di sfasamento, apre un contatto di allarme.
+
 #### Cause
+Le fasi della rete in ingresso sono state cambiate o non sono in fase.
+
 #### Soluzioni
+Girare le fasi per metterle in fase.
+
 
 ## Codice 002 {#002}
 Contatto relè termico aperto (impianto a fune 1-2 velocità).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il relè termico è presente in impianti a fune a 1 o 2 velocità e apre un contatto in caso di eccessivo
+assorbimento sulla rete della forza motrice.
+
 #### Cause
+1. il motore sta lavorando eccessivamente
+2. basso isolamento tra gli avvolgimenti
+
 #### Soluzioni
+1. controllare che il carico del motore non sia eccessivo
+2. controllare isolamento avvolgimenti
+
+Controllare assorbimento del motore sotto carico.
+
 
 ## Codice 003 {#003}
 Contatto termico olio aperto (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Le centraline oleodinamiche hanno un relè che apre un contatto in caso di surriscaldamento dell'olio.
+
 #### Cause
+La centralina sta lavorando eccessivamente
+
 #### Soluzioni
+Controllare che il carico della centralina non sia eccessivo
+
 
 ## Codice 004 {#004}
 Intervento allarme VVVF (impianto a fune).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il VVVF in dotazione sugli impianti a fune ha un uscita di allarme.
+
 #### Cause
+Da ricercare nel codice di errore del VVVF.
+
 #### Soluzioni
+Da ricercare nel codice di errore del VVVF.
+
 
 ## Codice 005 {#005}
 Collegamento termistori motore aperto o interrotto.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+I motori hanno una serie di contatti che si aprono in caso di sovratemperatura su uno o più avvolgimenti.
+L'errore segnala che il collegamento è assente.
+
 #### Cause
+Cavo interrotto o non collegato.
+
 #### Soluzioni
+Controllare collegamento tra termistori e quadro di manovra.
 
 ## Codice 006 {#006}
 Intervento termistori motore per sovratemperatura.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+I motori hanno una serie di contatti che si aprono in caso di sovratemperatura su uno o più avvolgimenti.
+L'errore segnala che la serie si è aperta per sovratemperatura.
+
 #### Cause
+1. il motore sta lavorando eccessivamente
+2. basso isolamento tra gli avvolgimenti
+
 #### Soluzioni
+1. controllare che il carico del motore non sia eccessivo
+2. controllare isolamento avvolgimenti
+
+Controllare assorbimento sotto carico.
+
 
 ## Codice 007 {#007}
 Tensione 48VDC di manovra assente.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+La tensione di manovra è la tensione di lavoro per il circuito di manovra, ovvero il circuito che monitorizza la serie
+di sicurezza e comanda glia attuatori del quadro.
+
 #### Cause
+Tensione assente all'inizio della catena delle sicurezze.
+
 #### Soluzioni
+* controllare l'intervento della valvola di manvovra
+* controllare trasformatore di alimentazione del quadro
+* controllare circuito alimentazione manvora
 
 ## Codice 008 {#008}
 Contatto extracorsa aperto.
 
 Relativo solo ad impianto oleodinameci.
 
-Questo errore provoca il blocco dell'impianto.
+Questo errore provoca il __blocco dell'impianto__ (vedi [blocco per errore di extracorsa](../../blocco_errore/README.md#extracorsa)).
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+L'impianto è andato oltre il limite impostato dell'extracorsa.
+
 #### Cause
+La cabina non si è fermata. Potrebbe non essere stato ricevuto il comando di fermata.
+Possibili cause sono:
+1.   interferenze magnetiche
+2.   accoppiamento piste magnetiche e induttori non corretto
+3.   induttori difettosi
+4.   cavo di cabina rovinato
+5.   piste di fermata registrate non correttamente
+
 #### Soluzioni
+1.   posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
+2.   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
+3.   controllare che gli induttori non siano difettosi
+4.   controllare che il cavo di cabina non sia interrotto
+5.   assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016).
 
 ## Codice 009 {#009}
 Contatti 2-3-4 catena sicurezze aperti.
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+La catena dei contatti della serie di sicurezza tra 2 e 4 (morsetti del quadro) è aperta.
+
 #### Cause
+L'impianto non era in manutenzione e:
+*    si è aperto il contatto di ALT
+*    si è aperto il deviatore normale/manovra
+
 #### Soluzioni
+Controllare bottoniera di manovra in cabina.
+
 
 ## Codice 010 {#010}
 Contatti 5-6-7 catena sicurezze aperti.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+La catena dei contatti della serie di sicurezza tra 5 e 7 (morsetti del quadro) è aperta.
+
 #### Cause
+1. intervenuto alt cabina
+2. intervenuto cev
+3. intervenuto paracadute
+
 #### Soluzioni
+1. controllare contatto alt cabina
+2. controllare contatto cev
+3. controllare contatto paracadute
+
 
 ## Codice 011 {#011}
 Contatto preliminari aperto durante il viaggio.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto dei preliminari (morsetti 7-8 sulla serie delle sicurezze) si è aperto in viaggio.
+
 #### Cause
+1. i contatti delle serrature sono difettosi
+2. il cavo di vano è difettoso
+
 #### Soluzioni
+1. controllare i contatti delle serrature
+2. controllare il cavo di vano
+
 
 ## Codice 012 {#012}
-Contatto portine aperto durante il viaggio.
+Contatto porte cabina aperto durante il viaggio.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto delle porte di cabina (morsetti 8-9 del quadro sulla serie delle sicurezze) si è aperto in viaggio.
+
 #### Cause
+1. i contatti delle porte di cabina sono difettosi
+2. il cavo di cabina è difettoso
+
 #### Soluzioni
+1. controllare i contatti di cabina
+2. controllare il cavo di cabina
+
 
 ## Codice 013 {#013}
 Relè PV attratto in bassa velocità (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Negli impianti oleodinamici, quando viene dato il comando di bassa velocità, il relè PV del quadro cade (il comando viene tolto) per chiudere la valvola di livellazione.
+
 #### Cause
+1. relè difettoso
+2. contatto relè di feedback alla scheda difettoso (vedi schema del quadro)
+3. ingresso feedback della scheda difettoso (pin 42, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando scheda difettosa (pin 66, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare il relè
+2. cambiare relè
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 014 {#014}
 Teleruttore PV non attratto in bassa velocità (impianto fune a 2 velocità).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Negli impiantio a fune a 2 velocità senza VVVF lo scambio tra alta e bassa velocità avviene con due teleruttori:
+* `P`, attratto solo in alta velocità
+* `PV`, attratto solo in bassa velocità
+
 #### Cause
+1. teruttore difettoso
+2. contatto del teleruttore di feedback alla scheda difettoso (vedi schema del quadro)
+3. ingresso feedback della scheda difettoso (pin 42, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando scheda difettosa (pin 66, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare il teleruttore
+2. cambiare il contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 015 {#015}
 Teleruttore P attratto in bassa velocità (impianto fune a 2 velocità).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Negli impiantio a fune a 2 velocità senza VVVF lo scambio tra alta e bassa velocità avviene con due teleruttori:
+* `P`, attratto solo in alta velocità
+* `PV`, attratto solo in bassa velocità
+
 #### Cause
+1. teruttore difettoso
+2. contatto del teleruttore di feedback alla scheda difettoso (vedi schema del quadro)
+3. ingresso feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare il teleruttore
+2. cambiare il contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 016 {#016}
 Pre-finecorsa aperto in discesa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+In impianti veloci per ragioni di sicurezza viene usato un contatto aggiuntivo oltre al finecorsa di discesa.
+
 #### Cause
+1. contatto difettoso
+2. cavo di vano difettoso
+3. ingresso scheda difettoso (pin 83, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. sostituire contatto
+2. controllare cavo di vano
+3. mandare scheda in assistenza
+
 
 ## Codice 017 {#017}
 Contatto blocchi aperto in discesa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto mentre la cabina viaggiava in discesa.
+
 #### Cause
+1. contatto blocchi difettoso
+2. ingresso scheda difettoso (pin 6-7, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto blocchi
+2. mandare scheda in assistenza
+3. controllare cavo di vano
+
 
 ## Codice 018 {#018}
 Teleruttore DIS non attratto in discesa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore DIS viene attratto per dare il comando di discesa.
+
 #### Cause
+1. teleruttore difettoso
+2. tensione di manovra bassa
+3. uscita scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md))
+4. ingresso di feedback della scheda difettoso (pin 40, vedi [layout](../../layouts/mcpx.md))
+5. contatto di feedback del teleruttore alla scheda difettoso (vedi schema del quadro)
+
 #### Soluzioni
+1. cambiare teleruttore
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. 4 mandare scheda in assistenza
+5. cambiare contatto o teleruttore
+
 
 ## Codice 019 {#019}
 Porte cabina automatiche aperte in discesa.
@@ -141,31 +311,73 @@ Porte cabina automatiche aperte in discesa.
 
 ## Codice 020 {#020}
 Teleruttore SAL attratto in dicesa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore di comando di salita SAL era attratto durante il comando di discesa.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi schema quadro)
+3. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md)))
+4. uscita di comando della scheda difettosa (pin 68, vedi [layout](../../layouts/mcpx.md)))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cabiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 021 {#021}
 Pre-finecorsa aperto in salita.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+In impianti veloci per ragioni di sicurezza viene usato un contatto aggiuntivo oltre al finecorsa di salita.
+
 #### Cause
+1. contatto difettoso
+2. cavo di vano difettoso
+3. ingresso scheda difettoso (pin 80, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. sostituire contatto
+2. controllare cavo di vano
+3. mandare scheda in assistenza
+
 
 ## Codice 022 {#022}
-Contatto blocchi aperto in salita.
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto mentre la cabina viaggiava in salita.
+
 #### Cause
+1. contatto blocchi difettoso
+2. ingresso scheda difettoso (pin 6-7, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto blocchi
+2. mandare scheda in assistenza
+3. controllare cavo di vano
+
 
 ## Codice 023 {#023}
 Teleruttore SAL non attratto in salita.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore SAL viene attratto per dare il comando di discesa.
+
 #### Cause
+1. teleruttore difettoso
+2. tensione di manovra bassa
+3. uscita scheda difettosa (pin 68, vedi [layout](../../layouts/mcpx.md))
+4. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md))
+5. contatto di feedback del teleruttore alla scheda difettoso
+
 #### Soluzioni
+1. cambiare teleruttore
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. 4 mandare scheda in assistenza
+5. cabiare contatto o teleruttore
+
 
 ## Codice 024 {#024}
 Porte cabina automatiche aperte in salita.
@@ -176,66 +388,154 @@ Porte cabina automatiche aperte in salita.
 
 ## Codice 025 {#025}
 Teleruttore DIS attratto in salita.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore di comando di salita SAL era attratto durante il comando di discesa.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso
+3. ingresso di feedback della scheda difettoso (pin 49, vedi [layout](../../layouts/mcpx.md)))
+4. uscita di comando della scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md)))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cabiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 026 {#026}
 Contatti pre-finecorsa aperti in alta velocità (impianto a fune con VVVF).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+In impianti veloci per ragioni di sicurezza vengono usati 2 contatti aggiuntivi oltre al finecorsa di salita e di discesa.
+
 #### Cause
+1. contatto difettoso
+2. cavo di vano difettoso
+3. ingresso scheda difettoso (pin 80 e 83, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. sostituire contatto
+2. controllare cavo di vano
+3. mandare scheda in assistenza
 
 ## Codice 027 {#027}
 Contatto blocchi aperto in alta velocità (impianto a fune con VVVF).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto mentre la cabina viaggiava in alta velocità. Questo errore viene segnalato solo in impianti a fune con VVVF.
+
 #### Cause
+1. contatto blocchi difettoso
+2. ingresso scheda difettoso (pin 6-7, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto blocchi
+2. mandare scheda in assistenza
+3. controllare cavo di vano
+
 
 ## Codice 028 {#028}
 Teleruttore P non attratto.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore P viene attratto per comandare il motore della centralina in impianti oleodinamici e
+per comandare il motore sia in salita che in discesa in impianti a fune senza VVVF.
+
 #### Cause
+1. teleruttore difettoso
+2. tensione di manovra bassa
+3. uscita scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+4. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+5. contatto di feedback del teleruttore alla scheda difettoso
+
 #### Soluzioni
+1. cambiare teleruttore
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. 4 mandare scheda in assistenza
+5. cambiare contatto o teleruttore
+
 
 ## Codice 029 {#029}
 Porte cabina automatiche aperte in alta velocità (impianto a fune con VVVF).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto delle porte cabina (morsetti 8-9 del quadro) della catena delle sicurezze si è aperto mentre l'impianto era in alta velocità.
+Questo codice viene segnalato solo in impianti a fune con VVVF.
+
 #### Cause
+1. contatto perte cabina difettoso
+2. ingresso scheda difettoso (pin 5-6, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto blocchi
+2. mandare scheda in assistenza
+3. controllare cavo di vano
+
 
 ## Codice 030 {#030}
 Mancata risposta del VVVF in bassa al cambio di velocità.
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il VVVF non ha attivato la propria uscita al cambio di velocità. L'uscita del VVVF può essere configurata per dare un segnale
+al cambio di velocità. Questo segnale viene letto sul pin 44 della scheda (vedi [layout](../../layouts/mcpx.md)).
+Questo ingresso può essere impostato con il parametro [025](../parametri/manovra.md#025).
+
 #### Cause
 #### Soluzioni
 
 ## Codice 031 {#031}
 Contatti pre-finecorsa aperti in bassa velocità (impianto a fune con VVVF).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+In impianti veloci per ragioni di sicurezza vengono usati 2 contatti aggiuntivi oltre al finecorsa di salita e di discesa.
+
 #### Cause
+1. contatto difettoso
+2. cavo di vano difettoso
+3. ingresso scheda difettoso (pin 80 e 83, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. sostituire contatto
+2. controllare cavo di vano
+3. mandare scheda in assistenza
+
 
 ## Codice 032 {#032}
 Contatto blocchi aperto in bassa velocità (impianto a fune con VVVF).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto mentre la cabina viaggiava in bassa velocità. Questo errore viene segnalato solo in impianti a fune con VVVF.
+
 #### Cause
+1. contatto blocchi difettoso
+2. ingresso scheda difettoso (pin 6-7, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto blocchi
+2. mandare scheda in assistenza
+3. controllare cavo di vano
+
 
 ## Codice 033 {#033}
 Teleruttori di marcia non attratti in bassa velocità (impianto a fune con VVVF).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+In impianti a fune con VVVF vengono usati due teleruttori TM e TM1 per comandare il motore.
+
 #### Cause
+1. teleruttori difettosi
+2. bassa tensione di manovra
+3. comando scheda difettoso (pin 8 e 82, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttori
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. mandare scheda in assistenza
+
 
 ## Codice 034 {#034}
 Porte cabina automatiche aperte in bassa velocità (impianto a fune con VVVF).
@@ -254,23 +554,45 @@ Mancata risposta del VVVF alla fine della rampa di rallentamento.
 ## Codice 036 {#036}
 5 tentativi di rifasamento falliti.
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+All'accensione della scheda la prima cosa che viene effettuata è un rifasamento dell'impianto (ritorno al piano più basso).
+La partenza viene provata per 5 volte, dopodichè viene __bloccato l'impianto__.
+
 #### Cause
+Qualsiasi condizione che possa bloccare la partenza:
+* blocchi aperti
+* fotocellula interrotta etc...
+
 #### Soluzioni
+Controllare che non ci siano condizioni che impediscono la partenza.
 
 ## Codice 037 {#037}
 Fine tempo di tenuta manovra in attesa che il contatto dei blocchi si chiuda.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Quando viene dato il comando di partenza, vengono aspettati circa 15 secondi per la chiusura dei blocchi.
+
 #### Cause
+1. contatto blocchi difettoso
+2. ingresso scheda difettoso (pin 6-7, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. controllare contatto blocchi
+2. mandare scheda in assistenza
 
 ## Codice 038 {#038}
 Fine tempo di tenuta manovra in attesa che le porte di cabina automatiche si chiudano.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Quando viene dato il comando di partenza, vengono aspettati circa 15 secondi per la chiusura del contatto di porte cabina.
+
 #### Cause
+1. contatto porte cabina difettoso
+2. ingresso scheda difettoso (pin 5-6, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. controllare contatto blocchi
+2. mandare scheda in assistenza
+
 
 ## Codice 039 {#039}
 Fine tempo di tenuta manovra in attesa che i contatti dei pre-finecorsa si chiudano ?????????.
