@@ -21,4 +21,4 @@ Negli impianti a fune con VVVF sono due teleruttori che comandano il motore.
 In impianti veloci per ragioni di sicurezza vengono usati 2 contatti aggiuntivi oltre al finecorsa di salita e di discesa.
 Questi contatti (prefinecorsa) sono meccanici e devono aprirsi dopo che si è aperto il rispettivo finecorsa e prima della fermata al piano estremo.
 
-<img src="../../../../res/piste-fune-estremi.png" style="width: 550px;">
+<img src="../res/piste-fune-estremi.png" style="width: 550px;">
