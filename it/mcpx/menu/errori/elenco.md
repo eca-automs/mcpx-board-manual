@@ -93,7 +93,7 @@ Tensione 48VDC di manovra assente.
 
 #### Descrizione
 La tensione di manovra è la tensione di lavoro per il circuito di manovra, ovvero il circuito che monitorizza la serie
-di sicurezza e comanda glia attuatori del quadro.
+di sicurezza e comanda glia componenti del quadro.
 
 #### Cause
 Tensione assente all'inizio della catena delle sicurezze.
@@ -194,7 +194,7 @@ Il contatto delle porte di cabina (morsetti 8-9 del quadro sulla serie delle sic
 Relè PV attratto in bassa velocità (impianto oleodinamico).
 
 #### Descrizione
-Negli impianti oleodinamici, quando viene dato il comando di bassa velocità, il relè PV del quadro cade (il comando viene tolto) per chiudere la valvola di livellazione.
+È stato ricevuto il comando di rallentamento e il relè PV sarebbe dovuto cadere per chiudere la valvola di livellazione e mandare impianto in bassa velocità.
 
 #### Cause
 1. relè difettoso
@@ -212,9 +212,7 @@ Negli impianti oleodinamici, quando viene dato il comando di bassa velocità, il
 Teleruttore PV non attratto in bassa velocità (impianto fune a 2 velocità).
 
 #### Descrizione
-Negli impiantio a fune a 2 velocità senza VVVF lo scambio tra alta e bassa velocità avviene con due teleruttori:
-* `P`, attratto solo in alta velocità
-* `PV`, attratto solo in bassa velocità
+È stato ricevuto il comando di rallentamento e il teleruttore PV sarebbe dovuto attrarsi (dopo la caduta di P) per comandare la bassa velocità.
 
 #### Cause
 1. teruttore difettoso
@@ -232,9 +230,7 @@ Negli impiantio a fune a 2 velocità senza VVVF lo scambio tra alta e bassa velo
 Teleruttore P attratto in bassa velocità (impianto fune a 2 velocità).
 
 #### Descrizione
-Negli impiantio a fune a 2 velocità senza VVVF lo scambio tra alta e bassa velocità avviene con due teleruttori:
-* `P`, attratto solo in alta velocità
-* `PV`, attratto solo in bassa velocità
+È stato ricevuto il comando di bassa velocità e il teleruttore P non è caduto.
 
 #### Cause
 1. teruttore difettoso
@@ -253,6 +249,7 @@ Pre-finecorsa aperto in discesa.
 
 #### Descrizione
 In impianti veloci per ragioni di sicurezza viene usato un contatto aggiuntivo oltre al finecorsa di discesa.
+Questo contatto (prefinecorsa) è meccanico e deve aprirsi dopo che si è aperto il finecorsa di discesa e prima della fermata.
 
 #### Cause
 1. contatto difettoso
@@ -286,7 +283,7 @@ Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto men
 Teleruttore DIS non attratto in discesa.
 
 #### Descrizione
-Il teleruttore DIS viene attratto per dare il comando di discesa.
+Effettuata partenza in discesa e il teleruttore DIS ([vedi descrizione](./componenti.md#DIS)) non si è attratto.
 
 #### Cause
 1. teleruttore difettoso
@@ -313,7 +310,7 @@ Porte cabina automatiche aperte in discesa.
 Teleruttore SAL attratto in dicesa.
 
 #### Descrizione
-Il teleruttore di comando di salita SAL era attratto durante il comando di discesa.
+È stata effettuata una partenza in discesa e il teleruttore SAL è rimasto attratto.
 
 #### Cause
 1. teleruttore difettoso
@@ -363,7 +360,7 @@ Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto men
 Teleruttore SAL non attratto in salita.
 
 #### Descrizione
-Il teleruttore SAL viene attratto per dare il comando di discesa.
+È stata fatta una partenza in salita e il teleruttore SAL non si è attratto.
 
 #### Cause
 1. teleruttore difettoso
@@ -390,7 +387,7 @@ Porte cabina automatiche aperte in salita.
 Teleruttore DIS attratto in salita.
 
 #### Descrizione
-Il teleruttore di comando di salita SAL era attratto durante il comando di discesa.
+È stata effettuata una partenza in salita e il teleruttore DIS è rimasto attratto.
 
 #### Cause
 1. teleruttore difettoso
@@ -409,6 +406,7 @@ Contatti pre-finecorsa aperti in alta velocità (impianto a fune con VVVF).
 
 #### Descrizione
 In impianti veloci per ragioni di sicurezza vengono usati 2 contatti aggiuntivi oltre al finecorsa di salita e di discesa.
+Questi contatti (prefinecorsa) sono meccanici e devono aprirsi dopo che si è aperto il rispettivo finecorsa e prima della fermata.
 
 #### Cause
 1. contatto difettoso
@@ -441,8 +439,7 @@ Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto men
 Teleruttore P non attratto.
 
 #### Descrizione
-Il teleruttore P viene attratto per comandare il motore della centralina in impianti oleodinamici e
-per comandare il motore sia in salita che in discesa in impianti a fune senza VVVF.
+È stata effettuata una partenza e il teleruttore P non si è attratto.
 
 #### Cause
 1. teleruttore difettoso
@@ -478,6 +475,7 @@ Questo codice viene segnalato solo in impianti a fune con VVVF.
 
 ## Codice 030 {#030}
 Mancata risposta del VVVF in bassa al cambio di velocità.
+
 #### Descrizione
 Il VVVF non ha attivato la propria uscita al cambio di velocità. L'uscita del VVVF può essere configurata per dare un segnale
 al cambio di velocità. Questo segnale viene letto sul pin 44 della scheda (vedi [layout](../../layouts/mcpx.md)).
@@ -487,10 +485,10 @@ Questo ingresso può essere impostato con il parametro [025](../parametri/manovr
 #### Soluzioni
 
 ## Codice 031 {#031}
-Contatti pre-finecorsa aperti in bassa velocità (impianto a fune con VVVF).
+Contatti prefinecorsa aperti in bassa velocità (impianto a fune con VVVF).
 
 #### Descrizione
-In impianti veloci per ragioni di sicurezza vengono usati 2 contatti aggiuntivi oltre al finecorsa di salita e di discesa.
+???????
 
 #### Cause
 1. contatto difettoso
@@ -521,10 +519,10 @@ Il contatto 9-10 (morsetti del quadro) delle serie di sicurezza si è aperto men
 
 
 ## Codice 033 {#033}
-Teleruttori di marcia non attratti in bassa velocità (impianto a fune con VVVF).
+Teleruttori di marcia TM-TM1 non attratti in bassa velocità (impianto a fune con VVVF).
 
 #### Descrizione
-In impianti a fune con VVVF vengono usati due teleruttori TM e TM1 per comandare il motore.
+È stato effettuato il passaggio da alta velocità a bassa velocità e i teleruttori TM-TM1 non erano attratti.
 
 #### Cause
 1. teleruttori difettosi
@@ -595,81 +593,196 @@ Quando viene dato il comando di partenza, vengono aspettati circa 15 secondi per
 
 
 ## Codice 039 {#039}
-Fine tempo di tenuta manovra in attesa che i contatti dei pre-finecorsa si chiudano ?????????.
+Fine tempo di tenuta manovra in attesa che i contatti dei pre-finecorsa si chiudano.
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+In impianti veloci per ragioni di sicurezza vengono usati 2 contatti aggiuntivi oltre al finecorsa di salita e di discesa.
+Questi contatti (prefinecorsa) sono meccanici e devono aprirsi dopo che si è aperto il rispettivo finecorsa e prima della fermata.
+
 #### Cause
+1. contatto difettoso
+2. cavo di vano difettoso
+3. ingresso scheda difettoso (pin 80 e 83, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. sostituire contatto
+2. controllare cavo di vano
+3. mandare scheda in assistenza
+
 
 ## Codice 040 {#040}
 Fine tempo di tenuta manovra in attesa che il teleruttore P si attragga con catena contatti sicurezze chiusa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di marcia ma il teleruttore P non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi shcema quadro)
+3. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cambiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
 
 ## Codice 041 {#041}
 Fine tempo di tenuta manovra in attesa che il teleruttore SAL si attragga con catena contatti sicurezze chiusa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di marcia in salita ma il teleruttore SAL non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi shcema quadro)
+3. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 68, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cambiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
 
 ## Codice 042 {#042}
 Fine tempo di tenuta manovra in attesa che il teleruttore DIS si attragga con catena contatti sicurezze chiusa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di marcia in dicsesa ma il teleruttore DIS non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi shcema quadro)
+3. ingresso di feedback della scheda difettoso (pin 40, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cambiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 043 {#043}
-Relè PV non attratto alla pertenza (impianto oleodinamico).
+Relè PV non attratto alla partenza (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di marcia in alta velocità per partire ma PV non si è attratto.
+
 #### Cause
+1. relè difettoso
+2. contatto di feedback del relè alla scheda difettoso (vedi schema del quadro)
+3. ingresso di feedback della scheda difettoso (pin 42, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettoso (pin 66, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. 2 cambiare relè
+3. 4 mandare scheda in assistenza
 
 ## Codice 044 {#044}
 Teleruttore Y non attratto alla partenza (impianto oleodinamico con avviamento stella-triangolo).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di marcia in salita ma il teleruttore Y non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. interblocco tra teleruttore SAL e Y difettoso
+3. contatto di feedback del teleruttore alla scheda difettoso (vedi scheda del quadro)
+4. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md))
+5. uscita di comando della scheda difettosa (pin 71, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cambiare interblocco
+3. cambiare contatto o teleruttore
+4. 5 mandare scheda in assistenza
 
 ## Codice 045 {#045}
 Teleruttore Y non attratto all'avvio del ripescamento in salita (impianto oleodinamico con avviamento stella-triangolo).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato provato un ripescaggio in salita ma il teleruttore Y non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. interblocco tra teleruttore SAL e Y difettoso
+3. contatto di feedback del teleruttore alla scheda difettoso (vedi scheda del quadro)
+4. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md))
+5. uscita di comando della scheda difettosa (pin 71, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cambiare interblocco
+3. cambiare contatto o teleruttore
+4. 5 mandare scheda in assistenza
+
 
 ## Codice 046 {#046}
-Teleruttore SAL non attratto all'avvio del ripescamento in salita (impianto oleodinamico con avviamento stella-triangolo).
+Teleruttore SAL non attratto all'avvio del ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato provato un ripescaggio in salita ma il teleruttore SAL non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. interblocco tra teleruttore SAL e Y difettoso (se avviamento stella triangolo)
+3. contatto di feedback del teleruttore alla scheda difettoso (vedi scheda del quadro)
+4. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md))
+5. uscita di comando della scheda difettosa (pin 68, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cambiare interblocco
+3. cambiare contatto o teleruttore
+4. 5 mandare scheda in assistenza
+
 
 ## Codice 047 {#047}
-Teleruttore P non attratto all'avvio del ripescamento in salita (impianto oleodinamico con avviamento diretto o soft-starter).
+Teleruttore P non attratto all'avvio del ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato provato un ripescaggio in salita ma il teleruttore P non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi schema del quadro)
+3. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cambiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 048 {#048}
 Relè PV attratto all'avvio del ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato avviato un ripescaggio in salita e il relè PV è rimasto attratto.
+
 #### Cause
+1. relè difettoso
 #### Soluzioni
 
 ## Codice 049 {#049}
 Teleruttori P e SAL non attratti all'avvio del ripescamento in salita (impianto oleodinamico con avviamento diretto o soft-starter).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescamento in salita ma i teleruttori P e SAL non si sono attratti.
+
 #### Cause
+1. teleruttori difettosi
+2. contatti di feedback dei teleruttori alla scheda difettosi (vedi lo schema del quadro)
+3. ingressi di feedback della scheda difettosi (pin 41 e 39, vedi [layout](../../layouts/mcpx.md))
+4. uscite di comando della scheda difettose (pin 65 e 68, vedi [layout](../../layouts/mcpx.md))
+5. tensione di manvora bassa
+
 #### Soluzioni
+1. cambiare teleruttori
+2. cambiare contatti o teleruttori
+3. 4 mandare scheda in assistenza
+5. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+
 
 ## Codice 050 {#050}
 Teleruttore P non attratto all'avvio del ripescamento in salita (impianto oleodinamico con avviamento diretto o soft-starter).
