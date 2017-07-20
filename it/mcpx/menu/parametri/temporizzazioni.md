@@ -103,6 +103,7 @@ da 0 a 600|secondo|0.01 secondi
 ## Parametro 012 {#012}
 
 Ritardo inserimento resistenza di passaggio in bassa velocità per impianto a fune 2 velocità.
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
