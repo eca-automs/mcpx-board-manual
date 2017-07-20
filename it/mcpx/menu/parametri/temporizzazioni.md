@@ -1,5 +1,6 @@
 # Gestione temporizzazioni
 
+
 ## Parametro 000 {#000}
 
 Tempo corsa.
@@ -7,6 +8,8 @@ Tempo corsa.
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
+
+---
 
 ## Parametro 001 {#001}
 
@@ -16,6 +19,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0.5 a 25.5|secondo|0.1 secondi
 
+---
+
 ## Parametro 002 {#002}
 
 Durata comando apertura porte.
@@ -23,6 +28,8 @@ Durata comando apertura porte.
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 25.5|secondo|0.1 secondi
+
+---
 
 ## Parametro 003 {#003}
 
@@ -32,6 +39,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
 
+---
+
 ## Parametro 004 {#004}
 
 Durata comando chiusura porte.
@@ -39,6 +48,8 @@ Durata comando chiusura porte.
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
+
+---
 
 ## Parametro 005 {#005}
 
@@ -48,6 +59,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
 
+---
+
 ## Parametro 006 {#006}
 
 Ritardo caduta pattino retrattile.
@@ -56,6 +69,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
 
+---
+
 ## Parametro 007 {#007}
 
 Tempo occupato / Partenza (per impianti con manovra a prenotazione).
@@ -63,6 +78,8 @@ Tempo occupato / Partenza (per impianti con manovra a prenotazione).
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
+
+---
 
 ## Parametro 008 {#008}
 
@@ -76,6 +93,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
 
+---
+
 ## Parametro 009 {#009}
 
 Tempo avvio ritorno al piano di stazionamento (dopo il tempo impostato la cabina va al piano impostato per lo stazionamento).
@@ -83,6 +102,8 @@ Tempo avvio ritorno al piano di stazionamento (dopo il tempo impostato la cabina
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
+
+---
 
 ## Parametro 010 {#010}
 
@@ -92,6 +113,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 6000|secondo|0.1 secondi
 
+---
+
 ## Parametro 011 {#011}
 
 Ritardo inserimento resistenza di avviamento motore per impianto a fune 2 velocità.
@@ -99,6 +122,8 @@ Ritardo inserimento resistenza di avviamento motore per impianto a fune 2 veloci
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
+
+---
 
 ## Parametro 012 {#012}
 
@@ -108,6 +133,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
 
+---
+
 ## Parametro 013 {#013}
 
 Ritardo attrazione relè PV alla partenza in impianti oleodinamici (permette partenza in bassa).
@@ -115,6 +142,8 @@ Ritardo attrazione relè PV alla partenza in impianti oleodinamici (permette par
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
+
+---
 
 ## Parametro 014 {#014}
 
@@ -124,6 +153,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
 
+---
+
 ## Parametro 015 {#015}
 
 Ritardo fermata in salita (il ritardo viene applicato alla chiusura degli induttori IS-ID solo in salita).
@@ -132,6 +163,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
 
+---
+
 ## Parametro 016 {#016}
 
 Ritardo fermata in discesa (il ritardo viene applicato alla chiusura degli induttori IS-ID solo in discesa).
@@ -139,6 +172,8 @@ Ritardo fermata in discesa (il ritardo viene applicato alla chiusura degli indut
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
+
+---
 
 ## Parametro 017 {#017}
 
@@ -156,6 +191,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
 
+---
+
 ## Parametro 018 {#018}
 
 Ritardo rallentamento alla fermata relativo al piano corto 3.
@@ -171,6 +208,8 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
+
+---
 
 ## Parametro 019 {#019}
 
@@ -188,6 +227,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
 
+---
+
 ## Parametro 20 {#020}
 
 Ritardo rallentamento alla fermata relativo al piano corto 5.
@@ -203,6 +244,8 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
+
+---
 
 ## Parametro 021 {#021}
 
@@ -220,6 +263,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
 
+---
+
 ## Parametro 022 {#022}
 
 Ritardo relativo al piano lungo 2.
@@ -236,6 +281,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 600|secondo|0.01 secondi
 
+---
+
 ## Parametro 027 {#027}
 
 Ritardo rallentamento alla partenza relativo al piano corto 2.
@@ -250,6 +297,8 @@ Fare riferimento alla spiegazione sulla [gestione di piani diversi](manovra.md/#
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
+
+---
 
 ## Parametro 028 {#028}
 
@@ -266,6 +315,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
 
+---
+
 ## Parametro 029 {#029}
 
 Ritardo rallentamento alla partenza relativo al piano corto 4.
@@ -278,6 +329,8 @@ Quando il timer è attivo, sul display viene visualizzata la voce `at29` al post
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
+
+---
 
 ## Parametro 030 {#030}
 
@@ -294,6 +347,8 @@ Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
 
+---
+
 ## Parametro 039 {#039}
 
 Ritardo scambio teleruttore stella con triangolo (in impianti oleodinamici con avviamento stella-triangolo).
@@ -303,6 +358,8 @@ il teleruttore di `triangolo`.
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
+
+---
 
 ## Parametro 040 {#040}
 
