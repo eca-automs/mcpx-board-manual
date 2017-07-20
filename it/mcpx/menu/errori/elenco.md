@@ -12,6 +12,7 @@ Le fasi della rete in ingresso sono state cambiate o non sono in fase.
 #### Soluzioni
 Girare le fasi per metterle in fase.
 
+---
 
 ## Codice 002 {#002}
 Contatto relè termico aperto (impianto a fune 1-2 velocità).
@@ -288,8 +289,8 @@ Effettuata partenza in discesa e il teleruttore DIS ([vedi descrizione](./compon
 #### Cause
 1. teleruttore difettoso
 2. tensione di manovra bassa
-3. uscita scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md))
-4. ingresso di feedback della scheda difettoso (pin 40, vedi [layout](../../layouts/mcpx.md))
+3. uscite della scheda difettose (pin 65 e 67, vedi [layout](../../layouts/mcpx.md))
+4. ingressi di feedback della scheda difettosi (pin 41 e 40, vedi [layout](../../layouts/mcpx.md))
 5. contatto di feedback del teleruttore alla scheda difettoso (vedi schema del quadro)
 
 #### Soluzioni
@@ -526,13 +527,17 @@ Teleruttori di marcia TM-TM1 non attratti in bassa velocità (impianto a fune co
 
 #### Cause
 1. teleruttori difettosi
-2. bassa tensione di manovra
-3. comando scheda difettoso (pin 8 e 82, vedi [layout](../../layouts/mcpx.md))
+2. contatti di feedback dei teleruttori alla scheda difettosi (vedi schema)
+3. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+4. comando scheda difettoso (pin 71, vedi [layout](../../layouts/mcpx.md))
+5. bassa tensione di manovra
+
 
 #### Soluzioni
 1. cambiare teleruttori
-2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
-3. mandare scheda in assistenza
+2. cambiare contatti o teleruttori
+3. 4 mandare scheda in assistenza
+5. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
 
 
 ## Codice 034 {#034}
@@ -785,167 +790,375 @@ Teleruttori P e SAL non attratti all'avvio del ripescamento in salita (impianto 
 
 
 ## Codice 050 {#050}
-Teleruttore P non attratto all'avvio del ripescamento in salita (impianto oleodinamico con avviamento diretto o soft-starter).
+Teleruttore P non attratto all'avvio del ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescamento in salita ma il teleruttore P non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla sceda difettoso (vedi schema quadro)
+3. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+5. bassa tensione di manovra
+
 #### Soluzioni
+1. cambiare teleruttori
+2. cambiare contatti o teleruttori
+3. 4 mandare scheda in assistenza
+5. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
 
 ## Codice 051 {#051}
-Modulo sicurezza non attratto dopo avvio ripescamento in salita (impianto oleodinamico).
+Modulo sicurezza RSS non attratto dopo avvio ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescaggio in salita ma l'uscita di abilitazione del modulo RSS non era attiva.
+
 #### Cause
+1. modulo difettoso
+2. ingresso di feedback della scheda difettoso (pin 44, vedi [layout](../../layouts/mcpx.md))
+3. ingressi della scheda di lettura zona di controllo ripecaggio difettosi (pin 19 e 21, vedi [layout](../../layouts/mcpx.md))
+4. uscite della scheda per comando ingressi RSS difettose (pin 22-23, 15-16, vedi [layout](../../layouts/mcpx.md))
+5. accoppiamento pista e induttore IZ1-IZ2 errato
+6. cavo di cabina difettoso
+
 #### Soluzioni
+1. cambiare modulo
+2. 3, 4 mandare scheda in assistenza
+5. assicurarsi che lo spazio tra l'induttore e la pista non sia maggiore di 1cm.
+6. cantrolla re cavo cabina
 
 ## Codice 052 {#052}
 Induttore ID aperto nel ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Durante il ripecaggio in salita si è aperto l'induttore ID.
+
 #### Cause
+1. induttore difettoso
+2. interferenze magnetiche
+3. cavo di cabina difettoso
+4. accoppiamento pista magnetica e induttore non corretto
+5. piste di fermata registrate non correttamente
+
 #### Soluzioni
+1. cambiare induttore
+2. posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
+3. controllare cavo di cabina
+4. controllare che la distanza tra induttore e pista non sia maggiore di 1cm
+5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
+
 
 ## Codice 053 {#053}
-Teleruttore SAL non attratto all'avvio del ripescamento in salita (impianto oleodinamico con avvio diretto o soft-starter).
+Teleruttore SAL non attratto all'avvio del ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripecaggio in salita ma il teleruttore SAL non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. tensione di manovra bassa
+3. uscita scheda difettosa (pin 68, vedi [layout](../../layouts/mcpx.md))
+4. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md))
+5. contatto di feedback del teleruttore alla scheda difettoso
+
 #### Soluzioni
+1. cambiare teleruttore
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. 4 mandare scheda in assistenza
+5. cabiare contatto o teleruttore
 
 ## Codice 054 {#054}
-Teleruttore P non attratto all'avvio del ripescamento in salita (impianto oleodinamico con avviamento diretto o soft-starter).
+Teleruttore P non attratto all'avvio del ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescaggio in salita ma il teleruttore P non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. tensione di manovra bassa
+3. uscita scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+4. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+5. contatto di feedback del teleruttore alla scheda difettoso
+
 #### Soluzioni
+1. cambiare teleruttore
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. 4 mandare scheda in assistenza
+5. cambiare contatto o teleruttore
 
 ## Codice 055 {#055}
-Relè PV attratto nel ripescamento in dicsesa (impianto oleodinamico).
+Relè PV attratto nel ripescamento in discesa (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescaggio e il relè PV è rimasto attratto.
+
 #### Cause
+1. relè difettoso
+2. contatto relè di feedback alla scheda difettoso (vedi schema del quadro)
+3. ingresso feedback della scheda difettoso (pin 42, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando scheda difettosa (pin 66, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare il relè
+2. cambiare relè
+3. 4 mandare scheda in assistenza
 
 ## Codice 056 {#056}
-Teleruttore P e relè DIS non attratti all'avvio del ripescamento in dicsesa (impianto oleodinamico avviamento diretto o soft-starter)??????????????????????????????????????.
+Teleruttore P e relè DIS non attratti all'avvio del ripescamento in discesa (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescaggio in discesa ma il teleruttore P e il relè DIS non si sono attratti.
+
 #### Cause
+1. teleruttore e relè difettosi
+2. tensione di manovra bassa
+3. uscita scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md))
+4. ingresso di feedback della scheda difettoso (pin 40, vedi [layout](../../layouts/mcpx.md))
+5. contatto di feedback del teleruttore e relè alla scheda difettoso (vedi schema del quadro)
+
 #### Soluzioni
+1. cambiare teleruttore e/o relè
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. 4 mandare scheda in assistenza
+5. cambiare contatto o teleruttore e relè
 
 ## Codice 057 {#057}
 Modulo sicurezza non attratto dopo avvio ripescamento in discesa (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescaggio in salita ma l'uscita di abilitazione del modulo RSS non era attiva.
+
 #### Cause
+1. modulo difettoso
+2. ingresso di feedback della scheda difettoso (pin 44, vedi [layout](../../layouts/mcpx.md))
+3. ingressi della scheda di lettura zona di controllo ripecaggio difettosi (pin 19 e 21, vedi [layout](../../layouts/mcpx.md))
+4. uscite della scheda per comando ingressi RSS difettose (pin 22-23, 15-16, vedi [layout](../../layouts/mcpx.md))
+5. accoppiamento pista e induttore IZ1-IZ2 errato
+6. cavo di cabina difettoso
+
 #### Soluzioni
+1. cambiare modulo
+2. 3, 4 mandare scheda in assistenza
+5. assicurarsi che lo spazio tra l'induttore e la pista non sia maggiore di 1cm.
+6. cantrolla re cavo cabina
+
 
 ## Codice 058 {#058}
 Induttore IS aperto nel ripescamento in discesa (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Durante il ripecaggio in discesa si è aperto l'induttore IS.
+
 #### Cause
+1. induttore difettoso
+2. interferenze magnetiche
+3. cavo di vano difettoso
+4. accoppiamento pista magnetica e induttore non corretto
+5. piste di fermata registrate non correttamente
+
 #### Soluzioni
+1. cambiare induttore
+2. posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
+3. controllare cavo di vano
+4. controllare che la distanza tra induttore e pista non sia maggiore di 1cm
+5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
+
 
 ## Codice 059 {#059}
-Relè DIS non attratto all'avvio del ripescamento in discesa (impianto oleodinamico avviamento diretto o soft-starter)????????????????????????????.
+Relè DIS non attratto all'avvio del ripescamento in discesa (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripecaggio in discesa ma il teleruttore DIS non si è attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. tensione di manovra bassa
+3. uscita scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md))
+4. ingresso di feedback della scheda difettoso (pin 40, vedi [layout](../../layouts/mcpx.md))
+5. contatto di feedback del teleruttore alla scheda difettoso
+
 #### Soluzioni
+1. cambiare teleruttore
+2. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+3. 4 mandare scheda in assistenza
+5. cabiare contatto o teleruttore
+
 
 ## Codice 060 {#060}
 Relè DIS attratto nel ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescaggio in salita e il relè DIS è rimasto attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso
+3. ingresso di feedback della scheda difettoso (pin 49, vedi [layout](../../layouts/mcpx.md)))
+4. uscita di comando della scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md)))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cabiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 061 {#061}
 Teleruttore SAL attratto nel ripescamento in discesa (impianto oleodinamico).
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+È stato dato il comando di ripescaggio in discesa e il teleruttore di salita è rimasto attratto.
+
 #### Cause
+1. teleruttore difettoso
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi schema quadro)
+3. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md)))
+4. uscita di comando della scheda difettosa (pin 68, vedi [layout](../../layouts/mcpx.md)))
+
 #### Soluzioni
+1. cambiare teleruttore
+2. cabiare contatto o teleruttore
+3. 4 mandare scheda in assistenza
+
 
 ## Codice 062 {#062}
 Scaduto tempo ripescamento in salita (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il comando di ripescaggio in salita è rimasto attivo per troppo tempo (???) senza che la cabina sia ritornata al piano.
+
 #### Cause
+Relè e/o teleruttori (SAL, P, Y) di marcia difettosi.
+
 #### Soluzioni
+Cambiare relè e/o teleruttori di marcia.
 
 ## Codice 063 {#063}
 Scaduto tempo ripescamento in discesa (impianto oleodinamico).
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il comando di ripescaggio in discesa è rimasto attivo per troppo tempo (???) senza che la cabina sia ritornata al piano.
+
 #### Cause
+Relè e/o teleruttori (P, DIS) di marcia difettosi.
+
 #### Soluzioni
+Cambiare relè e/o teleruttori di marcia.
 
 ## Codice 064 {#064}
 Scaduto tempo corsa.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+L'impianto è rimasto in movimento senza avere nessun feedback da induttori (IS, ID) e/o finecorsa (FCS,FCD) per un tempo superiore a quello impostato nel parametro [000](../parametri/temporizzazioni.md#000).
+
 #### Cause
+1. induttori e bistabili difettosi
+2. accoppiamento pista magnetica e induttore/bistabile non corretto
+3. cavo di cabina difettoso
+4. ingressi scheda difettosi (pin 55-56-57-58, vedi [layout](../../layouts/mcpx.md))
+5. relè e/o (SAL, P, PV, DIS, Y) teleruttori di marcia difettosi
+
 #### Soluzioni
+1. cambiare induttori e bistabili
+2. controllare che la distanza tra induttori e bistabili con piste non sia maggiore di 1cm
+3. controllare cavo di cabina
+4. mandare scheda in assistenza
+5. cambiare relè e/o teleruttori di marcia
+
+---
 
 ## Codice 065 {#065}
 Scaduto tempo bassa velocità.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+La cabina è rimasta in movimento in bassa velocità senza avere un feedback dagli induttori IS e ID per un tempo superiore a
+quello impostato nel parametro [014](../parametri/temporizzazioni.md#014).
+
 #### Cause
+1. interferenza magnetiche
+2. accoppiamento piste magnetiche e induttori non corretto
+3. cavo di cabina difettoso
+4. relè e o teleruttori di comando bassa velocità difettosi (PV, SAL, DIS)
+
 #### Soluzioni
+1. posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
+2. controllare che la distanza tra induttore e pista non sia maggiore di 1cm
+3. controllare cavo di cabina
+4. cambiare relè e/o teleruttori di comando di bassa velocità
+
+---
 
 ## Codice 066 {#066}
 Ripristino conteggio discesa dal conteggio di salita.
+
 #### Descrizione
 Durante ogni viaggio vengono contate separatemente le piste di discesa e di salita incontrate nella corsa. Per andare dal piano A al piano B sono presenti nel vano N piste di salita e N piste di discesa.
 Alla fermata (induttori IS e ID  chiusi) viene confrontato il numero di piste di salita e discesa contate con il numero N.
 In questo caso il numero di piste di discesa contate è diverso da N, mentre quelle di salita è giusto, quindi viene ripristinato il conteggio delle piste di discesa al numero N.
-#### Cause
-*   interferenze magnetiche
-*   accoppiamento piste magnetiche e induttori non corretto
-*   induttori difettosi
-*   cavo di cabina rovinato
 
+#### Cause
+1.   interferenze magnetiche
+2.   accoppiamento piste magnetiche e induttori non corretto
+3.   induttori difettosi
+4.   cavo di cabina difettoso
+5. piste di fermata registrate non correttamente
 
 #### Soluzioni
-*   posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
-*   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
-*   controllare che gli induttori non siano difettosi
-*   controllare che il cavo di cabina non sia interrotto
+1.   posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
+2.   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
+3.   controllare che gli induttori non siano difettosi
+4.   controllare che il cavo di cabina non sia interrotto
+5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
+
+---
 
 ## Codice 067 {#067}
 Ripristino conteggio salita dal conteggio di discesa.
+
 #### Descrizione
 Durante ogni viaggio vengono contate separatemente le piste di discesa e di salita incontrate nella corsa. Per andare dal piano A al piano B sono presenti nel vano N piste di salita e N piste di discesa.
 Alla fermata (induttori IS e ID  chiusi) viene confrontato il numero di piste di salita e discesa contate con il numero N.
 In questo caso il numero di piste di salita contate è diverso da N, mentre quelle di discesa è giusto, quindi viene ripristinato il conteggio delle piste di salita al numero N.
-#### Cause
-*   interferenze magnetiche
-*   accoppiamento piste magnetiche e induttori non corretto
-*   induttori difettosi
-*   cavo di cabina rovinato
 
+#### Cause
+1.   interferenze magnetiche
+2.   accoppiamento piste magnetiche e induttori non corretto
+3.   induttori difettosi
+4.   cavo di cabina difettoso
+5.   piste di fermata registrate non correttamente
 
 #### Soluzioni
-*   posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
-*   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
-*   controllare che gli induttori non siano difettosi
-*   controllare che il cavo di cabina non sia interrotto
+1.   posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
+2.   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
+3.   controllare che gli induttori non siano difettosi
+4.   controllare che il cavo di cabina non sia interrotto
+5.  assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
+
+---
 
 ## Codice 068 {#068}
 Effettuata una chiamata ad un piano più alto del numero di fermate.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+
+Non si può effettuare una chiamata ad un piano che in teoria non esiste.
+
 #### Cause
+Errata programmazione scheda madre e/o periferiche.
+
 #### Soluzioni
+Assicurarsi di aver programmato un numero di fermate (parametro [046](../parametri/manovra.md#046)) che sia in accordo
+con gli indirizzi programmati nelle periferiche del quadro (vedi [elenco indirizzi periferiche](../../../periferiche/indirizzi.md)).
+
+---
 
 ## Codice 069
 Entrambi i finecorsa (FCS e FCD) sono aperti, non è possibile effettuare partenza.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+La situazione in cui entrambi i finecorsa sono aperti è considerata una ragione sufficiente per non effettuare la partenza.
+
 #### Cause
+
 #### Soluzioni
 
 ## Codice 070 {#070}
