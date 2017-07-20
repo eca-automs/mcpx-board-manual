@@ -1239,154 +1239,244 @@ con gli indirizzi programmati nelle periferiche del quadro (vedi [elenco indiriz
 
 ---
 
----
-
-## Codice 069
+## Codice 069 {#069}
 Entrambi i finecorsa (FCS e FCD) sono aperti, non è possibile effettuare partenza.
 
 #### Descrizione
 La situazione in cui entrambi i finecorsa sono aperti è considerata una ragione sufficiente per non effettuare la partenza.
 
 #### Cause
+1. bistabili difettosi
+2. accoppiamento bistabili e piste magnetiche non corretto
+3. cavo di cabina difettoso
+4. ingressi della scheda difettosi (pin 57-58, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. cambiare bistabili
+2. assicurarsi che la distanza tra bistabile e pista sia meno di 1cm e che il versio della pista sia quello giusto
+3. controllare cavo di cabina
+4. mandare scheda in assistenza
 
 ---
 
 ## Codice 070 {#070}
 Induttore IS aperto alla fermata per scivolamento.
+
 #### Descrizione
 Dopo il comando di fermata (induttori IS e ID chiusi) viene avviato un timer dalla durata fissa di 4 secondi.
 Se in questo frangente l'induttore IS si apre viene dedotto che l'impianto ha scivolato.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 071 {#071}
 Induttore ID aperto alla fermata per scivolamento.
+
 #### Descrizione
 Dopo il comando di fermata (induttori IS e ID chiusi) viene avviato un timer dalla durata fissa di 4 secondi.
 Se in questo frangente l'induttore ID si apre viene dedotto che l'impianto ha scivolato.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 072 {#072}
 Induttore ID aperto con impianto fermo per deriva dovuta ad elasticità funi o manovra a mano.
+
 #### Descrizione
 Dopo il comando di fermata (induttori IS e ID chiusi), scaduto il timer di 4 secondi di controllo
 di scivolamento della cabina ([vedi errore 070 o 071](#070)), si è aperto l'induttore ID.
 Viene dedotto che le funi hanno troppa elasticità o la cabina è stata spostata a mano.
 Questo errore è __escluso__ nell'__impianto oleodinamico__.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 073 {#073}
 Induttore IS aperto con impianto fermo per deriva dovuta ad elasticità funi o manovra a mano.
+
 #### Descrizione
 Dopo il comando di fermata (induttori IS e ID chiusi), scaduto il timer di 4 secondi di controllo
 di scivolamento della cabina ([vedi errore 070 o 071](#070)), si è aperto l'induttore IS.
 Viene dedotto che le funi hanno troppa elasticità o la cabina è stata spostata a mano.
 Questo errore è __escluso__ nell'__impianto oleodinamico__.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 074 {#074}
-Scaduto timer apertura porte di sicurezza.
+Scaduto timer di sicurezza dell'apertura porte.
+
 #### Descrizione
 Il timer di sicurezza per l'apertura porte è un timer dalla durata fissa di 25 secondi che serve a fermare il comando di apertura porte nel caso in cui tutti i controlli hanno fallito.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 075 {#075}
 Il contatto di controllo del relè AP è rimasto chiuso per oltre 25 secondi.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il relè AP ha un contatto che viene usato come feedback dalla scheda per sapere se è attratto o meno. Consultare lo schema specifico del quadro per vedere quale contatto è usato.
+
 #### Cause
+1. contatto o relè difettoso
+2. interblocco meccanico tra AP e CP difettoso
+3. ingresso di feedback della scheda difettoso (pin 31, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 10 o 11, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare relè
+2. cambiare interblocco
+3. 4 mandare scheda in assistenza
 
 ---
 
 ## Codice 076 {#076}
-Il contatto di controllo del teleruttore DIS è rimasto chiuso per oltre 25 secondi.
+Il contatto di controllo del teleruttore o relè DIS è rimasto chiuso per oltre 25 secondi.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore o relè DIS ha un contatto che viene usato come feedback dalla scheda per sapere se è attratto o meno. Consultare lo schema specifico del quadro per vedere quale contatto è usato.
+
 #### Cause
+1. contatto o relè difettoso
+2. interblocco meccanico tra SAL e DIS difettoso
+3. ingresso di feedback della scheda difettoso (pin 40, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 67, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare relè o teleruttore o contatto
+2. cambiare interblocco
+3. 4 mandare scheda in assistenza
 
 ---
 
 ## Codice 077 {#077}
 Il contatto di controllo del teleruttore SAL è rimasto chiuso per oltre 25 secondi.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore SAL ha un contatto che viene usato come feedback dalla scheda per sapere se è attratto o meno. Consultare lo schema specifico del quadro per vedere quale contatto è usato.
+
 #### Cause
+1. contatto o teleruttore difettoso
+2. interblocco meccanico tra SAL e DIS difettoso
+3. ingresso di feedback della scheda difettoso (pin 39, vedi [layout](../../layouts/mcpx.md))
+4. uscita di comando della scheda difettosa (pin 68, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore o contatto
+2. cambiare interblocco
+3. 4 mandare scheda in assistenza
 
 ---
 
 ## Codice 078 {#078}
 Il contatto di controllo del teleruttore P è rimasto chiuso per oltre 25 secondi.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore P ha un contatto che viene usato come feedback dalla scheda per sapere se è attratto o meno. Consultare lo schema specifico del quadro per vedere quale contatto è usato.
+
 #### Cause
+1. contatto o teleruttore difettoso
+2. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+3. uscita di comando della scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare teleruttore o contatto
+2. 3 mandare scheda in assistenza
 
 ---
 
 ## Codice 079 {#079}
 Il contatto di controllo del teleruttore PV è rimasto chiuso per oltre 25 secondi.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il teleruttore o relè PV ha un contatto che viene usato come feedback dalla scheda per sapere se è attratto o meno. Consultare lo schema specifico del quadro per vedere quale contatto è usato.
+
 #### Cause
+1. contatto relè o teleruttore difettoso
+2. ingresso di feedback della scheda difettoso (pin 41, vedi [layout](../../layouts/mcpx.md))
+3. uscita di comando della scheda difettosa (pin 65, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. cambiare relè, teleruttore o contatto
+2. 3 mandare scheda in assistenza
 
 ---
 
 ## Codice 082 {#082}
 Mancata risposta del VVVF all'avvio o in marcia.
+
 #### Descrizione
 Quando viene dato il comando di marcia al VVVF questo chiude un contatto N.O. (contatto OUT) per segnalare che
-ha accettato la richiesta e la marcia è partita. Questo contatto viene letto e, se alla
-partenza o in viaggio non è chiuso, viene segnalato questo errore e fermata la cabina.
+ha accettato la richiesta e la marcia è partita. Questo contatto viene letto tramite un ingresso di feedback dalla scheda e, se alla
+partenza o in viaggio non è chiuso, viene segnalato questo errore e tolto il comando di marcia.
+
 #### Cause
+1. contatto VVVF difettoso (vedi schema del quadro)
+2. ingresso di feedback della scheda difettoso (pin 44, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. se non è possibile programmare VVVF per usare un'altra uscita, madare VVVF in assistenza
+2. mandare scheda in assistenza
 
 ---
 
 ## Codice 083 {#083}
 Induttori IS e ID chiusi in viaggio all'apertura del finecorsa di discesa FCD.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 084 {#084}
 Induttori IS e ID chiusi in viaggio all'apertura del finecorsa di salita FCS.
+
 #### Descrizione
+
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 085 {#085}
 Esauriti 10 tentativi di partenza con prenotazione.
+
 #### Descrizione
 Negli impianti a prenotazione la partenza viene tentata per 10 volte in attesa che eventuali situazioni
 che bloccano l'impianto si ripristino (tipo chiusura blocchi, contatto fotocellula / costola mobile etc)
+
 #### Cause
+Qualsiasi situazione che può bloccare la partenza dell'impianto:
+* blocchi aperti
+* fotocellula interrotta
+* intervento sovraccarico
+* ...
+
 #### Soluzioni
+Rimuovere situazione di blocco.
 
 ---
 
@@ -1394,182 +1484,237 @@ che bloccano l'impianto si ripristino (tipo chiusura blocchi, contatto fotocellu
 Peirferica 41 ferma per 200 millisecondi.
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 087 {#087}
 Rimbalzo dei contatti di cabina alla partenza.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 088 {#088}
 Rimbalzo dei contatti dei blocchi alla partenza.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 089 {#089}
 Peirferica 41 ferma per 200 millisecondi durante ripescamento (impianto oleodinamico).
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 090 {#090}
 Sovraccarico inserito per più di 3 minuti e 20 secondi (impianto a prenotazione).
+
 #### Descrizione
 Se l'ingresso del sovraccarico rimane attivo per più di 3 minuti e 20 secondi in impianto a prenotazione viene dedotto che l'impianto
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 091 {#091}
 Ingresso costola mobile dell'ingresso 1 (CM1) inserito per più di 3 minuti e 20 secondi (impianto a prenotazione).
+
 #### Descrizione
 Se l'ingresso della contola mobile rimane attivo per più di 3 minuti e 20 secondi in impianto a prenotazione viene dedotto che l'impianto
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 092 {#092}
 Ingresso costola mobile dell'ingresso 2 (CM2) inserito per più di 3 minuti e 20 secondi (impianto a prenotazione).
+
 #### Descrizione
 Se l'ingresso della contola mobile rimane attivo per più di 3 minuti e 20 secondi in impianto a prenotazione viene dedotto che l'impianto
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 093 {#093}
 Contatto porte cabina in impianti con porte a battente aperto per più di 3 minuti e 20 secondi (impianto a prenotazione).
+
 #### Descrizione
 Se il contatto delle porte cabina rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 094 {#094}
 Contatto porte cabina in impianti con porte a battente aperto per più di 3 minuti e 20 secondi (impianto a prenotazione).
+
 #### Descrizione
 Se il contatto delle porte cabina rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 095 {#095}
 Relè di sicurezza aperto al piano (impianto oleodinamico).
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 096 {#096}
 Relè di sicurezza rimasto chiuso all'abbandono del piano (impianto oleodinamico).
+
 #### Descrizione
 Il contatto del relè di sicurezza è rimasto chiuso quando la cabina ha lasciato il piano in cui si trovava.
 La posizione della cabina riportata nell'errore in questo caso è quella del piano successivo o precedente a seconda che questa si
 sia mossa in salita o in discesa. Ad esempio, se viene segnalato l'errore al piano 5 e la cabina si è mossa in salita, l'errore si  è verificato
 al piano 4.
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 097 {#097}
 Scaduto timer di 10 secondi che controlla lo stato dei teleruttori.
+
 #### Descrizione
 VEDERE CODICI ERRORI PRECEDENTI A QUESTO PER CONOSCERE CAUSA
 SE TELER NON ATTRAE IL COMANDO E'RIPETUTO PER 10" POI ERRORE
 GLI ERRORI IN MEMORIA PRIMA DI QUESTO DANNO IL MOTIVO ????????????????????????
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 098 {#098}
 Il relè AP non si è attratto al comando di apertura porte.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 099 {#099}
 Il finecorsa di apertura porte è rimasto chiuso dopo la fine dell'apertura.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 100 {#100}
 Il relè AP si è attratto al compando di apertura ma l'operatore non ha aperto.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 101 {#101}
 La periferica 47 (controllo emedamento A3) è assente o guasta.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 102 {#102}
 La batteria di alimentazione del CEV e braccio per controllo emedamento A3 è guasta.
+
 #### Descrizione
 ----Breve descrizione del contesto dell'errore------
+
 #### Cause
+
 #### Soluzioni
 
 ---
 
 ## Codice 103 {#103}
 Scaduto tempo corsa per impianto a fune a 1 velocità.
+
 #### Descrizione
 Dopo il comando di fermata sulla prima pista, la cabina non è arrivata al piano.
+
 #### Cause
 *   induttore ID o IS difettoso
 *   cavo di cabina difettoso
 *   accoppiamento piste magnetiche induttore errato
 *   disturbi elettromagnetici
+
 #### Soluzioni
 
 ---
 
 ## Codice 255 {#255}
 Scaduto il timer WDT (watch dog timer).
+
 #### Descrizione
 Questo timer interviene in caso il software rimanga bloccato resettando la scheda.
+
 #### Cause
 *   bug nel software
 
