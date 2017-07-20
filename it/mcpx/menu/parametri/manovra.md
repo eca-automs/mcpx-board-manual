@@ -1,5 +1,6 @@
 # Gestione manovra
 
+
 ## Parametro 024 {#024}
 
 Segnalazioni occupato, arrivo/prenotato, freccie.
@@ -17,6 +18,8 @@ Valore|Funzione
 4|Arrivo/prenotazioni lampeggianti
 
 Sommando i valori si ottengono varie combinazioni di configurazione.
+
+---
 
 ## Parametro 025 {#025}
 
@@ -39,6 +42,8 @@ Sommando i valori si ottengono varie combinazioni di configurazione.
 
 L'uscita FTC di default segnala che la fotocellula è rimasta interrotta per più di 1 minuto.
 
+---
+
 ## Parametro 026 {#026}
 
 Finecorsa apertura porte, termico motore, termoresistenza motore, relè controllo fasi.
@@ -58,6 +63,8 @@ Valore|Funzione
 
 Sommando i valori si ottengono varie combinazioni di configurazione
 
+---
+
 ## Parametro 031 {#031}
 
 Impostazione manovre speciali.
@@ -76,6 +83,8 @@ Valore|Funzione
 
 Questo parametro viene __azzerato__ quando si entra nel parametro __048__ o quando il parametro __043__ è impostato per impianto ad 1 velocità.
 
+
+---
 
 ## Parametro 032 {#032}
 
@@ -105,6 +114,8 @@ Valore|Funzione
 
 Questo parametro viene __azzerato__ quando si entra nel parametro __043__.
 
+---
+
 ## Parametro 033 {#033}
 
 Tipo display (gestito da periferica).
@@ -124,6 +135,8 @@ Valore|Funzione
 5|Segmenti
 
 I parametri da __8__ a __13__ impostano __come__ quelli da __0__ a __5__ e in più impostano la periferica con indirizzo 16 per lavorare __come presente__.
+
+---
 
 ## Parametro 034 {#034}
 
@@ -145,6 +158,8 @@ Valore|Funzione
 altri|Da implementare
 
 Questo parametro viene __azzerato__ quando si entra nel parametro __033__ ed è abilitato solo se il parametro __033__ è impostato per __display a segmenti__.
+
+---
 
 ## Parametro 035 {#035}
 
@@ -169,6 +184,8 @@ Valore|Funzione
 
 Sommando i valori si ottengono varie combinazioni di configurazione.
 
+---
+
 ## Parametro 036 {#036}
 
 Configurazione seriale cabina.
@@ -183,6 +200,8 @@ Valore|Funzione
 0|Tutto escluso
 1|Seriale cabina senza induttori
 2|Seriale cabina e induttori
+
+---
 
 ## Parametro 041 {#041}
 
@@ -207,6 +226,8 @@ Valore|Funzione
 I valori __9__-__10__-__11__ impostano __come__ __1__-__2__-__3__ in più abilitano segnalazione direzione prossima partenza (FSX-FDX).
 I valori __13__-__14__-__15__ impostano come __5__-__6__-__7__ in più abilitano segnalazione prossima partenza (FSX-FDX).
 Se impostato impianto a prenotazione in batteria alla chiamata al piano viene attivato gong e accese entrambe le frecce per individuare quale ascensore aprirà le porte.
+
+---
 
 ## Parametro 042 {#042}
 
@@ -242,6 +263,8 @@ Valore|Funzione
 La configurazione dei parametri dell'impianto __zoppo__ vengono __abilitati__ solo se il tipo di impianto è __impostato__ come __duplex__
 (vedi [parametro 48](#048)) mentre quelli della __chiamata al piano__ solo se la manovra è a __prenotazione__
 (vedi [parametro 48](#048)).
+
+---
 
 ## Parametro 043 {#043}
 
@@ -279,6 +302,8 @@ Valore|Funzione
 22|Impianto oleodinamico con avviamento stella triangolo porte automatiche 2 ingressi selettivi
 23|Impianto oleodinamico con avviamento soft-starter porte automatiche 2 ingressi selettivi
 
+---
+
 ## Parametro 044 {#044}
 
 Opzioni aggiuntive per impianti a prenotazione in batteria.
@@ -286,9 +311,13 @@ Opzioni aggiuntive per impianti a prenotazione in batteria.
 Da implementare.
 
 
+---
+
 ## Parametro 045 {#045}
 
 Non usato.
+
+---
 
 ## Parametro 046 {#046}
 
@@ -340,6 +369,8 @@ La relazione tra numero di fermate e numero da impostare nel parametro è:
 numero fermate da impostare = numero fermate - 1
 ```
 
+---
+
 ## Parametro 047 {#047}
 
 Numero del piano di stazionamento.
@@ -388,6 +419,8 @@ Valore|Funzione
 
 Nel conteggio del numero del piano lo zero viene considerato il piano estremo basso.
 
+---
+
 ## Parametro 048 {#048}
 
 Tipo di manovra e abilitazione comunicazione con scheda esterna per telecontrollo o
@@ -428,6 +461,8 @@ triplex|`5-6` (slave 2, slave 3), in questa configurazione il master cerca slave
 quadruplex|`5-6-7` (slave 2, slave 3, slave 4), in questa configurazione il master cerca slave con indirizzo `2`, `3` e `4`
 
 
+---
+
 ## Parametro 049 {#049}
 
 Non usato.
@@ -460,113 +495,169 @@ Nello stazionamento a porte chiuse vengono chiuse le porte di entrambi i lati.
 
 Per attivare lo stazionamento a porte chiuse bisogna inoltre __impostare un tempo diverso da zero nel [parametro 008](./temporizzazioni.md#008)__. Cambiandolo, __in automatico tutti i parametri da 050 ad 081 vengono impostati__ a con un valore da 4 a 6, oppure 8 a seconda del valore impostato precendentemente nel parametro. Riportando a zero il parametro 8 tutti i parametri da 050 ad 081 vengono impostati ad un valore tra 1 e 3, oppure 7.
 
+---
+
 ## Parametro 082 {#082}
 
 Non usato.
+
+---
 
 ## Parametro 083 {#083}
 
 Non usato.
 
+---
+
 ## Parametro 084 {#084}
 
 Non usato.
+
+---
 
 ## Parametro 085 {#085}
 
 Non usato.
 
+---
+
 ## Parametro 086 {#086}
 
 Non usato.
+
+---
 
 ## Parametro 087 {#087}
 
 Non usato.
 
+---
+
 ## Parametro 088 {#088}
 
 Non usato.
+
+---
 
 ## Parametro 089 {#089}
 
 Non usato.
 
+---
+
 ## Parametro 090 {#090}
 
 Non usato.
+
+---
 
 ## Parametro 091 {#091}
 
 Non usato.
 
+---
+
 ## Parametro 092 {#092}
 
 Non usato.
+
+---
 
 ## Parametro 093 {#093}
 
 Non usato.
 
+---
+
 ## Parametro 094 {#094}
 
 Non usato.
+
+---
 
 ## Parametro 095 {#095}
 
 Non usato.
 
+---
+
 ## Parametro 096 {#096}
 
 Non usato.
+
+---
 
 ## Parametro 097 {#097}
 
 Non usato.
 
+---
+
 ## Parametro 098 {#098}
 
 Non usato.
+
+---
 
 ## Parametro 099 {#099}
 
 Non usato.
 
+---
+
 ## Parametro 100 {#100}
 
 Non usato.
+
+---
 
 ## Parametro 101 {#101}
 
 Non usato.
 
+---
+
 ## Parametro 102 {#102}
 
 Non usato.
+
+---
 
 ## Parametro 103 {#103}
 
 Non usato.
 
+---
+
 ## Parametro 104 {#104}
 
 Non usato.
+
+---
 
 ## Parametro 105 {#105}
 
 Non usato.
 
+---
+
 ## Parametro 106 {#106}
 
 Non usato.
+
+---
 
 ## Parametro 107 {#107}
 
 Non usato.
 
+---
+
 ## Parametro 108 {#108}
 
 Non usato.
+
+---
 
 ## Parametro 109 {#109}
 
@@ -689,11 +780,15 @@ Piano con corsa lunga (impianti veloci). Il ritardo di rallentamento viene regol
 Piano con corsa lunga (impianti veloci). Il ritardo di rallentamento viene regolato dal parametro [021](temporizzazioni.md/#021).
 
 
+---
+
 ## Parametro 141 {#141}
 
 Password 1.
 
 Questa password blocca l'accesso ai parametri dal numero 24 al numero 154 ed è composta solo da numeri.
+
+---
 
 ## Parametro 142 {#142}
 
@@ -701,11 +796,15 @@ Password 2.
 
 Questa password blocca l'accesso al parametro [144](#144) ed è composta solo da numeri.
 
+---
+
 ## Parametro 143 {#143}
 
 Password 3.
 
 Questa password blocca l'accesso alla sezione `MANOVRA` del menù ed è composta solo da numeri.
+
+---
 
 ## Parametro 144 {#144}
 
@@ -713,30 +812,44 @@ Numero corse massimo dell'impianto.
 
 Al raggiungimento di questo limite l'impianto viene bloccato.
 
+---
+
 ## Parametro 145 {#145}
 
 Non usato.
+
+---
 
 ## Parametro 146 {#146}
 
 Non usato.
 
+---
+
 ## Parametro 147 {#147}
 
 Non usato.
+
+---
 
 ## Parametro 148 {#148}
 
 Non usato.
 
+---
+
 ## Parametro 149 {#149}
 
 Non usato.
+
+---
 
 ## Parametro 150 {#150}
 
 Non usato.
 
+
+---
 
 ## Parametro 151 {#151}
 
@@ -744,17 +857,23 @@ Numero dell'impianto (matricola).
 
 Non è possibile modificarlo.
 
+---
+
 ## Parametro 152 {#152}
 
 Numero seriale quadro.
 
 Non è possibile modificarlo.
 
+---
+
 ## Parametro 153 {#153}
 
 Numero corse effettuate.
 
 Non è possibile modificarlo.
+
+---
 
 ## Parametro 154 {#154}
 
