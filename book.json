@@ -7,6 +7,9 @@
     "versions": {
       "gitbookConfigURL": "{{ BOOK_BASE_URL }}book.json",
       "options": []
+    },
+    "lunr": {
+      "maxIndexSize": 1000000000
     }
   }
 }

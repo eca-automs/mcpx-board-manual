@@ -1,3 +1,26 @@
+<a name="0.0.0-alpha.4"></a>
+# 0.0.0-alpha.4 (2017-07-21)
+
+* Aggiunte descrizioni per errori 001-039 ([6423f55](https://gitlab.com/eca-automs/mcpx-board-manual/commit/6423f55))
+* Aggiunte righe separatori in elenco parametri di temposrizzazione per dare maggiore chiarezza ([da2842e](https://gitlab.com/eca-automs/mcpx-board-manual/commit/da2842e))
+* Aggiunte righe separatorie in elenco parametri di manovra per dare maggiore chiarezza ([be061e5](https://gitlab.com/eca-automs/mcpx-board-manual/commit/be061e5))
+* Aggiunte righe separatorie tra errori in elenco per maggiore dare maggiore chiarezza ([7d0b423](https://gitlab.com/eca-automs/mcpx-board-manual/commit/7d0b423))
+* Aggiunte voci induttori nel glossario ([bb20240](https://gitlab.com/eca-automs/mcpx-board-manual/commit/bb20240))
+* Aggiunto glossario con prime voci ([038269e](https://gitlab.com/eca-automs/mcpx-board-manual/commit/038269e))
+* Aumentato limite del search index ([295c07a](https://gitlab.com/eca-automs/mcpx-board-manual/commit/295c07a))
+* Descrizioni sommarie error 083-255 ([8526445](https://gitlab.com/eca-automs/mcpx-board-manual/commit/8526445))
+* Descrizioni sommarie errori 069-082 ([2319c56](https://gitlab.com/eca-automs/mcpx-board-manual/commit/2319c56))
+* Elenco indirizzi periferiche: aggiunte righe separatorie + piccoli cambiamenti di stile ([41c7220](https://gitlab.com/eca-automs/mcpx-board-manual/commit/41c7220))
+* Fix Error loading version latest: Error: Cannot find module 'extend' ([a8a5d0a](https://gitlab.com/eca-automs/mcpx-board-manual/commit/a8a5d0a))
+* Fix formattazione parametro 012 ([cd0fec7](https://gitlab.com/eca-automs/mcpx-board-manual/commit/cd0fec7))
+* Fix percorso immagine prefinecorsa ([c6e4fb9](https://gitlab.com/eca-automs/mcpx-board-manual/commit/c6e4fb9))
+* Glossario + riscrittura errori ([217eaa1](https://gitlab.com/eca-automs/mcpx-board-manual/commit/217eaa1))
+* Integrate note correttive sui parametri ([537303e](https://gitlab.com/eca-automs/mcpx-board-manual/commit/537303e))
+* Integrazione note su sezione comandi ([b08c218](https://gitlab.com/eca-automs/mcpx-board-manual/commit/b08c218))
+* Stesura generica descrizioni errori fin a numero 068 ([a3f9677](https://gitlab.com/eca-automs/mcpx-board-manual/commit/a3f9677))
+
+
+
 <a name="0.0.0-alpha.3"></a>
 # 0.0.0-alpha.3 (2017-07-14)
 

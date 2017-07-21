@@ -1,4 +1,4 @@
-# Bus seriali
+# Comunicazioni seriali
 
 La scheda MCP2015X-SMD presenta 2 bus seriali, uno per comunicare "localmente" con le periferiche,
 l'altro per comunicare "esternamente" con altri quadri o schede. Per comodità chiameremo il primo "bus locale" e il secondo "bus esterno".

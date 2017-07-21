@@ -1,6 +1,6 @@
 {
   "name": "mcpx-board-manual",
-  "version": "0.0.0-alpha.3",
+  "version": "0.0.0-alpha.4",
   "description": "The manual of the MCP2015X-SMD and  PER16B-SMD boards",
   "scripts": {
     "build-site": "./node_modules/.bin/gs",

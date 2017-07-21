@@ -16,6 +16,6 @@ SW|Muove il cursore dello schermo verso destra
 SET|Tasto di invio/conferma
 
 In base all'input dell'utente o allo stato dell'impianto vengono distinti 3 stati di funzionamento:
-*   MENU
-*   MANOVRA
-*   BLOCCO PER ERRORE
+*   [MENU](./menu/README.md)
+*   [MANOVRA](./manovra/README.md)
+*   [BLOCCO PER ERRORE](./blocco_errore/README.md)
