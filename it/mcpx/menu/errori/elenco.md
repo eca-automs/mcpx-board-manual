@@ -1440,24 +1440,36 @@ partenza o in viaggio non è chiuso, viene segnalato questo errore e tolto il co
 Induttori IS e ID chiusi in viaggio all'apertura del finecorsa di discesa FCD.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+La cabina era in viaggio in discesa, si è aperto FCD ma gli induttori di fermata IS e ID erano già chiusi.
 
 #### Cause
+1. induttori difettosi
+2. piste di fermata posizionate in maniera errata
+3. ingressi della scheda difettosi (pin 55 e 56, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. cambiare induttori
+2. assicurarsi che le piste di fermata non siano troop vicine alla pista del finecorsa
+3. mandare scheda in assistenza
 
 ---
 
 ## Codice 084 {#084}
-Induttori IS e ID chiusi in viaggio all'apertura del finecorsa di salita FCS.
+Induttori IS e ID chiusi in viaggio all'apertura del finecorsa di
+discesa FCS.
 
 #### Descrizione
-
-----Breve descrizione del contesto dell'errore------
+La cabina era in viaggio in salita, si è aperto FCS ma gli induttori di fermata IS e ID erano già chiusi.
 
 #### Cause
+1. induttori difettosi
+2. piste di fermata posizionate in maniera errata
+3. ingressi della scheda difettosi (pin 55 e 56, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. cambiare induttori
+2. assicurarsi che le piste di fermata non siano troop vicine alla pista del finecorsa
+3. mandare scheda in assistenza
 
 ---
 
@@ -1481,13 +1493,20 @@ Rimuovere situazione di blocco.
 ---
 
 ## Codice 086 {#086}
-Peirferica 41 ferma per 200 millisecondi.
+Peirferica [41](../../../periferiche/indirizzi.md#indirizzo-41) ferma per 200 millisecondi.
+
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Non è stato ricevuto nessun messaggio sul bus seriale dalla periferica [41](../../../periferiche/indirizzi.md#indirizzo-41) per 200 millisecondi. Viene fermato il comando di marcia se attivo.
 
 #### Cause
+1. periferica difettosa
+2. periferica diconnessa
+3. connessione bus difettosa
 
 #### Soluzioni
+1. cambiare periferica
+2. connettere periferica
+3. controllare connessione [bus locale](../../../bus_seriali/README.md#bus-locale)
 
 ---
 
@@ -1519,11 +1538,17 @@ Rimbalzo dei contatti dei blocchi alla partenza.
 Peirferica 41 ferma per 200 millisecondi durante ripescamento (impianto oleodinamico).
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Non è stato ricevuto nessun messaggio sul bus seriale dalla periferica [41](../../../periferiche/indirizzi.md#indirizzo-41) per 200 millisecondi durante il ripescaggio. Il ripescaggio viene fermato.
 
 #### Cause
+1. periferica difettosa
+2. periferica diconnessa
+3. connessione bus difettosa
 
 #### Soluzioni
+1. mandare scheda periferica in assistenza
+2. connettere periferica
+3. controllare connessione [bus locale](../../../bus_seriali/README.md#bus-locale)
 
 ---
 
@@ -1535,8 +1560,14 @@ Se l'ingresso del sovraccarico rimane attivo per più di 3 minuti e 20 secondi i
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
 
 #### Cause
+1. impianto in sovraccarico
+2. sovraccarico difettoso
+3. ingresso della scheda difettoso (pin 51, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. rimuovere causa sovracarico
+2. controllare attuatore del sovraccarico
+3. mandare scheda in assistenza
 
 ---
 
@@ -1548,8 +1579,14 @@ Se l'ingresso della contola mobile rimane attivo per più di 3 minuti e 20 secon
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
 
 #### Cause
+1. costola mobile o fotocellula interrotta
+2. costola mobile o fotocellula difettosa
+3. ingresso della scheda difettoso (pin 53, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. rimovere causa dell'interruzione
+2. controllare o cambiare costola mobile o fotocellula
+3. mandare scheda in assistenza
 
 ---
 
@@ -1561,8 +1598,14 @@ Se l'ingresso della contola mobile rimane attivo per più di 3 minuti e 20 secon
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
 
 #### Cause
+1. costola mobile o fotocellula interrotta
+2. costola mobile o fotocellula difettosa
+3. ingresso della scheda difettoso (pin 52, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. rimovere causa dell'interruzione
+2. controllare o cambiare costola mobile o fotocellula
+3. mandare scheda in assistenza
 
 ---
 
@@ -1570,52 +1613,86 @@ non può camminare e viene attivato il "fuori servizio" e annullate tutte le pre
 Contatto porte cabina in impianti con porte a battente aperto per più di 3 minuti e 20 secondi (impianto a prenotazione).
 
 #### Descrizione
-Se il contatto delle porte cabina rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
+Se il contatto delle porte cabina sulla catenza delle sicurezze (morsetti 8-9 sul quadro) rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
 
 #### Cause
+1. le porte sono state lasciate aperte
+2. contatto porte difettoso
+3. bassa tensione di manvora
+4. ingresso della scheda diffettoso (pin 5-6, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. richuidere le porte
+2. controllare contatto porte
+3. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+4. mandare scheda in assistenza
 
 ---
 
 ## Codice 094 {#094}
-Contatto porte cabina in impianti con porte a battente aperto per più di 3 minuti e 20 secondi (impianto a prenotazione).
+Contatto dei preliminari in impianti con porte a battente aperto per più di 3 minuti e 20 secondi (impianto a prenotazione).
 
 #### Descrizione
-Se il contatto delle porte cabina rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
+Se il contatto dei preliminari sulla catenza delle sicurezze (morsetti 7-8 sul quadro) rimane aperto per più di 3 minuti e 20 secondi in impianto a porte a battente e a prenotazione viene dedotto che l'impianto
 non può camminare e viene attivato il "fuori servizio" e annullate tutte le prenotazioni.
 
 #### Cause
+1. porta di piano lasciata aperta
+2. contatto preliminari difettoso
+3. bassa tensione di manovra
+4. ingresso della scheda difettoso (pin 4-5, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. chiudere porta
+2. controllare contatto preliminari
+3. controllare tensione di manovra ad inizio e fine serie durante il funzionamento e identificare il circuito che provoca il calo di tensione
+4. mandare scheda in assistenza
 
 ---
 
 ## Codice 095 {#095}
-Relè di sicurezza aperto al piano (impianto oleodinamico).
+Relè di sicurezza RSS aperto al piano (impianto oleodinamico).
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il relè RSS ha aperto il contatto di abilitazione al ripescaggio perchè IZ1-IZ2 si sono aperti al piano.
 
 #### Cause
+1. pista di IZ1-IZ2 troppo corta o non centrata
+2. accoppiamento IZ1-IZ2 con pista non corretto
+3. relè RSS difettoso
+4. ingresso della scheda di feedback difettoso (pin 44, vedi [layout](../../layouts/mcpx.md))
+5. ingressi IZ1-IZ2 della scheda difettosi (pin 19 e 21, vedi [layout](../../layouts/mcpx.md))
+6. uscite IZ1-IZ2 della scheda difettose (pin 15-16 e 22-23, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. assicurarsi che la lunghezza della pista sia giusta (30cm circa) e che sia centrata a livello del piano
+2. assicurarsi che la distanza tra IZ1-IZ2 e la pista non sia maggiore di 1cm
+3. cambiare relè
+4. 5,6 mandare scheda in assistenza
 
 ---
 
 ## Codice 096 {#096}
-Relè di sicurezza rimasto chiuso all'abbandono del piano (impianto oleodinamico).
+Relè di sicurezza RSS rimasto chiuso all'abbandono del piano (impianto oleodinamico).
 
 #### Descrizione
-Il contatto del relè di sicurezza è rimasto chiuso quando la cabina ha lasciato il piano in cui si trovava.
+Il contatto di abilitazione del relè di sicurezza RSS è rimasto chiuso quando la cabina ha lasciato il piano in cui si trovava.
 La posizione della cabina riportata nell'errore in questo caso è quella del piano successivo o precedente a seconda che questa si
 sia mossa in salita o in discesa. Ad esempio, se viene segnalato l'errore al piano 5 e la cabina si è mossa in salita, l'errore si  è verificato
 al piano 4.
 
 #### Cause
+1. pista di IZ1-IZ2 troppo lunga o non centrata
+2. relè RSS difettoso
+3. ingresso della scheda di feedback difettoso (pin 44, vedi [layout](../../layouts/mcpx.md))
+4. ingressi IZ1-IZ2 della scheda difettosi (pin 19 e 21, vedi [layout](../../layouts/mcpx.md))
+5. uscite IZ1-IZ2 della scheda difettose (pin 15-16 e 22-23, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. assicurarsi che la lunghezza della pista sia giusta (30cm circa) e che sia centrata a livello del piano
+2. cambiare relè
+3. 4,5 mandare scheda in assistenza
 
 ---
 
@@ -1670,14 +1747,20 @@ Il relè AP si è attratto al compando di apertura ma l'operatore non ha aperto.
 ---
 
 ## Codice 101 {#101}
-La periferica 47 (controllo emedamento A3) è assente o guasta.
+La periferica [47](../../../periferiche/indirizzi.md#indirizzo-47) è assente o guasta.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Non è stato ricevuto nessun mesaggio sul bus seriale dalla periferica [47](../../../periferiche/indirizzi.md#indirizzo-47) per più di 200 millisecondi. L'impianto viene bloccato. Un operatore dovrà ripristinare manualmente l'errore (vedi [reset errore A3](../../manovra/comandi/README.md#res-err-a3)).
 
 #### Cause
+1. periferica difettosa
+2. periferica diconnessa
+3. connessione bus difettosa
 
 #### Soluzioni
+1. mandare scheda periferica in assistenza
+2. connettere periferica
+3. controllare connessione [bus locale](../../../bus_seriali/README.md#bus-locale)
 
 ---
 
@@ -1685,7 +1768,6 @@ La periferica 47 (controllo emedamento A3) è assente o guasta.
 La batteria di alimentazione del CEV e braccio per controllo emedamento A3 è guasta.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
 
 #### Cause
 
@@ -1697,15 +1779,21 @@ La batteria di alimentazione del CEV e braccio per controllo emedamento A3 è gu
 Scaduto tempo corsa per impianto a fune a 1 velocità.
 
 #### Descrizione
-Dopo il comando di fermata sulla prima pista, la cabina non è arrivata al piano.
+Dopo il comando di fermata ricevuto con la prima pista, il secondo induttore non si è chiuso entro il tempo stabilito. Si deduce che la cabina non è arrivata al piano.
 
 #### Cause
-*   induttore ID o IS difettoso
-*   cavo di cabina difettoso
-*   accoppiamento piste magnetiche induttore errato
-*   disturbi elettromagnetici
+1.   induttore ID o IS difettoso
+2.   cavo di cabina difettoso
+3.   accoppiamento piste magnetiche induttore errato
+4.   interferenza magnetiche
+5.   piste di fermata registrate non correttamente
 
 #### Soluzioni
+1. cambiare induttore
+2. controllare cavo di cabina
+3. assicurarsi che la distanza tra induttore e pista non sia maggiore di 1cm
+4. posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
+5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016).
 
 ---
 
@@ -1716,7 +1804,7 @@ Scaduto il timer WDT (watch dog timer).
 Questo timer interviene in caso il software rimanga bloccato resettando la scheda.
 
 #### Cause
-*   bug nel software
+Bug nel software.
 
 #### Soluzioni
-*   contattare l'assistenza tecnica
+Contattare l'assistenza tecnica.
