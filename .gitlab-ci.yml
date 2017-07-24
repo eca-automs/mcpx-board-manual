@@ -22,7 +22,7 @@ build-testing-local:
     - npm install gitbook-cli@2.3.0 -g
     - gitbook fetch latest
     - npm i
-    - DEBUG=gs BOOK_PRERELEASES=true BOOK_FILE_NAME=$BOOK_FILE_NAME BOOK_BASE_URL=./ PDF_BASE_URL=./ npm run build-site
+    - DEBUG=gs BOOK_PRERELEASES=true BOOK_FILE_NAME=$BOOK_FILE_NAME BOOK_BASE_URL=/ PDF_BASE_URL=/ npm run build-site
   artifacts:
     paths:
       - site
