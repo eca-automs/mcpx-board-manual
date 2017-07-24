@@ -13,6 +13,23 @@ stages:
 #   only:
 #     - master
 
+build-testing-local:
+  image: node:6.10.2
+  stage: build
+  script:
+    - apt-get update
+    - apt-get install calibre -y
+    - npm install gitbook-cli@2.3.0 -g
+    - gitbook fetch latest
+    - npm i
+    - DEBUG=gs BOOK_PRERELEASES=true BOOK_FILE_NAME=$BOOK_FILE_NAME BOOK_BASE_URL=./ PDF_BASE_URL=./ npm run build-site
+  artifacts:
+    paths:
+      - site
+  except:
+    - master
+    - develop
+
 build-testing:
   image: node:6.10.2
   stage: build
