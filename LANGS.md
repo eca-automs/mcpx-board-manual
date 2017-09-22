@@ -1,3 +1,0 @@
-# Languages
-
-* [Italian](it/)
