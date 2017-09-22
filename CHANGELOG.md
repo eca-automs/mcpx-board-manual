@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.5"></a>
+# 0.0.0-alpha.5 (2017-09-22)
+
+
+### Bug Fixes
+
+* **$package.json:** typo in version script ([d65907a](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/d65907a))
+
+
+
 <a name="0.0.0-alpha.4"></a>
 # 0.0.0-alpha.4 (2017-07-21)
 
