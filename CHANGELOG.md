@@ -1,3 +1,14 @@
+<a name="0.0.0-alpha.6"></a>
+# [0.0.0-alpha.6](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.5...v0.0.0-alpha.6) (2017-09-26)
+
+
+### Bug Fixes
+
+* **.bookignore:** ignore files not noeeded in the final book build ([a4530a5](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/a4530a5))
+* **gitlab-ci and package.json:** typo in s3cmd name and change build-site command name ([8a314b0](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/8a314b0))
+
+
+
 <a name="0.0.0-alpha.5"></a>
 # 0.0.0-alpha.5 (2017-09-22)
 
