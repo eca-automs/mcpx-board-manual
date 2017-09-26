@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.10"></a>
+# [0.0.0-alpha.10](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.9...v0.0.0-alpha.10) (2017-09-26)
+
+
+### Bug Fixes
+
+* **gitlab-ci:** explicitly set s3cmd acl private in deploy stage ([73f6791](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/73f6791))
+
+
+
 <a name="0.0.0-alpha.9"></a>
 # [0.0.0-alpha.9](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.8...v0.0.0-alpha.9) (2017-09-26)
 
