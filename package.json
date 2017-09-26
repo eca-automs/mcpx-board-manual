@@ -3,7 +3,7 @@
   "version": "0.0.0-alpha.5",
   "description": "The manual of the MCP2015X-SMD and  PER16B-SMD boards with firmware P",
   "scripts": {
-    "build-site": "./node_modules/.bin/gs",
+    "build": "./node_modules/.bin/gs",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "dev": "gitbook serve",
     "optimize:images": "jpegoptim -o  --size=15% src/images/*.jpg -d dist/; cp src/images/*.png dist && optipng dist/*.png",
