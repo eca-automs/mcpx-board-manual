@@ -1,3 +1,22 @@
+<a name="0.0.0-alpha.13"></a>
+# 0.0.0-alpha.13 (2017-09-26)
+
+
+### Bug Fixes
+
+* **.bookignore:** ignore files not noeeded in the final book build ([a4530a5](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/a4530a5))
+* **$package.json:** typo in version script ([d65907a](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/d65907a))
+* **gitlab-ci:** add manully the trailing / in s3cmd sync ([b0f9c11](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/b0f9c11))
+* **gitlab-ci:** explicitly set s3cmd acl private in deploy stage ([73f6791](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/73f6791))
+* **gitlab-ci:** quote scripts in deploy testing job ([427176c](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/427176c))
+* **gitlab-ci:** s3cmd options ([ae27934](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/ae27934))
+* **gitlab-ci:** set explicit pyhton version image ([be5d53e](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/be5d53e))
+* **gitlab-ci:** typo in s3cmd ([e61520b](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/e61520b))
+* **gitlab-ci:** use python 2.7 in deply stage ([de131bb](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/de131bb))
+* **gitlab-ci and package.json:** typo in s3cmd name and change build-site command name ([8a314b0](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/8a314b0))
+
+
+
 <a name="0.0.0-alpha.12"></a>
 # 0.0.0-alpha.12 (2017-09-26)
 
