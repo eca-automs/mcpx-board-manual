@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.7"></a>
+# [0.0.0-alpha.7](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.6...v0.0.0-alpha.7) (2017-09-26)
+
+
+### Bug Fixes
+
+* **gitlab-ci:** typo in s3cmd ([e61520b](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/e61520b))
+
+
+
 <a name="0.0.0-alpha.6"></a>
 # [0.0.0-alpha.6](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.5...v0.0.0-alpha.6) (2017-09-26)
 
