@@ -1,1 +1,8 @@
 src
+*.xcf
+node_modules
+.gitignore
+.bookignore
+.gitlab-ci.yml
+CHANGELOG.md
+package.json
