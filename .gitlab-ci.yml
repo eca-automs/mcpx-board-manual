@@ -54,7 +54,7 @@ deploy to testing:
   script:
     - pip install s3cmd
     - s3cmd sync --access_key=$S3_ACCESS_KEY --secret_key=$S3_SECRET_KEY --host=$S3_HOST --host-bucket=$S3_HOST_BUCKET --acl-private --delete-removed --dry-run ./site/public/ s3://$TESTING_BUCKET_NAME/$PUBLIC_PATH
-    - s3cmd sync --access_key=$S3_ACCESS_KEY --secret_key=$S3_SECRET_KEY --host=$S3_HOST --host-bucket=$S3_HOST_BUCKET --acl-private --delete-removed --dry-run ./site/pdf s3://$TESTING_BUCKET_NAME/$DOWNLOAD_PATH
+    - s3cmd sync --access_key=$S3_ACCESS_KEY --secret_key=$S3_SECRET_KEY --host=$S3_HOST --host-bucket=$S3_HOST_BUCKET --acl-private --delete-removed --dry-run ./site/pdf s3://$TESTING_BUCKET_NAME/$DOWNLOAD_PATH/
   only:
     - /^v\d+\.\d+\.\d+-(alpha|beta|rc)\.\d+$/
   except:
