@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.9"></a>
+# [0.0.0-alpha.9](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.8...v0.0.0-alpha.9) (2017-09-26)
+
+
+### Bug Fixes
+
+* **gitlab-ci:** use python 2.7 in deply stage ([de131bb](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/de131bb))
+
+
+
 <a name="0.0.0-alpha.8"></a>
 # [0.0.0-alpha.8](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.7...v0.0.0-alpha.8) (2017-09-26)
 
