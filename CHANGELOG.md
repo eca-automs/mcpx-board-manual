@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.11"></a>
+# [0.0.0-alpha.11](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.10...v0.0.0-alpha.11) (2017-09-26)
+
+
+### Bug Fixes
+
+* **gitlab-ci:** set explicit pyhton version image ([be5d53e](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/be5d53e))
+
+
+
 <a name="0.0.0-alpha.10"></a>
 # [0.0.0-alpha.10](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.9...v0.0.0-alpha.10) (2017-09-26)
 
