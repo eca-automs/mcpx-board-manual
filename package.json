@@ -1,6 +1,6 @@
 {
   "name": "mcpx-board-manual",
-  "version": "0.0.0-alpha.16",
+  "version": "0.0.0-alpha.17",
   "description": "The manual of the MCP2015X-SMD and  PER16B-SMD boards with firmware P",
   "scripts": {
     "build": "./node_modules/.bin/gs",

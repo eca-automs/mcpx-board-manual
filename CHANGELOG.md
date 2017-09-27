@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.17"></a>
+# [0.0.0-alpha.17](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.15...v0.0.0-alpha.17) (2017-09-27)
+
+
+### Bug Fixes
+
+* **gitlab-ci:** remove typo in deploy testing job ([9d6d564](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/9d6d564))
+
+
+
 <a name="0.0.0-alpha.16"></a>
 # [0.0.0-alpha.16](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.15...v0.0.0-alpha.16) (2017-09-27)
 
