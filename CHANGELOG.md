@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.19"></a>
+# [0.0.0-alpha.19](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.18...v0.0.0-alpha.19) (2017-09-27)
+
+
+### Features
+
+* **gitlab-ci:** deploy testing artifacts to s3 ([776ee89](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/776ee89))
+
+
+
 <a name="0.0.0-alpha.18"></a>
 # [0.0.0-alpha.18](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.15...v0.0.0-alpha.18) (2017-09-27)
 
