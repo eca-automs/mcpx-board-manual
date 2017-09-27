@@ -1,3 +1,8 @@
+<a name="0.0.0-alpha.16"></a>
+# [0.0.0-alpha.16](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.15...v0.0.0-alpha.16) (2017-09-27)
+
+
+
 <a name="0.0.0-alpha.15"></a>
 # [0.0.0-alpha.15](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.14...v0.0.0-alpha.15) (2017-09-27)
 
