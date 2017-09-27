@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.15"></a>
+# [0.0.0-alpha.15](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.14...v0.0.0-alpha.15) (2017-09-27)
+
+
+### Bug Fixes
+
+* **gitlab-ci:** quote source/destination endpoints in deploy testing stage ([0a57a96](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/0a57a96))
+
+
+
 <a name="0.0.0-alpha.14"></a>
 # 0.0.0-alpha.14 (2017-09-26)
 
