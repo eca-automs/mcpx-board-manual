@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.22"></a>
+# [0.0.0-alpha.22](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.21...v0.0.0-alpha.22) (2017-10-23)
+
+
+### Bug Fixes
+
+* **CI:** Fixes S3 desctination error ([65732ca](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/65732ca))
+
+
+
 <a name="0.0.0-alpha.21"></a>
 # [0.0.0-alpha.21](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.20...v0.0.0-alpha.21) (2017-10-23)
 
