@@ -17,6 +17,6 @@ _book
 *.pdf
 
 temp
-site
+artifacts
 
 *.log

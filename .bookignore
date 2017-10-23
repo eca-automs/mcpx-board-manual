@@ -5,4 +5,8 @@ node_modules
 .bookignore
 .gitlab-ci.yml
 CHANGELOG.md
+SHORT.md
+README.old.md
 package.json
+ecadoc.json
+*.jpg
