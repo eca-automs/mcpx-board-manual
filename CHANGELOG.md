@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.21"></a>
+# [0.0.0-alpha.21](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.20...v0.0.0-alpha.21) (2017-10-23)
+
+
+### Bug Fixes
+
+* **CI:** Fixes `Invalid source: './artifacts/'` ([19eba50](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/19eba50))
+
+
+
 <a name="0.0.0-alpha.20"></a>
 # [0.0.0-alpha.20](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.19...v0.0.0-alpha.20) (2017-10-23)
 
