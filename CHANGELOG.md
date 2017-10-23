@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.20"></a>
+# [0.0.0-alpha.20](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.19...v0.0.0-alpha.20) (2017-10-23)
+
+
+### Features
+
+* **build:** Builds only the current tag ([51201c2](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/51201c2))
+
+
+
 <a name="0.0.0-alpha.19"></a>
 # [0.0.0-alpha.19](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.18...v0.0.0-alpha.19) (2017-09-27)
 
