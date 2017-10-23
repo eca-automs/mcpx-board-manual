@@ -10,3 +10,4 @@ README.old.md
 package.json
 ecadoc.json
 *.jpg
+build.js
