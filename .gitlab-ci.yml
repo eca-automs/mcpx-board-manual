@@ -14,7 +14,7 @@ build testing:
     - npm run build
   artifacts:
     paths:
-      - site
+      - artifacts
   only:
     - /^v\d+\.\d+\.\d+-(alpha|beta|rc)\.\d+$/
   except:
