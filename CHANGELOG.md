@@ -1,3 +1,13 @@
+<a name="0.0.0-alpha.23"></a>
+# [0.0.0-alpha.23](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.22...v0.0.0-alpha.23) (2017-10-23)
+
+
+### Bug Fixes
+
+* **CI:** Fixes reduntant upload directory name ([1d3ff42](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/1d3ff42))
+
+
+
 <a name="0.0.0-alpha.22"></a>
 # [0.0.0-alpha.22](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.21...v0.0.0-alpha.22) (2017-10-23)
 
