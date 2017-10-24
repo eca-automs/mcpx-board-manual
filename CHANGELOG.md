@@ -1,3 +1,19 @@
+<a name="0.0.0-alpha.24"></a>
+# [0.0.0-alpha.24](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.23...v0.0.0-alpha.24) (2017-10-24)
+
+
+### Bug Fixes
+
+* **build:** Adds build.js script to .bookignore ([e74746a](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/e74746a))
+* **package.json:** Fix name to be equal to ecadoc id ([65e8a5f](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/65e8a5f))
+
+
+### Features
+
+* **ecadoc.json:** Add site and download paths ([ef34588](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/commit/ef34588))
+
+
+
 <a name="0.0.0-alpha.23"></a>
 # [0.0.0-alpha.23](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.22...v0.0.0-alpha.23) (2017-10-23)
 
