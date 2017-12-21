@@ -19,6 +19,8 @@ deploy:
   skip_cleanup: true
   upload-dir: testing
   local_dir: artifacts
+  bucket: "docsecaqin"
+  region: eu-west-1
   acl: private
   on:
     tags: "/^v\\d+\\.\\d+\\.\\d+-(alpha|beta|rc)\\.\\d+$/"
