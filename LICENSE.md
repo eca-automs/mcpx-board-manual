@@ -1,4 +1,6 @@
-Copyright (C)  2016  Eca.
+# Licenza
+
+Copyright (C) 2017  Eca.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
