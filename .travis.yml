@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- '8.9'
+before_script:
+- sudo apt-get install calibre xvfb jpegoptim optipng -y
+- npm install -g gitbook-cli
+- gitbook fetch 3.2.3
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+script:
+- npm run build
+deploy:
+  provider: s3
+  skip_cleanup: true
+  bucket: S3 Bucket
+  upload-dir: testing
+  local_dir: artifacts
+  acl: private
+  on:
+    tags: "/^v\\d+\\.\\d+\\.\\d+-(alpha|beta|rc)\\.\\d+$/"
+env:
+  global:
+  - secure: BgN75aqexxmwG4lmeU7VsG6VzybahbpxmFKr4TMzhE7xPI+qR21OtzmY43xOODQAdr5Gjhu58WOQo/BuCR9VtKko4ZFEJ8M15wYdDclcEgEao98KUO9NnqN+dr15ILMG1uwrSvc+UjTmy7jUTAg7p50L+Xr3jzutdHVpKtW95VghvEa+zxU2lPpCMhNgBficW1ErIpIKXW8xU89IGcrGFyIfJmUVEUXmFRgaQoMOl35nrtb4Bsy0Co75TdmvKZROTFTTXDpUYneKR+uHengaruoK+vav8o7libAD70YR0IztCojvx+uMHcbsynMsU7R19cdtPqZDhYceLfy34JLSglr1OeFLQmExsXuTOQ96zT9m5jGLmuUt5U8ksK62+6MApKy7Qx7qQrLCRW0KL95ZFxvmo3MwzsoqASnXDnoXfT1H8hYKyJZkrNRey8+zuOO/BwqF/PAcVjn3vcMToUvRCF18ipkMhgsLjjPdPrSNfQCy1IoQ/PVfKCDyQNkeXpMhSWvsuTtm/YtMQUBWTwyvaO5K+BuR05uWtduHZ6HuqjXUQSAVJxDOgRt61sOh5Z0TA6rb9WzS+O8Y77dTpa0LYEekocTIGIB9y/lRLD/HFNliBDOWKO38NvqnmpjIaVzbu3ei2P2Wa7cKh+E0tEW4S0Hn3RguwZsaUHQxHtdAfE0=
+  - secure: dG6dsJZ/QZFWe7gPRou81uHuOekmKxzPjeCtSlGedTbbE6wR3yTiJtASCa/nIQwD7/H3J+5ARS5nrB7nYPW5GUpPoGEf8edeNqrTfC/ijJzrrokIDHG3lVxktD4tLGI0thj00oKmPLs4arWwci57Ya16ewbWEHMOPDdTKX90hxb+ALp0VvRYLrPK6YQLwhIDPUuAYe6U5rJ7aCMNLlYcjf+SgY5fINyjf8MYcgi6Bo8Zr+YQz2c0yMNxKraAx+ILJOPu3HdU9nAarNF6Vu6nY+SfDlG144OHPhGx/+Ej0bG5/Mxf+AA20oMb5F7UMkF+/Z8FmIUo2SXIMupd4DzfAYJhO4vplOrETbbuez3YDIIpOoJ3qZJZSV25OPokrI6juObaRxEBw10fXnAbOZweASl6iXrYk3dSWhMoHG9Wjac2Z3YvxTqKdWPW7H3fMGVpKZ1IUQgLVpKANhwpJDAp4AM+P1JWUVaDqXyZBubpgJ6oRysIq8qM9ELnhMXVZB1xaxmpJduktF1c3d9S0fW+Gbfz11glY4qT21+ozcpN19fJjY7aYYb+imUigXT16/BrOexeauWIqQh4O++iG6avaGXKNVSLzJTUaE7BAKDm2aOGk8i8i5bYlP0RyxIzFiSGR4eJwGpgZb9f3PKAjebC6ctXPhDkGbisiBTk/HElDTs=
