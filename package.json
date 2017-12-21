@@ -8,7 +8,7 @@
     "dev": "gitbook serve",
     "optimize:images": "jpegoptim -o  --size=15% src/images/*.jpg -d dist/; cp src/images/*.png dist && optipng dist/*.png",
     "watch:optimize:images": "watch 'npm run optimize:images' ./src/images",
-    "preversion": "js-yaml .gitlab-ci.yml",
+    "preversion": "js-yaml .travis.yml",
     "version": "npm run optimize:images && npm run changelog && git add -A",
     "postversion": "git push && git push --tags"
   },
