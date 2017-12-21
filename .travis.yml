@@ -17,7 +17,7 @@ branches:
 deploy:
   provider: s3
   skip_cleanup: true
-  upload-dir: testing
+  upload-dir: testing/mcpx-board-manual_it
   local_dir: artifacts
   bucket: "docsecaqin"
   region: eu-west-1
