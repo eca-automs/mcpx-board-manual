@@ -10,6 +10,13 @@ before_script:
 - sleep 3
 script:
 - npm run build
+branches:
+  only:
+    - master
+    - develop
+    - /^v\\d+\\.\\d+\\.\\d+-(alpha|beta|rc)\\.\\d+$/
+    - /^v\\d+\\.\\d+\\.\\d+$/
+
 deploy:
   provider: s3
   skip_cleanup: true
