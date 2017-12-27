@@ -27,8 +27,6 @@ deploy:
   acl: private
   on:
     tags: true
-    all_branches: true
-    condition: "$TRAVIS_TAG =~ ^v\\d+\\.\\d+\\.\\d+-(alpha|beta|rc)\\.\\d+$"
 env:
   global:
   - secure: 7EJDJZt+8VjNUiOT+QGQVMW7DGucebtJO1cDDBN0NIk5/yPbN5T65klH0KQ8J7VlcU17sB/PPLu4Jnm74MciTyoVhTlzRmHcpFY6N6HvQDm0MUi9TtoGgJZYZqgfzBtHjWgG8MU1SZtl+Yi7+X4Cr9dQRXAmmUUpQ4+qOA8PcZwSRWPOXzrYINehDH/3n9Z6ZMTWauCUWVPYbfDcDqbqY5t4826w++wiU7LMYJA/gx63UeEkh8kJpDf7dqBfGTMHmfhi/30ID1QQfiPWGe6TWAMxNZYII6+3Gwwd51aczNzs+g/9pGeSRJ0xFEdaYWewrWTzqenJ6qI9tYwUD+f6ROb8kMB2mfNvGpTf8e5ufR9eDLgIC5m0xhiN6aBZrx7/hBLj23BG2sXQyX/v+iEHI2/p8F7OhtDl6NP9NBG8OPzaxNPjy/YzXzVU61c8j8r52l9+JleftkBKZi8G3vh4ZRu7eHr7H6FWNbF8xY8q4ypLT1U/xcmSYOawQm/AB7x7DhgaKnc4Si//jZP9XfDJhoR9SMyMh8yPdUVcITz7SHBDGJn63RpteaH+OdeAqp629I7Kgmb/6WkZIDjxGdvD85sTmGiNtGbvzINTRi5BlFqJLeqa0CH9mxHg7D8cbswnAjNyCTOv3vi+K29bzFZVG12BqIMv2BGWAfOIOatM2Z8=
