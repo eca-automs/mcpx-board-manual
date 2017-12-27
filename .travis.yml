@@ -20,6 +20,7 @@ deploy:
   acl: private
   on:
     tags: true
+    all_branches: true
     condition: "$TRAVIS_TAG =~ ^v\\d+\\.\\d+\\.\\d+-(alpha|beta|rc)\\.\\d+$"
 env:
   global:
