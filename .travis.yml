@@ -20,7 +20,7 @@ branches:
 deploy:
   - provider: s3
     skip_cleanup: true
-    upload-dir: production/mcpx-board-manual_it
+    upload-dir: mcpx-board-manual_it
     local_dir: artifacts
     bucket: "docsecaqin"
     region: eu-west-1
@@ -30,9 +30,9 @@ deploy:
       condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
   - provider: s3
     skip_cleanup: true
-    upload-dir: testing/mcpx-board-manual_it
+    upload-dir: mcpx-board-manual_it
     local_dir: artifacts
-    bucket: "docsecaqin"
+    bucket: "docsecaqin-testing"
     region: eu-west-1
     acl: private
     on:
