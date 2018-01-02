@@ -22,4 +22,3 @@
         * [PER16B-SMD](/periferiche/layouts/per16b.md)
         * [PER16R-SMD](/periferiche/layouts/per16r.md)
 * [Comunicazioni seriali](/bus_seriali/README.md)
-* [GNU Free Document License](/GNUFDL.md)
