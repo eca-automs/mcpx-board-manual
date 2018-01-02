@@ -35,4 +35,5 @@ try {
   console.log(chalk.green('Done!'))
 } catch (e) {
   console.error(chalk.red('An error occured', e))
+  process.exit(1)
 }
