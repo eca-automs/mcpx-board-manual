@@ -1,5 +1,8 @@
 # Elenco indirizzi e funzioni
 
+#### Numerazione morsetti {#numerazione-morsetti}
+
+<img src="../dist/perif-connectors.png">
 
 ## Indirizzo 1
 
@@ -256,7 +259,28 @@ Segnalazione presente da 16 a 31 in impianti con 32 fermate.
 
 #### Funzione
 
-Seriale cabina per induttori --- SPECIFICARE FUNZIONI --- .
+Ingressi su bus seriale.
+
+Vedi [numerazione morsetti](#numerazione-morsetti).
+
+Morsetto | Funzione
+---|---
+0  | partenza rapida
+1  | cabina completa
+2  | induttore IAUX
+3  | FCS
+4  | FCD
+5  | IS
+6  | ID
+7  | costola mobile ingresso 1
+8  | costola mobile ingresso 2
+9  | sovraccarico
+10  | manutenzione
+11  | fondo mobile
+12  | chiave cabina
+13  | pulsante apertura per manovra pompieri
+14  | finecorsa apertura porte per manovra pompieri
+
 
 ---
 
@@ -264,12 +288,31 @@ Seriale cabina per induttori --- SPECIFICARE FUNZIONI --- .
 
 #### Funzione
 
-Seriale cabina per segnalazioni -- SPECIFICARE SEGNALAZIONI --- .
+Uscite su bus seriale.
+
+Vedi [numerazione morsetti](#numerazione-morsetti).
+
+Morsetto | Funzione
+---|---
+0  |  segnalazione gong
+1  |  segnalazione freccia salita
+2  |  segnalazione freccia discesa
+3  |  segnalazione prossima partenza salita
+4  |  segnalazione prossima partenza discesa
+5  |  segnalazione fuori servizio
+7  |  comune chiamate cabina per manovra pompieri
+8  |  apertura porte ingresso 1
+9  |  apertura porte ingresso 2
+10  |  chiusura porte ingresso 1 e 2
+
+
 
 ---
 
-## Indirizzo 43
+## Indirizzo 47
 
 #### Funzione
 
 Gestione controllo contatti del freno su impianto a fune con emendamento A3.
+
+Controllo batteria alimentazione dispositivo A3.
