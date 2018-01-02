@@ -1,6 +1,6 @@
 # Menu
 
-<img src="../../dist/menu.jpg" style="width: 500px; border-radius: 5%;">
+<img src="../../dist/menu.jpeg" style="width: 500px; border-radius: 5%;">
 
 Premendo per circa 4 secondi il tasto MENU si accede alla pagina del menu.
 

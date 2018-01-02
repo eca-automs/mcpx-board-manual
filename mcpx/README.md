@@ -1,7 +1,7 @@
 # Scheda MCP2015X-SMD
 
-<img src="../dist/mcpx-board-1.jpg" style="width: 200px; border-radius: 5%;">
-<img src="../dist/mcpx-buttons.jpg" style="height: 266.5px; border-radius: 5%;">
+<img src="../dist/mcpx-board-1.jpeg" style="width: 200px; border-radius: 5%;">
+<img src="../dist/mcpx-buttons.jpeg" style="height: 266.5px; border-radius: 5%;">
 
 
 Come già anticipato nell'introduzione, MCP2015X-SMD è la scheda madre del quadro elettrico mcpx.

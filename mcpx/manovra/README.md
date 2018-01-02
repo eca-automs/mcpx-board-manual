@@ -4,13 +4,13 @@ La modalità di manovra è quella che attiva la gestione dell'ascensore. Appena 
 
 Viene presentata a schermo una pagina con lo stato del quadro di manovra.
 
-<img src="../../dist/manovra-1.jpg" style="width: 300px; height: 200px; border-radius: 5%;">
+<img src="../../dist/manovra-1.jpeg" style="width: 300px; height: 200px; border-radius: 5%;">
 
 Sempre all'accensione, la prima cosa che viene effettuata è un rifasamento dell'impianto (se questo non è messo in manutenzione).
 
 In questo caso si alterna la pagina con lo stato dell'impianto e la segnalazione di rifasamento.
 
-<img src="../../dist/manovra-rifasamento.jpg" style="width: 300px; height: 200px; border-radius: 5%;"> <img src="../../dist/manovra-2.jpg" style="width: 300px; height: 200px; border-radius: 5%;">
+<img src="../../dist/manovra-rifasamento.jpeg" style="width: 300px; height: 200px; border-radius: 5%;"> <img src="../../dist/manovra-2.jpeg" style="width: 300px; height: 200px; border-radius: 5%;">
 
 La pagina di stato del quadro ha la seguente struttura
 
@@ -257,4 +257,4 @@ se l'induttore IAUX per gestione dei piani corti estremi è chiuso.
 
 Lo stato degli induttori e dei finecorsa viene riportato, oltre che sul display, anche su led appositi sulla scheda
 
-<img src="../../dist/manovra-3.jpg" style="width: 300px; height: 200px; border-radius: 5%;">
+<img src="../../dist/manovra-3.jpeg" style="width: 300px; height: 200px; border-radius: 5%;">

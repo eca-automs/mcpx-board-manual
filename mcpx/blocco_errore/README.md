@@ -11,7 +11,7 @@ Gli errori che richiedono un intervento sulla scheda dopo aver rimosso la causa 
 
 A schermo viene alternata la pagina dello stato del quadro con la notifica dell'allarme dell'extracorsa.
 
-<img src="../../dist/mem-extracorsa-1.jpg" style="width: 300px; height: 200px; border-radius: 5%;"> <img src="../../dist/mem-extracorsa-2.jpg" style="width: 300px; height: 200px; border-radius: 5%;">
+<img src="../../dist/mem-extracorsa-1.jpeg" style="width: 300px; height: 200px; border-radius: 5%;"> <img src="../../dist/mem-extracorsa-2.jpeg" style="width: 300px; height: 200px; border-radius: 5%;">
 
 Per riattivare l'impianto, dopo aver riportato la cabina nella situazione con extracorsa chiuso, resettare l'errore usando il comando di [reset extracorsa](../menu/manovra/comandi/README.md#res-extra) che si trova nella voce [manvora](../menu/manovra/README.md) del [menu](../menu/README.md).
 
@@ -20,6 +20,6 @@ Per riattivare l'impianto, dopo aver riportato la cabina nella situazione con ex
 
 A schermo viene riportata la notifica
 
-<img src="../../dist/tempocorsa.jpg" style="width: 300px; height: 200px; border-radius: 5%;">
+<img src="../../dist/tempocorsa.jpeg" style="width: 300px; height: 200px; border-radius: 5%;">
 
 Per resettare questo errore basta toglere e ridare alimentazione alla scheda, oppure entrare ed uscire dal [menu](../menu/README.md).

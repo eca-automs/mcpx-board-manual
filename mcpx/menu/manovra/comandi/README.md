@@ -4,7 +4,7 @@ Di seguito viene riportato l'elenco dei comandi disponibili e le loro funzioni.
 
 ## Esclusione apertura porte (esclus aperture) {#escl-apert}
 
-<img src="../../../../dist/menu-manovra-voce-esempio-1.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-voce-esempio-1.jpeg" style="width: 300px; border-radius: 5%;">
 
 Esclusione apertura delle porte. Può risultare utile usare questo comando nel caso in cui si vuole fare delle prove
 ed impedire l'accesso in cabina agli utenti.
@@ -16,7 +16,7 @@ N|Le porte vengono comandate normalmente
 
 ## Tuning VVVF (tuning vvvf) {#tun-vvvf}
 
-<img src="../../../../dist/menu-manovra-tuning.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-tuning.jpeg" style="width: 300px; border-radius: 5%;">
 
 Attrae i teleruttori di marcia per preparazione alla procedura di tuning del vvvf.
 Le __serie devono essere chiuse__ affinchè il comando funzioni.
@@ -28,7 +28,7 @@ N|I teleruttori cadono
 
 ## Manovra da pulsanti (manovra da pulsanti up-sw) {#man-puls}
 
-<img src="../../../../dist/menu-manovra-manovra-puls.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-manovra-puls.jpeg" style="width: 300px; border-radius: 5%;">
 
 Abilita il comando di movimento in manovra tramite i pulsanti UP e SW della scheda.
 
@@ -42,20 +42,20 @@ N|La manvora da pulsanti non è attiva
 
 Una volta impostato il parametro, una volta usciti dal menu si vedrà lampeggiare a scermo la scritta `manovra da pulsanti`
 
-<img src="../../../../dist/manutenzione1.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/manutenzione1.jpeg" style="width: 300px; border-radius: 5%;">
 
 A questo punto premendo UP si manda la cabina in salita, premendo SW in discesa.
 
 Spostando lo switch del quadro invece, a schermo si vedrà scritto `mn` e `FS` nella pagina di stato del quadro
 (vedi [modailtà manovra](../../manovra/README.md))
 
-<img src="../../../../dist/manutenzione2.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/manutenzione2.jpeg" style="width: 300px; border-radius: 5%;">
 
 e si potrà spostare la cabina alla stessa maniera.
 
 ## Reset errore A3 (reset errore a3) {#res-err-a3}
 
-<img src="../../../../dist/menu-manovra-reset-err-a3.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-reset-err-a3.jpeg" style="width: 300px; border-radius: 5%;">
 
 Resetta l'errore del modulo che gestisce movimento incontrollato cabina in base all'emendamento A3.
 
@@ -68,7 +68,7 @@ N|L'errore non viene resettato
 
 ## Reset extracorsa (res extracorsa) {#res-extra}
 
-<img src="../../../../dist/menu-manovra-reset-extracorsa.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-reset-extracorsa.jpeg" style="width: 300px; border-radius: 5%;">
 
 Resetta l'errore di extracorsa.
 
@@ -81,7 +81,7 @@ N|L'errore non viene resettato
 
 ## Reset errori (reset errori) {#res-err}
 
-<img src="../../../../dist/menu-manovra-reset-errori.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-reset-errori.jpeg" style="width: 300px; border-radius: 5%;">
 
 Azzera l'elenco degli errori.
 
@@ -92,7 +92,7 @@ N|L'elenco non viene azzerato
 
 ## Memorizzazione indirizzo periferica (memor ind perif) {#mem-ind}
 
-<img src="../../../../dist/menu-manovra-mem-ind-per.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-mem-ind-per.jpeg" style="width: 300px; border-radius: 5%;">
 
 Avvia la procedura di memorizzazione di una scheda PER16B-SMD.
 
@@ -105,17 +105,17 @@ N|La procedura non viene avviata
 
 Una scheda PER16B-SMD alla volta può essere memorizzata. Prima di iniziare assicurarsi di aver collegato la scheda PER16B-SMD alla scheda MCP2015X-SMD come mostrato in foto.
 
-<img src="../../../../dist/esempio-collegamento.jpg" style="width: 200px; border-radius: 5%;">
+<img src="../../../../dist/esempio-collegamento.jpeg" style="width: 200px; border-radius: 5%;">
 
 Dopo aver selezionato S nella voce del menu, verrà presentata la seguente schermata.
 
-<img src="../../../../dist/mem-new.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/mem-new.jpeg" style="width: 300px; border-radius: 5%;">
 
 Impostare l'indirizzo della scheda desiderato (vedi [elenco indirizzi periferiche e relative funzioni](../../../../periferiche/indirizzi.md)), utilizzando il tasto UP per modificare il valore puntato dal cursore, SW per spostare il cursore orizzontalmente, SET per impostare e MENU per uscire.
 
 Se tutto è andato a buon fine verrà presentata la schermata
 
-<img src="../../../../dist/mem-ok.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/mem-ok.jpeg" style="width: 300px; border-radius: 5%;">
 
 Dopo essere usciti, per rendere le modifiche attive bisogna __resettare la scheda MCP2015X-SMD__ (vedi [reset sistema](#reset-sistema)).
 
@@ -123,16 +123,16 @@ Dopo essere usciti, per rendere le modifiche attive bisogna __resettare la sched
 
 Se la scheda PER16B-SMD è stata già programmata, nella schermata di memorizzazione verrà visualizzato l'indirizzo corrente.
 
-<img src="../../../../dist/mem-old.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/mem-old.jpeg" style="width: 300px; border-radius: 5%;">
 
 È possibile a questo punto __modifcare__ l'indirizzo, tenendo a mente che __non è possibile memorizzare due schede con lo  stesso indirizzo__.
 In tal caso la procedura fallisce.
 
-<img src="../../../../dist/mem-error.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/mem-error.jpeg" style="width: 300px; border-radius: 5%;">
 
 ## Reset sistema (RESET SISTEMA) {#reset-sistema}
 
-<img src="../../../../dist/menu-manovra-reset-sist.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-reset-sist.jpeg" style="width: 300px; border-radius: 5%;">
 
 Riavvia il firmware.
 
@@ -143,7 +143,7 @@ N|La scheda non viene riavviata
 
 ## Chiamate da pulsanti (chiamate da pulsanti up-sw-set) {#ch-puls}
 
-<img src="../../../../dist/menu-manovra-chiamate-puls.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/menu-manovra-chiamate-puls.jpeg" style="width: 300px; border-radius: 5%;">
 
 Permette di effettuare chiamate ad un piano specifico selezionato con i pulsanti UP, SW, SET.
 
@@ -156,10 +156,10 @@ N|Le chiamate da pulsanti non sono attivate
 
 Una volta attivate le chiamate da pulsanti, quando si esce dal menu manovra verrà visualizzata la seguente schermata.
 
-<img src="../../../../dist/chiamate-puls-1.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/chiamate-puls-1.jpeg" style="width: 300px; border-radius: 5%;">
 
 `CH:00` indica il piano a cui verrà fatta la chiamata. Con i tasti UP e SW è possibile cambiare il numero del piano. Premendo SET verrà effetuata la chiamata e schermo si vedrà una cosa simila a questa:
 
-<img src="../../../../dist/chiamate-puls-2.jpg" style="width: 300px; border-radius: 5%;">
+<img src="../../../../dist/chiamate-puls-2.jpeg" style="width: 300px; border-radius: 5%;">
 
 nella foto l'impianto è partito in discesa dal piano 8 (`PC:08` indica la posizione della cabina).

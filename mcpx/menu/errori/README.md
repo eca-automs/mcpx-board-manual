@@ -112,4 +112,4 @@ indica che l'impianto era in manutenzione ed entrambi gli induttori erano aperti
 
 Ecco un esempio di alcune schermate di errore.
 
-<img src="../../../dist/errore-1.jpg" style="width: 300px; height: 200px; border-radius: 5%;"> <img src="../../../dist/errore-4.jpg" style="width: 300px; height: 200px; border-radius: 5%;">
+<img src="../../../dist/errore-1.jpeg" style="width: 300px; height: 200px; border-radius: 5%;"> <img src="../../../dist/errore-4.jpeg" style="width: 300px; height: 200px; border-radius: 5%;">

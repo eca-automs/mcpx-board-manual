@@ -1,8 +1,8 @@
 # Schede periferiche PER16B-SMD
 
 
-<img src="../dist/perif-1.jpg" style="width: 200px; height: 300px; border-radius: 5%;">
-<img src="../dist/perif-2.jpg" style="width: 200px; height: 300px; border-radius: 5%;">
+<img src="../dist/perif-1.jpeg" style="width: 200px; height: 300px; border-radius: 5%;">
+<img src="../dist/perif-2.jpeg" style="width: 200px; height: 300px; border-radius: 5%;">
 
 Come già accennato nell'introduzione, le schede periferiche PER16B-SMD complementano la scheda madre MCP2015X-SMD con funzionalità aggiuntive.
 

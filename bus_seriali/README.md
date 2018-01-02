@@ -13,7 +13,7 @@ La scheda madre ha in dotazione solo un connettore che rappresenta il punto di p
 
 <img src="../dist/local-connection.png" style="width: 400px;">
 
-<img src="../dist/perif-connectors.jpg" style="height: 200px;"><img src="../dist/mcpx-connector.jpg" style="height: 200px;">
+<img src="../dist/perif-connectors.jpeg" style="height: 200px;"><img src="../dist/mcpx-connector.jpeg" style="height: 200px;">
 
 ## Bus esterno
 
