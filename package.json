@@ -1,6 +1,6 @@
 {
   "name": "mcpx-board-manual-p_it",
-  "version": "0.0.0-alpha.37",
+  "version": "1.0.0-alpha.0",
   "description": "The manual of the MCP2015X-SMD and  PER16B-SMD boards with firmware P",
   "scripts": {
     "build": "npm run optimize:images && node build.js",
