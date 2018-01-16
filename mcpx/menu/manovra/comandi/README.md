@@ -57,9 +57,7 @@ e si potrà spostare la cabina alla stessa maniera.
 
 <img src="../../../../dist/menu-manovra-reset-err-a3.jpeg" style="width: 300px; border-radius: 5%;">
 
-Resetta l'errore del modulo che gestisce movimento incontrollato cabina in base all'emendamento A3.
-
-Vedi errori [101](../../errori/elenco.md#101) e [102](../../errori/elenco.md#102).
+Azzera gli errori relativi alla gestione emendamento A3.
 
 Valore impostato|Effetto
 --|--
@@ -70,7 +68,7 @@ N|L'errore non viene resettato
 
 <img src="../../../../dist/menu-manovra-reset-extracorsa.jpeg" style="width: 300px; border-radius: 5%;">
 
-Resetta l'errore di extracorsa.
+Resetta l'errore di extracorsa in __impianti oleodinamici__.
 
 Vedi errore [008](../../errori/elenco.md#008).
 
@@ -152,14 +150,13 @@ Valore impostato|Effetto
 S|Le chiamate da pulsanti sono attivate
 N|Le chiamate da pulsanti non sono attivate
 
-#### Chiamate da pulsanti
+## Adeguamento EN81-20
 
-Una volta attivate le chiamate da pulsanti, quando si esce dal menu manovra verrà visualizzata la seguente schermata.
+<img src="../../../../dist/en82-10.jpeg" style="width: 300px; border-radius: 5%;">
 
-<img src="../../../../dist/chiamate-puls-1.jpeg" style="width: 300px; border-radius: 5%;">
+Attiva adeguamento a normativa EN81-20
 
-`CH:00` indica il piano a cui verrà fatta la chiamata. Con i tasti UP e SW è possibile cambiare il numero del piano. Premendo SET verrà effetuata la chiamata e schermo si vedrà una cosa simila a questa:
-
-<img src="../../../../dist/chiamate-puls-2.jpeg" style="width: 300px; border-radius: 5%;">
-
-nella foto l'impianto è partito in discesa dal piano 8 (`PC:08` indica la posizione della cabina).
+Valore impostato|Effetto
+--|--
+S|Adeguamento attivato
+N|Adeguamento non attivato
