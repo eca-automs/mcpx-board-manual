@@ -348,6 +348,19 @@ Valori|Unità di misura|Risoluzione
 da 0 a 255|millisecondi|100 millisecondi
 
 ---
+## Parametro 037 {#037}
+
+Tempo aggiuntivo durata comando apertura porte quando interviene una condizione di riapertura (ad esempio fotocellula).
+
+Questo parametro è attivo solamente se il valore è diverso da zero e il [parametro 26](../parametri/manovra.md#026) è impostato con finecorsa disattivato ed è utile nei casi in cui l'operatore necessiti di un tempo aggiuntivo per effettuare la riapertura.
+Ad esempio, il comando di chiusura è attivo da 2 secondi quando ad un certo punto interviene la fotocellula. Impostando questo parametro a 1 secondo (valore `10`) la scheda darà il comando di apertura per `2 + 1 secondi`
+Ritardo scambio teleruttore stella con triangolo (in impianti oleodinamici con avviamento stella-triangolo).
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 255|millisecondi|100 millisecondi
+
+---
 
 ## Parametro 039 {#039}
 

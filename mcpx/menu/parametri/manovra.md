@@ -40,7 +40,8 @@ Valore|Funzione
 
 Sommando i valori si ottengono varie combinazioni di configurazione.
 
-L'uscita FTC di default segnala che la fotocellula è rimasta interrotta per più di 1 minuto.
+L'uscita FTC di default segnala che la fotocellula è rimasta interrotta per un tempo superiore a quello
+impostato nel [parametro 10](./temporizzazioni.md#010).
 
 ---
 
@@ -226,13 +227,15 @@ Valore|Funzione
 I valori __9__-__10__-__11__ impostano __come__ __1__-__2__-__3__ in più abilitano segnalazione direzione prossima partenza (FSX-FDX).
 I valori __13__-__14__-__15__ impostano come __5__-__6__-__7__ in più abilitano segnalazione prossima partenza (FSX-FDX).
 Se impostato impianto a prenotazione in batteria alla chiamata al piano viene attivato gong e accese entrambe le frecce per individuare quale ascensore aprirà le porte.
+I valori da __8 a 12__ non sono usati (impostano valore a zero).
 
 ---
 
 ## Parametro 042 {#042}
 
-Configurazione chiamata al piano in impianto a prenotazione e configurazione
-impianto duplex zoppo (con una fermata in più o in meno tra master e slave).
+Configurazione chiamata al piano in impianto a prenotazione, configurazione
+impianto duplex zoppo (con una fermata in più o in meno tra master e slave)
+e reset chiamata della direzione opposta
 
 Per chiamata al piano si intende:
 *   l'utente preme il pulsante di chiamata / prenotazione di piano
@@ -242,9 +245,14 @@ Per chiamata al piano si intende:
 *   se a questo punto viene premuto il pulsante della chiamata in cabina del piano corrente o il
     pulsante esterno il quadro riapre le porte, cosa che non farebbe senza impostare la chiamata al piano
 
+Per reset chiamata direzione opposta si intende:
+*   l'utente effettua una prenotazione in entrambe le direzioni
+*   il primo ascensore che arriva al piano resetta la chiamata nella sua direzione (ad esempio salita)
+    e in quella della direzione opposta (ad esempio dicesa)
+
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 5|nessuna|nessuna
+0-7-8-9 se configurato come master o slave 3-4 in configurazione triplex, quadruplex o simplex. Da 0 a 9 se impostato come master o slave 2 in configurazione duplex | nessuna | nessuna
 
 #### Funzioni
 Valore|Funzione
@@ -254,11 +262,11 @@ Valore|Funzione
 2|Master con un piano in più in alto
 3|Come 1 e chiamata al piano attivata
 4|Come 2 e chiamata al piano attivata
-5|Chiamata al piano attivata
-6|Da aggiungere
-7|Da aggiungere
-8|Da aggiungere
-9|Da aggiungere
+5|Come 3 e reset chiamata direzione opposta attivata
+6|Come 3 e reset chiamata direzione opposta attivata
+7|Chiamata al piano attivata
+8|Reset chiamata direzione opposta attivata
+9|Chiamata al piano e reset chiamata direzione opposta attivati
 
 La configurazione dei parametri dell'impianto __zoppo__ vengono __abilitati__ solo se il tipo di impianto è __impostato__ come __duplex__
 (vedi [parametro 48](#048)) mentre quelli della __chiamata al piano__ solo se la manovra è a __prenotazione__
@@ -325,7 +333,7 @@ Numero fermate.
 
 Valori|Unità di misura|Risoluzione
 ---|---|---
-da 0 a 31|nessuna|nessuna
+da 1 a 31|nessuna|nessuna
 
 #### Funzioni
 Valore|Funzione
@@ -786,7 +794,7 @@ Piano con corsa lunga (impianti veloci). Il ritardo di rallentamento viene regol
 
 Password 1.
 
-Questa password blocca l'accesso ai parametri dal numero 24 al numero 154 ed è composta solo da numeri.
+Questa password blocca l'accesso ai parametri dal numero 0 al numero 154 ed è composta solo da numeri.
 
 ---
 
