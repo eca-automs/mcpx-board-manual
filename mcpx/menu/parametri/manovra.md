@@ -55,7 +55,7 @@ da 0 a 15|nessuna|nessuna
 #### Funzioni
 Valore|Funzione
 ---|---
-0|Tutto escluso
+0|Tutte funzioni inserite
 1|Fine-corsa apertura porte escluso
 2|Termico impianto fine/oleo o allarme VVVF escluso
 4|Termoresistenza motore (PTC) esclusi (pin 43 [vedi layout](../../layouts/mcpx.md))

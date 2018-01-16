@@ -117,9 +117,7 @@ Tensione assente all'inizio della catena delle sicurezze.
 ## Codice 008 {#008}
 Contatto extracorsa aperto.
 
-Relativo solo ad impianto oleodinameci.
-
-Questo errore provoca il __blocco dell'impianto__ (vedi [blocco per errore di extracorsa](../../blocco_errore/README.md#extracorsa)).
+In impianti oleodinamici questo errore provoca il __blocco dell'impianto__ (vedi [blocco per errore di extracorsa](../../blocco_errore/README.md#extracorsa)).
 
 #### Descrizione
 L'impianto è andato oltre il limite impostato dell'extracorsa.
@@ -323,11 +321,17 @@ Effettuata partenza in discesa e il teleruttore DIS ([vedi descrizione](./compon
 ---
 
 ## Codice 019 {#019}
-Porte cabina automatiche aperte in discesa.
-#### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto 8-9 (morsetti del quadro) delle serie di sicurezza si è aperto mentre la cabina viaggiava in discesa.
+
 #### Cause
+1. contatto porte cabina difettoso
+2. ingresso scheda difettoso (pin 5-6, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto porte cabina
+2. mandare scheda in assistenza
+3. controllare cavo di vano
 
 ---
 
@@ -406,11 +410,17 @@ Teleruttore SAL non attratto in salita.
 ---
 
 ## Codice 024 {#024}
-Porte cabina automatiche aperte in salita.
-#### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto 8-9 (morsetti del quadro) delle serie di sicurezza si è aperto mentre la cabina viaggiava in salita.
+
 #### Cause
+1. contatto porte cabina difettoso
+2. ingresso scheda difettoso (pin 5-6, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto porte cabina
+2. mandare scheda in assistenza
+3. controllare cavo di vano
 
 ---
 
@@ -527,15 +537,18 @@ Questo ingresso può essere impostato con il parametro [025](../parametri/manovr
 Contatti prefinecorsa aperti in bassa velocità (impianto a fune con VVVF).
 
 #### Descrizione
-???????
+Questo errore si verifica in due casi:
+1. al cambio di velocità ai piani intermedi si sono aperti i prefinecorsa di salita/discesa
+   (secondo la direzione della cabina)
+2. ai piani estremi all'apertura del prefinecorsa non è intervenuto il contatto di bypass del VVVF
 
 #### Cause
-1. contatto difettoso
+1. contatto VVVF difettoso
 2. cavo di vano difettoso
 3. ingresso scheda difettoso (pin 80 e 83, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
-1. sostituire contatto
+1. sostituire contatto VVVF
 2. controllare cavo di vano
 3. mandare scheda in assistenza
 
@@ -584,18 +597,33 @@ Teleruttori di marcia TM-TM1 non attratti in bassa velocità (impianto a fune co
 ## Codice 034 {#034}
 Porte cabina automatiche aperte in bassa velocità (impianto a fune con VVVF).
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Il contatto 8-9 relativo alle porte cabina si è aperto mentre la cabina viaggiava in bassa velocità.
+
 #### Cause
+1. contatto porte cabina difettoso
+2. ingresso scheda difettoso (pin 5-6, vedi [layout](../../layouts/mcpx.md))
+3. cavo di vano difettoso
+
 #### Soluzioni
+1. controllare contatto porte cabina
+2. mandare scheda in assistenza
+3. controllare cavo di vano
 
 ---
 
 ## Codice 035 {#035}
 Mancata risposta del VVVF alla fine della rampa di rallentamento.
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Alla fermata il VVVF genera un segnale (apre un contatto) per segnalare alla scheda del quadro di avviare la sequenza di fermata.
+Questo segnale è mancato e la scheda ha fermato la manovra.
+
 #### Cause
+1. contatto VVVF difettoso (vedi schema del quadro)
+2. ingresso di feedback della scheda difettoso (pin 44, vedi [layout](../../layouts/mcpx.md))
+
 #### Soluzioni
+1. se non è possibile programmare VVVF per usare un'altra uscita, madare VVVF in assistenza
+2. mandare scheda in assistenza
 
 ---
 
@@ -604,6 +632,7 @@ Mancata risposta del VVVF alla fine della rampa di rallentamento.
 #### Descrizione
 All'accensione della scheda la prima cosa che viene effettuata è un rifasamento dell'impianto (ritorno al piano più basso).
 La partenza viene provata per 5 volte, dopodichè viene __bloccato l'impianto__.
+Controllare gli errori precedenti a questo per risalire alle cause del blocco.
 
 #### Cause
 Qualsiasi condizione che possa bloccare la partenza:
@@ -1108,7 +1137,7 @@ Teleruttore SAL attratto nel ripescamento in discesa (impianto oleodinamico).
 Scaduto tempo ripescamento in salita (impianto oleodinamico).
 
 #### Descrizione
-Il comando di ripescaggio in salita è rimasto attivo per troppo tempo (???) senza che la cabina sia ritornata al piano.
+Il comando di ripescaggio in salita è rimasto attivo per troppo tempo senza che la cabina sia ritornata al piano.
 
 #### Cause
 Relè e/o teleruttori (SAL, P, Y) di marcia difettosi.
@@ -1122,7 +1151,7 @@ Cambiare relè e/o teleruttori di marcia.
 Scaduto tempo ripescamento in discesa (impianto oleodinamico).
 
 #### Descrizione
-Il comando di ripescaggio in discesa è rimasto attivo per troppo tempo (???) senza che la cabina sia ritornata al piano.
+Il comando di ripescaggio in discesa è rimasto attivo per troppo tempo senza che la cabina sia ritornata al piano.
 
 #### Cause
 Relè e/o teleruttori (P, DIS) di marcia difettosi.
@@ -1136,10 +1165,10 @@ Cambiare relè e/o teleruttori di marcia.
 Scaduto tempo corsa.
 
 #### Descrizione
-L'impianto è rimasto in movimento senza avere nessun feedback da induttori (IS, ID) e/o finecorsa (FCS,FCD) per un tempo superiore a quello impostato nel parametro [000](../parametri/temporizzazioni.md#000).
+L'impianto è rimasto in movimento senza avere nessun feedback dai finecorsa (FCS,FCD) per un tempo superiore a quello impostato nel parametro [000](../parametri/temporizzazioni.md#000).
 
 #### Cause
-1. induttori e bistabili difettosi
+1. bistabili difettosi
 2. accoppiamento pista magnetica e induttore/bistabile non corretto
 3. cavo di cabina difettoso
 4. ingressi scheda difettosi (pin 55-56-57-58, vedi [layout](../../layouts/mcpx.md))
@@ -1166,12 +1195,16 @@ quello impostato nel parametro [014](../parametri/temporizzazioni.md#014).
 2. accoppiamento piste magnetiche e induttori non corretto
 3. cavo di cabina difettoso
 4. relè e o teleruttori di comando bassa velocità difettosi (PV, SAL, DIS)
+5. induttori difettosi
+6. VVVF non tarato correttamente
 
 #### Soluzioni
 1. posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
 2. controllare che la distanza tra induttore e pista non sia maggiore di 1cm
 3. controllare cavo di cabina
 4. cambiare relè e/o teleruttori di comando di bassa velocità
+5. cambiare induttori
+6. effettuare taratura VVVF
 
 ---
 
@@ -1514,7 +1547,6 @@ Non è stato ricevuto nessun messaggio sul bus seriale dalla periferica [41](../
 Rimbalzo dei contatti di cabina alla partenza.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
 
 #### Cause
 
@@ -1526,7 +1558,6 @@ Rimbalzo dei contatti di cabina alla partenza.
 Rimbalzo dei contatti dei blocchi alla partenza.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
 
 #### Cause
 
@@ -1697,16 +1728,23 @@ al piano 4.
 ---
 
 ## Codice 097 {#097}
-Scaduto timer di 10 secondi che controlla lo stato dei teleruttori.
+Nel ripescamento, è scaduto timer di 10 secondi che controlla lo stato dei teleruttori.
 
 #### Descrizione
-VEDERE CODICI ERRORI PRECEDENTI A QUESTO PER CONOSCERE CAUSA
-SE TELER NON ATTRAE IL COMANDO E'RIPETUTO PER 10" POI ERRORE
-GLI ERRORI IN MEMORIA PRIMA DI QUESTO DANNO IL MOTIVO ????????????????????????
+Nel ripescaggio viene controllato lo stato dei teleruttori di marcia (se sono atratti o meno tramite contatti di feedback in scheda).
+In mancanza di feedback il comando viene ripetuto per 10 secondi, dopodichè il ripescaggio viene annullato e segnalato l'errore.
+Controllare gli errori precedenti a questo nello storico per risalire alla causa del mancato ripescaggio.
 
 #### Cause
+1. teleruttori difettosi
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi schema del quadro)
+3. ingressi di feedback della scheda difettoso (vedi [layout](../../layouts/mcpx.md))
+4. uscite di comando della scheda difettose (vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. cambiare teleruttore/i
+2. cambiare contatto/i di feedback
+3. 4. mandare scheda in assistenza
 
 ---
 
@@ -1714,35 +1752,63 @@ GLI ERRORI IN MEMORIA PRIMA DI QUESTO DANNO IL MOTIVO ????????????????????????
 Il relè AP non si è attratto al comando di apertura porte.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Questo errore viene segnalato quando il [parametro 26](../parametri/manovra.md#026) è impostato
+con finecorsa apertura porte attivato.
 
 #### Cause
+1. relè comando difettoso
+2. uscita/e di comando della scheda difettosa (pin 20-10 e 20-11, vedi [layout](../../layouts/mcpx.md))
+3. ingresso di feedback della scheda difettoso (pin 37, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
-
+1. sostituire relè
+2. 3. mandare scheda in assistenza
 ---
 
 ## Codice 099 {#099}
 Il finecorsa di apertura porte è rimasto chiuso dopo la fine dell'apertura.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Questo errore viene segnalato quando il [parametro 26](../parametri/manovra.md#026) è impostato
+con finecorsa apertura porte attivato.
+Se alla scadenza del tempo impostato nel [parametro 2](../parametri/temporizzazioni.md#002) il relè
+di apertura porte è ancora attratto, la scheda deduce che il finecorsa non è intervenuto.
 
 #### Cause
+1. finecorsa difettoso
+2. relè difettoso
+3. contatto di feedback relè difettoso
+4. ingresso di feedback della scheda difettoso (pin 37, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. controllare finecorsa
+2. sostituire relè
+3. sostituire contatto/relè
+4. mandare scheda in assistenza
 
 ---
 
 ## Codice 100 {#100}
-Il relè AP si è attratto al compando di apertura ma l'operatore non ha aperto.
+Al comandi di apertura porte l'operatore non ha aperto.
 
 #### Descrizione
-----Breve descrizione del contesto dell'errore------
+Se il [parametro 26](../parametri/manovra.md#026) è impostato
+con finecorsa apertura porte attivato il relè AP si è attratto ma i contatti delle
+porte 8-9 non si sono aperti. La scheda deduce quindi che l'operatore non ha aperto.
+
+Se [parametro 26](../parametri/manovra.md#026) è impostato
+con finecorsa apertura porte disattivato il relè AP non è montato e il comando viene dato direttamente
+dalla scheda (usato con operatori elettronici).
 
 #### Cause
+1. finecorsa difettoso
+2. contatti di fase o relè AP difettoso
+3. uscita/e di comando della scheda difettosa (pin 20-10 e 20-11, vedi [layout](../../layouts/mcpx.md))
 
 #### Soluzioni
+1. controllare finecorsa
+2. sostituire relè
+3. mandare scheda in assistenza
 
 ---
 
@@ -1750,7 +1816,7 @@ Il relè AP si è attratto al compando di apertura ma l'operatore non ha aperto.
 La periferica [47](../../../periferiche/indirizzi.md#indirizzo-47) è assente o guasta.
 
 #### Descrizione
-Non è stato ricevuto nessun mesaggio sul bus seriale dalla periferica [47](../../../periferiche/indirizzi.md#indirizzo-47) per più di 200 millisecondi. L'impianto viene bloccato. Un operatore dovrà ripristinare manualmente l'errore (vedi [reset errore A3](../../manovra/comandi/README.md#res-err-a3)).
+Non è stato ricevuto nessun mesaggio sul bus seriale dalla periferica [47](../../../periferiche/indirizzi.md#indirizzo-47) per più di 200 millisecondi.
 
 #### Cause
 1. periferica difettosa
