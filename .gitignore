@@ -8,7 +8,7 @@
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-images
+# assets/*
 
 # Book build output
 _book

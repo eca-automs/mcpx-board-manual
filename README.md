@@ -1,3 +1,1 @@
-# Manuale scheda MCP2015X-SMD con firmware P
-
-Breve introduzione del manuale.
+# mcpx-board-manual-p_it
