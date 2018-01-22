@@ -4,7 +4,7 @@ node_js:
 
 before_script:
 - sudo apt-get install calibre xvfb jpegoptim optipng -y
-- npm install -g gitbook-cli
+- npm install -g gitbook-cli gulp-cli
 - gitbook fetch 3.2.3
 - gitbook install
 - export DISPLAY=:99.0
