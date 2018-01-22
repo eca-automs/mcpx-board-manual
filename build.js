@@ -19,6 +19,7 @@ let publicPath = `./artifacts/public/${bookVersion}`
 let downloadPath = `./artifacts/download/${bookVersion}`
 
 gulp.task('pre:build', async () => {
+  await exec('gitbook install', {cwd: './book'})
   await mkdirp(publicPath)
   await mkdirp(downloadPath)
 })
