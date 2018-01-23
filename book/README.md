@@ -2,7 +2,7 @@
 
 | Versione manuale | Nome firmware | Versione firmware
 | :---: | :---: | :---: |
-| __{{ book.version }}__  | `P` | `0.2.x` |
+| `{{ book.version }}`  | `{{ book.firmware.name }}` | `{{ book.firmware.version }}` |
 
 # Introduzione
 
@@ -48,11 +48,11 @@ Una spiegazione più dettagliata viene data nel capitolo ["Comunicazioni seriali
 
 | Nome | Versione |
 | :---: | :---: |
-| `P`  | `0.2.x`|
+| `{{ book.firmware.name }}`  | `{{ book.firmware.version }}`|
 
-Il nome del firmware presente sulle schede è `P`.
+Il nome del firmware presente sulle schede è {{ book.firmware.name }}.
 
-La versione compatibile con questo manuale  è la `0.2.x`.
-Vedi parametro [154](./mcpx/menu/parametri/manovra.md#154) per controllare la versione del firmware, il valore dovrebbe essere almeno `P000200`.
+La versione compatibile con questo manuale  è la {{ book.firmware.version }}.
+Vedi parametro [154](./mcpx/menu/parametri/manovra.md#154) per controllare la versione del firmware, il valore dovrebbe essere almeno {{ book.firmware.displayedVersion }}.
 
 Permette la gestione della cabina in seriale e parallelo e del vano in parallelo, ma non permette una gestione in seriale di tutto l'impianto.
