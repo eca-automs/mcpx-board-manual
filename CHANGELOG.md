@@ -1,3 +1,46 @@
+<a name="1.0.0-beta.0"></a>
+# [1.0.0-beta.0](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.26...v1.0.0-beta.0) (2018-01-23)
+
+
+### Bug Fixes
+
+* **book:** add explicit versions reference ([6ee9985](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/6ee9985))
+* **book:** add firmware data to book variables ([c2ee152](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/c2ee152))
+* **book:** add missing image in `manovra -> comandi` ([dcda453](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/dcda453))
+* **book:** fix firmware version in intro ([3cd41b4](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/3cd41b4))
+* **book:** remove section not completed ([e11b7cc](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/e11b7cc))
+* **book:** sistema sezione `manovra` ([ab899a3](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/ab899a3))
+* **build:** add automatic version bumping ([4a783a4](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/4a783a4))
+* **build:** remove dead code ([6abd7da](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/6abd7da))
+* **cover:** fix cover ([109a796](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/109a796))
+* **ecadoc:** add SHORT and README descriptions ([8932dc3](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/8932dc3))
+* **errori:** aggiunge descrizioni mancanti errori ([284504c](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/284504c))
+* **GLOSSARY:** fix glossary entries ([6a4158d](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/6a4158d))
+* **package:** change build scripts to use gulp ([407dbeb](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/407dbeb))
+* **periferiche:** Aggiunge indirizzi 41 42 47 ([238c659](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/238c659))
+* **travis:** add `gitbook install` in install stage ([f07b09d](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/f07b09d))
+* **travis:** add buiild notifications ([3ac569e](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/3ac569e))
+* **travis:** add gulp-cli in install stage ([93d32d4](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/93d32d4))
+* **travis:** add missing node-canvas dependencies ([76b7cf1](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/76b7cf1))
+* **travis:** escape env vars ([a821c7e](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/a821c7e))
+* **travis:** fix notifications urls ([d7abb25](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/d7abb25))
+* **travis:** remove `gitbook install` from install and add it to build script properly ([62553d6](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/62553d6))
+* **travis:** revert env var quoting ([29adae1](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/29adae1))
+* **travis:** try to quote env vars ([201e5bb](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/201e5bb))
+* **typo:** fix `dist\images` showing in wrong places ([c4de24e](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/c4de24e))
+
+
+### Features
+
+* **build:** add gulp ([5d432b6](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/5d432b6))
+* **build:** switch to gulp completely, clean up directory structure ([d653b39](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/d653b39))
+* **build:** use ecadoc folder as artifacts folder ([e383dad](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/e383dad))
+* **comandi:** aggiunge adeguamento a en81-20, sistema alcune voci ([4e6cdfd](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/4e6cdfd))
+* **parametri:** aggiunge parametro 37, nuove funzioni parametro 42, sitema descrizioni varie ([300d962](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/300d962))
+* **travis:** move env vars in project settings ([6b3417d](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/6b3417d))
+
+
+
 <a name="0.0.0-alpha.37"></a>
 # [0.0.0-alpha.37](https://gitlab.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.36...v0.0.0-alpha.37) (2017-12-27)
 
