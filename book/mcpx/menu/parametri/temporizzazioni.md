@@ -251,7 +251,7 @@ da 0 a 600|secondo|0.01 secondi
 
 Ritardo rallentamento relativo al piano lungo 1.
 
-In impianti veloci dove le piste di rallentamento sono molto dist/imagesanti da quelle di fermata,
+In impianti veloci dove le piste di rallentamento sono molto distanti da quelle di fermata,
 il tempo impostato in questo parametro ritarda il comando di rallentamento (un volta incontrata la pista relativa) quando viene effettuata  una
 corsa tra due piani adiacenti.
 
@@ -269,7 +269,7 @@ da 0 a 600|secondo|0.01 secondi
 
 Ritardo relativo al piano lungo 2.
 
-In impianti veloci dove le piste di rallentamento sono molto dist/imagesanti da quelle di fermata,
+In impianti veloci dove le piste di rallentamento sono molto distanti da quelle di fermata,
 il tempo impostato in questo parametro ritarda il comando di rallentamento (un volta incontrata la pista relativa) quando viene effettuata  una
 corsa tra due piani adiacenti.
 

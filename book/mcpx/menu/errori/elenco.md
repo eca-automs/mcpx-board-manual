@@ -133,7 +133,7 @@ Possibili cause sono:
 
 #### Soluzioni
 1.   posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
-2.   controllare che la dist/imagesanza tra induttori e piste non sia maggiore di 1cm
+2.   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
 3.   controllare che gli induttori non siano difettosi
 4.   controllare che il cavo di cabina non sia interrotto
 5.   assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016).
@@ -944,7 +944,7 @@ Durante il ripecaggio in salita si è aperto l'induttore ID.
 1. cambiare induttore
 2. posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
 3. controllare cavo di cabina
-4. controllare che la dist/imagesanza tra induttore e pista non sia maggiore di 1cm
+4. controllare che la distanza tra induttore e pista non sia maggiore di 1cm
 5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
 
 ---
@@ -1070,7 +1070,7 @@ Durante il ripecaggio in discesa si è aperto l'induttore IS.
 1. cambiare induttore
 2. posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
 3. controllare cavo di vano
-4. controllare che la dist/imagesanza tra induttore e pista non sia maggiore di 1cm
+4. controllare che la distanza tra induttore e pista non sia maggiore di 1cm
 5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
 
 ---
@@ -1176,7 +1176,7 @@ L'impianto è rimasto in movimento senza avere nessun feedback dai finecorsa (FC
 
 #### Soluzioni
 1. cambiare induttori e bistabili
-2. controllare che la dist/imagesanza tra induttori e bistabili con piste non sia maggiore di 1cm
+2. controllare che la distanza tra induttori e bistabili con piste non sia maggiore di 1cm
 3. controllare cavo di cabina
 4. mandare scheda in assistenza
 5. cambiare relè e/o teleruttori di marcia
@@ -1200,7 +1200,7 @@ quello impostato nel parametro [014](../parametri/temporizzazioni.md#014).
 
 #### Soluzioni
 1. posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
-2. controllare che la dist/imagesanza tra induttore e pista non sia maggiore di 1cm
+2. controllare che la distanza tra induttore e pista non sia maggiore di 1cm
 3. controllare cavo di cabina
 4. cambiare relè e/o teleruttori di comando di bassa velocità
 5. cambiare induttori
@@ -1225,7 +1225,7 @@ In questo caso il numero di piste di discesa contate è diverso da N, mentre que
 
 #### Soluzioni
 1.   posizionare le piste di fermata con lati opposti (ad esempio una con lato gialla ed una con lato nero)
-2.   controllare che la dist/imagesanza tra induttori e piste non sia maggiore di 1cm
+2.   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
 3.   controllare che gli induttori non siano difettosi
 4.   controllare che il cavo di cabina non sia interrotto
 5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
@@ -1249,7 +1249,7 @@ In questo caso il numero di piste di salita contate è diverso da N, mentre quel
 
 #### Soluzioni
 1.   posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
-2.   controllare che la dist/imagesanza tra induttori e piste non sia maggiore di 1cm
+2.   controllare che la distanza tra induttori e piste non sia maggiore di 1cm
 3.   controllare che gli induttori non siano difettosi
 4.   controllare che il cavo di cabina non sia interrotto
 5.  assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016)
@@ -1286,7 +1286,7 @@ La situazione in cui entrambi i finecorsa sono aperti è considerata una ragione
 
 #### Soluzioni
 1. cambiare bistabili
-2. assicurarsi che la dist/imagesanza tra bistabile e pista sia meno di 1cm e che il versio della pista sia quello giusto
+2. assicurarsi che la distanza tra bistabile e pista sia meno di 1cm e che il versio della pista sia quello giusto
 3. controllare cavo di cabina
 4. mandare scheda in assistenza
 
@@ -1698,7 +1698,7 @@ Il relè RSS ha aperto il contatto di abilitazione al ripescaggio perchè IZ1-IZ
 
 #### Soluzioni
 1. assicurarsi che la lunghezza della pista sia giusta (30cm circa) e che sia centrata a livello del piano
-2. assicurarsi che la dist/imagesanza tra IZ1-IZ2 e la pista non sia maggiore di 1cm
+2. assicurarsi che la distanza tra IZ1-IZ2 e la pista non sia maggiore di 1cm
 3. cambiare relè
 4. 5,6 mandare scheda in assistenza
 
@@ -1857,7 +1857,7 @@ Dopo il comando di fermata ricevuto con la prima pista, il secondo induttore non
 #### Soluzioni
 1. cambiare induttore
 2. controllare cavo di cabina
-3. assicurarsi che la dist/imagesanza tra induttore e pista non sia maggiore di 1cm
+3. assicurarsi che la distanza tra induttore e pista non sia maggiore di 1cm
 4. posizionare le piste di fermata con lati opposti (ad esempio una con lato giall ed una con lato nero)
 5. assicurarsi che lo spazio di sovrapposizione tra le piste di fermata sia di almeno 2cm, regolare la fermata con i parametri [015](../parametri/temporizzazioni.md#015) e [016](../parametri/temporizzazioni.md#016).
 

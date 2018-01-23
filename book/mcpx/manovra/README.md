@@ -21,7 +21,7 @@ x|id|cm12|fm|svr|prr
 < >      PC:00 ER:00
 ```
 
-in cui si dist/imagesinguono 10 zone (numerate da 1 a 10) che vengono usate per visualizzare più informazioni in maniera alternata
+in cui si distinguono 10 zone (numerate da 1 a 10) che vengono usate per visualizzare più informazioni in maniera alternata
 
 ```
 1   |2   |3 |fcd|fcs
