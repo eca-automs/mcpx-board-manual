@@ -7,11 +7,9 @@ const util = require('util')
 const chalk = require('chalk')
 const pack = require('./package.json')
 const exec = util.promisify(require('child_process').exec)
-const fs = require('fs')
-const writeFile = util.promisify(fs.writeFile)
 const mkdirp = util.promisify(require('mkdirp'))
 const ecadoc = require('./ecadoc/ecadoc.json')
-const gulpfile = require('./optimize')
+require('./optimize')
 
 let bookFileName = ecadoc.id
 let bookVersion = pack.version
@@ -35,13 +33,6 @@ gulp.task('pdf', async () => {
   let pdf = path.join(process.cwd(), downloadPath, `${bookFileName}.pdf`)
   await exec(`gitbook pdf ./ ${pdf}`, { cwd: './book' })
 })
-
-// gulp.task('ecadoc', async () => {
-//   console.log(chalk.blue('Copying ecadoc.json, SHORT.md and README.md files in artifacts'))
-//   await writeFile('artifacts/ecadoc.json', fs.readFileSync('./ecadoc/ecadoc.json', 'UTF8'), 'UTF8')
-//   await writeFile('artifacts/SHORT.md', fs.readFileSync('./ecadoc/SHORT.md', 'UTF8'), 'UTF8')
-//   await writeFile('artifacts/README.md', fs.readFileSync('./ecadoc/README.md', 'UTF8'), 'UTF8')
-// })
 
 gulp.task('build', ['book', 'pdf'])
 gulp.task('default', sequence('optimize', 'pre:build', 'build'))
