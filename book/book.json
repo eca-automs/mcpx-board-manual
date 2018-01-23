@@ -6,7 +6,7 @@
   "lunr": {
     "maxIndexSize": 1000000000
   },
-  "plugins": ["links"],
+  "plugins": ["links", "autocover"],
   "pluginsConfig": {
     "links": {
       "links": [
@@ -16,6 +16,20 @@
           "icon": "fa fa-info"
         }
       ]
+    },
+    "autocover": {
+      "font": {
+          "size": null,
+          "family": "Impact",
+          "color": "#FFF"
+      },
+      "size": {
+          "w": 1800,
+          "h": 2360
+      },
+      "background": {
+          "color": "#09F"
+      }
     }
   }
 }
