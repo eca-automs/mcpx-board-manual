@@ -1,38 +1,38 @@
 'use strict'
 
-const ecadoc = require('./ecadoc.json')
-const pack = require('./package.json')
-const execSync = require('child_process').execSync
-const mkdirp = require('mkdirp')
+const gulp = require('gulp')
+const sequence = require('gulp-sequence')
+const path = require('path')
+const util = require('util')
 const chalk = require('chalk')
-const fs = require('fs')
+const pack = require('./package.json')
+const exec = util.promisify(require('child_process').exec)
+const mkdirp = util.promisify(require('mkdirp'))
+const ecadoc = require('./ecadoc/ecadoc.json')
+require('./optimize')
 
-console.log(chalk.green('Starting artifacts building...'))
+let bookFileName = ecadoc.id
+let bookVersion = pack.version
+let publicPath = `./ecadoc/public/${bookVersion}`
+let downloadPath = `./ecadoc/download/${bookVersion}`
 
-try {
-  let bookFileName = ecadoc.id
-  let bookVersion = pack.version
-  let publicPath = `artifacts/public/${bookVersion}`
-  let downloadPath = `artifacts/download/${bookVersion}`
-  mkdirp.sync(publicPath)
-  mkdirp.sync(downloadPath)
+gulp.task('pre:build', async () => {
+  await exec('gitbook install', {cwd: './book'})
+  await mkdirp(publicPath)
+  await mkdirp(downloadPath)
+})
 
+gulp.task('book', async () => {
   console.log(chalk.blue('Building gitbook static site'))
-  execSync(`gitbook build ./ ${publicPath}`, {
-    stdio: [0, 1, 2]
-  })
+  let book = path.join(process.cwd(), `${publicPath}`)
+  await exec(`gitbook build ./ ${book}`, { cwd: './book' })
+})
 
+gulp.task('pdf', async () => {
   console.log(chalk.blue('Building book pdf'))
-  execSync(`gitbook pdf ./ ${downloadPath}/${bookFileName}.pdf`, {
-    stdio: [0, 1, 2]
-  })
+  let pdf = path.join(process.cwd(), downloadPath, `${bookFileName}.pdf`)
+  await exec(`gitbook pdf ./ ${pdf}`, { cwd: './book' })
+})
 
-  console.log(chalk.blue('Copying ecadoc.json, SHORT.md and README.md files in artifacts'))
-  fs.writeFileSync('artifacts/ecadoc.json', fs.readFileSync('ecadoc.json', 'UTF8'), 'UTF8')
-  fs.writeFileSync('artifacts/SHORT.md', fs.readFileSync('SHORT.md', 'UTF8'), 'UTF8')
-  fs.writeFileSync('artifacts/README.md', fs.readFileSync('README.md', 'UTF8'), 'UTF8')
-
-  console.log(chalk.green('Done!'))
-} catch (e) {
-  console.error(chalk.red('An error occured', e))
-}
+gulp.task('build', ['book', 'pdf'])
+gulp.task('default', sequence('optimize', 'pre:build', 'build'))
