@@ -41,19 +41,23 @@ x|id|cm12|7 |8  |prr
 
 In questa zona vengono fornite le seguenti informazioni
 
-Informazione|Descrizione
----|---
-alta|attivato il comando di alta velocità
-vman|attivato il comando di velocità di manutenzione (in impianti a fune con VVVF)
-occ|attivato occupato
-tstz|in attesa di prenotazioni (in impianti a prenotazione)
-atm1|attivato il timer 1 per la gestione del piano corto 2 (vedi [parametro 17](../menu/parametri/temporizzazioni.md#017))
-atm2|attivato il timer 2 per la gestione del piano corto 3 (vedi [parametro 18](../menu/parametri/temporizzazioni.md#018))
-atm3|attivato il timer 3 per la gestione del piano corto 4 (vedi [parametro 19](../menu/parametri/temporizzazioni.md#019))
-atm4|attivato il timer 4 per la gestione del piano corto 5 (vedi [parametro 20](../menu/parametri/temporizzazioni.md#020))
-atm5|attivato il timer 5 per la gestione del piano lungo 1 (vedi [parametro 21](../menu/parametri/temporizzazioni.md#021))
-atm6|attivato il timer 6 per la gestione del piano lungo 2 (vedi [parametro 22](../menu/parametri/temporizzazioni.md#022))
-A-R!|errore nel comando dei timer dei piani corti
+| Informazione | Descrizione |
+| --- | --- |
+| alta | attivato il comando di alta velocità |
+| vman | attivato il comando di velocità di manutenzione (in impianti a fune con VVVF) |
+| occ | attivato occupato |
+| tstz | in attesa di prenotazioni (in impianti a prenotazione) |
+| atm1 | attivato il timer 1 per la gestione del piano corto 2 (vedi [parametro 17](../menu/parametri/temporizzazioni.md#017)) |
+| atm2 | attivato il timer 2 per la gestione del piano corto 3 (vedi [parametro 18](../menu/parametri/temporizzazioni.md#018)) |
+| atm3 | attivato il timer 3 per la gestione del piano corto 4 (vedi [parametro 19](../menu/parametri/temporizzazioni.md#019)) |
+| atm4 | attivato il timer 4 per la gestione del piano corto 5 (vedi [parametro 20](../menu/parametri/temporizzazioni.md#020)) |
+| atm5 | attivato il timer 5 per la gestione del piano lungo 1 (vedi [parametro 21](../menu/parametri/temporizzazioni.md#021)) |
+| atm6 | attivato il timer 6 per la gestione del piano lungo 2 (vedi [parametro 22](../menu/parametri/temporizzazioni.md#022)) |
+| at27   | attivato il timer 27 per la gestione del piano corto 2 (vedi [parametro 27](../menu/parametri/temporizzazioni.md#027))  |
+| at28   | attivato il timer 28 per la gestione del piano corto 3 (vedi [parametro 28](../menu/parametri/temporizzazioni.md#028))  |
+| at29   | attivato il timer 29 per la gestione del piano corto 4 (vedi [parametro 29](../menu/parametri/temporizzazioni.md#029))  |
+| at30   | attivato il timer 30 per la gestione del piano corto 5 (vedi [parametro 30](../menu/parametri/temporizzazioni.md#030)) |
+| A-R! | errore nel comando dei timer dei piani corti |
 
 #### Zona 2
 
@@ -98,11 +102,11 @@ x|id|cm12|7 |8  |prr
 
 In questa zona vengono fornite le seguenti informazioni
 
-Informazione|Descrizione
----|---
-ap12|attivato il comando di apertura porte lato 1 o 2 (od entrambi, a seconda di come è stato impostata l'apertura al piano)
-ap_c|rilevato relè apertura porte difettoso (la scheda ha dato il comando ma il relè non si è attratto)
-chiu|attivato il comando di chiusura porte
+| Informazione | Descrizione |
+| --- | --- |
+| ap12 | attivato il comando di apertura porte lato 1 o 2 (od entrambi, a seconda di come è stato impostata l'apertura al piano) |
+| ap_c | contatto di feedback del relè di apertura porte (vedi AP1-AP2) |
+| chiu | attivato il comando di chiusura porte |
 
 #### Zona 5
 
@@ -194,7 +198,7 @@ Informazione|Descrizione
 X (lampeggiante)|non sono presenti periferiche sul bus seriale
 A (lampeggiante)|la comunicazione seriale è stata azzerata per il verificarsi di un errore
 E (lampeggiante)|errore di comunicazione con una periferica (segue informazione successiva)
-00 (lampeggiante)|l'indirizzo della periferica che ha problemi di comunicazione (è un numero che va da 00 a 48, vedi [indirizzi periferiche](../../periferiche/indirizzi.md))
+00 (lampeggiante)|l'indirizzo della periferica che ha problemi di comunicazione (è un numero che va da 01 a 48, vedi [indirizzi periferiche](../../periferiche/indirizzi.md))
 
 #### Zona 10
 

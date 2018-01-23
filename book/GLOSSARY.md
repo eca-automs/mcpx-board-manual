@@ -17,9 +17,11 @@ Negli impianti oleodinamici con avviamento stella-triangolo il teleruttore Y (st
 ## Teleruttori TM-TM1
 Negli impianti a fune con VVVF sono due teleruttori che comandano il motore.
 
-## AP
+## AP1-AP2
+Relè che comandano l'apertura dell'operatore porte (AP1 apre il lato 1, AP2 il lato 2)
 
-## CP
+## CP1-CP2
+Relè che comandano la chiusura dell'operatore porte (CP1 chiude il lato 1, CP2 il lato 2)
 
 ## RSS
 È un relè di sicurezza con due ingressi ed un'uscita di abilitazione. Se entrambi gli ingressi sono attivi viene chiuso il contatto di uscita (abilitazione), all'aprirsi di uno od entrambi l'uscita viene aperta (disabilitata) e lasciata aperta anche se si richiudono successivamente, richedendo il reset manuale per ripristinare il modulo/relè dalla situazione di allarme.
