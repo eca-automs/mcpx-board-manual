@@ -731,9 +731,6 @@ Valore|Funzione
 7|piano lungo tipo 2
 
 
---- INSERIRE DIAGRAMMA/SPIEGAZIONE INDUUTORE IAUX PER PIANI CORTI ESTREMI ---
-
-
 #### Gestione tipi di piani diversi {#gest-piani}
 
 Vengono gestite 8 tipologie che vengono identificate con numeri progressivi.
