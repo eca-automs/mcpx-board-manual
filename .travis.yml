@@ -44,5 +44,6 @@ deploy:
 
 notification:
   webhooks:
-    urls: "$NOTIFICATION_URL_1"
+    urls:
+      - "$NOTIFICATION_URL_1"
     on_start: always
