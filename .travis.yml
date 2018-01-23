@@ -3,7 +3,7 @@ node_js:
 - '8.9'
 
 before_script:
-- sudo apt-get install calibre xvfb jpegoptim optipng -y
+- sudo apt-get install libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++ calibre xvfb jpegoptim optipng -y
 - npm install -g gitbook-cli gulp-cli
 - gitbook fetch 3.2.3
 - export DISPLAY=:99.0
