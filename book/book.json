@@ -6,29 +6,33 @@
   "lunr": {
     "maxIndexSize": 1000000000
   },
-  "plugins": ["links", "autocover"],
+  "variables": {
+    "version": "1.0.0-alpha.0"
+  },
+  "plugins": [
+    "links",
+    "autocover"
+  ],
   "pluginsConfig": {
     "links": {
-      "links": [
-        {
-          "label": "Info documento",
-          "url": "/it/info/mcpx-board-manual-p",
-          "icon": "fa fa-info"
-        }
-      ]
+      "links": [{
+        "label": "Info documento",
+        "url": "/it/info/mcpx-board-manual-p",
+        "icon": "fa fa-info"
+      }]
     },
     "autocover": {
       "font": {
-          "size": null,
-          "family": "Impact",
-          "color": "#FFF"
+        "size": null,
+        "family": "Impact",
+        "color": "#FFF"
       },
       "size": {
-          "w": 1800,
-          "h": 2360
+        "w": 1800,
+        "h": 2360
       },
       "background": {
-          "color": "#09F"
+        "color": "#09F"
       }
     }
   }

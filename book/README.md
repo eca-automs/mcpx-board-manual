@@ -1,3 +1,9 @@
+# Informazioni manuale
+
+| Versione manuale | Nome firmware | Versione firmware
+| :---: | :---: | :---: |
+| __{{ book.version }}__  | `P` | `0.2.x` |
+
 # Introduzione
 
 MCP2015X-SMD è la scheda madre del quadro elettrico mcpx e gestisce tutte le funzioni principali di gestione della manovra
@@ -39,6 +45,10 @@ In totale vengono utilizzati quindi 2 bus seriali:
 Una spiegazione più dettagliata viene data nel capitolo ["Comunicazioni seriali"](./bus_seriali/README.md).
 
 ## Firmware
+
+| Nome | Versione |
+| :---: | :---: |
+| `P`  | `0.2.x`|
 
 Il nome del firmware presente sulle schede è `P`.
 
