@@ -2,6 +2,7 @@
 
 Di seguito viene riportato l'elenco dei comandi disponibili e le loro funzioni.
 
+
 ## Esclusione apertura porte (esclus aperture) {#escl-apert}
 
 <img src="../../../../dist/images/menu-manovra-voce-esempio-1.jpeg" style="width: 300px; border-radius: 5%;">
@@ -13,6 +14,7 @@ Valore impostato|Effetto
 --|--
 S|Le porte non vengono mai aperte
 N|Le porte vengono comandate normalmente
+
 
 ## Tuning VVVF (tuning vvvf) {#tun-vvvf}
 
@@ -26,32 +28,18 @@ Valore impostato|Effetto
 S|I teleruttori si attraggono
 N|I teleruttori cadono
 
-## Manovra da pulsanti (manovra da pulsanti up-sw) {#man-puls}
 
-<img src="../../../../dist/images/menu-manovra-manovra-puls.jpeg" style="width: 300px; border-radius: 5%;">
+## Adeguamento EN81-20
 
-Abilita il comando di movimento in manovra tramite i pulsanti UP e SW della scheda.
+<img src="../../../../dist/images/en81-20.jpeg" style="width: 300px; border-radius: 5%;">
 
-La stessa funzione si può ottenere spostando lo switch in dotazione sul quadro in `manutenzione` ed usare
-i pulsanti UP e SW per manovrare l'impianto.
+Attiva adeguamento a normativa EN81-20
 
 Valore impostato|Effetto
 --|--
-S|La manovra da pulsanti è attiva
-N|La manvora da pulsanti non è attiva
+S|Adeguamento attivato
+N|Adeguamento non attivato
 
-Una volta impostato il parametro, una volta usciti dal menu si vedrà lampeggiare a scermo la scritta `manovra da pulsanti`
-
-<img src="../../../../dist/images/manutenzione1.jpeg" style="width: 300px; border-radius: 5%;">
-
-A questo punto premendo UP si manda la cabina in salita, premendo SW in discesa.
-
-Spostando lo switch del quadro invece, a schermo si vedrà scritto `mn` e `FS` nella pagina di stato del quadro
-(vedi [modailtà manovra](../../manovra/README.md))
-
-<img src="../../../../dist/images/manutenzione2.jpeg" style="width: 300px; border-radius: 5%;">
-
-e si potrà spostare la cabina alla stessa maniera.
 
 ## Reset errore A3 (reset errore a3) {#res-err-a3}
 
@@ -63,6 +51,7 @@ Valore impostato|Effetto
 --|--
 S|L'errore viene resettato
 N|L'errore non viene resettato
+
 
 ## Reset extracorsa (res extracorsa) {#res-extra}
 
@@ -77,6 +66,7 @@ Valore impostato|Effetto
 S|L'errore viene resettato
 N|L'errore non viene resettato
 
+
 ## Reset errori (reset errori) {#res-err}
 
 <img src="../../../../dist/images/menu-manovra-reset-errori.jpeg" style="width: 300px; border-radius: 5%;">
@@ -87,6 +77,7 @@ Valore impostato|Effetto
 --|--
 S|L'elenco viene azzerato
 N|L'elenco non viene azzerato
+
 
 ## Memorizzazione indirizzo periferica (memor ind perif) {#mem-ind}
 
@@ -139,6 +130,7 @@ Valore impostato|Effetto
 S|La scheda viene riavviata
 N|La scheda non viene riavviata
 
+
 ## Chiamate da pulsanti (chiamate da pulsanti up-sw-set) {#ch-puls}
 
 <img src="../../../../dist/images/menu-manovra-chiamate-puls.jpeg" style="width: 300px; border-radius: 5%;">
@@ -149,14 +141,3 @@ Valore impostato|Effetto
 --|--
 S|Le chiamate da pulsanti sono attivate
 N|Le chiamate da pulsanti non sono attivate
-
-## Adeguamento EN81-20
-
-<img src="../../../../dist/images/en82-10.jpeg" style="width: 300px; border-radius: 5%;">
-
-Attiva adeguamento a normativa EN81-20
-
-Valore impostato|Effetto
---|--
-S|Adeguamento attivato
-N|Adeguamento non attivato
