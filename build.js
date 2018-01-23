@@ -15,8 +15,8 @@ const gulpfile = require('./optimize')
 
 let bookFileName = ecadoc.id
 let bookVersion = pack.version
-let publicPath = `./artifacts/public/${bookVersion}`
-let downloadPath = `./artifacts/download/${bookVersion}`
+let publicPath = `./ecadoc/public/${bookVersion}`
+let downloadPath = `./ecadoc/download/${bookVersion}`
 
 gulp.task('pre:build', async () => {
   await exec('gitbook install', {cwd: './book'})
@@ -36,12 +36,12 @@ gulp.task('pdf', async () => {
   await exec(`gitbook pdf ./ ${pdf}`, { cwd: './book' })
 })
 
-gulp.task('ecadoc', async () => {
-  console.log(chalk.blue('Copying ecadoc.json, SHORT.md and README.md files in artifacts'))
-  await writeFile('artifacts/ecadoc.json', fs.readFileSync('./ecadoc/ecadoc.json', 'UTF8'), 'UTF8')
-  await writeFile('artifacts/SHORT.md', fs.readFileSync('./ecadoc/SHORT.md', 'UTF8'), 'UTF8')
-  await writeFile('artifacts/README.md', fs.readFileSync('./ecadoc/README.md', 'UTF8'), 'UTF8')
-})
+// gulp.task('ecadoc', async () => {
+//   console.log(chalk.blue('Copying ecadoc.json, SHORT.md and README.md files in artifacts'))
+//   await writeFile('artifacts/ecadoc.json', fs.readFileSync('./ecadoc/ecadoc.json', 'UTF8'), 'UTF8')
+//   await writeFile('artifacts/SHORT.md', fs.readFileSync('./ecadoc/SHORT.md', 'UTF8'), 'UTF8')
+//   await writeFile('artifacts/README.md', fs.readFileSync('./ecadoc/README.md', 'UTF8'), 'UTF8')
+// })
 
-gulp.task('build', ['book', 'pdf', 'ecadoc'])
+gulp.task('build', ['book', 'pdf'])
 gulp.task('default', sequence('optimize', 'pre:build', 'build'))

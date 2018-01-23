@@ -10,6 +10,9 @@ node_modules
 
 # assets/*
 
+ecadoc/public
+ecadoc/download
+
 # Book build output
 _book
 
