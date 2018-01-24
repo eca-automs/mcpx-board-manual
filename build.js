@@ -9,7 +9,7 @@ const pack = require('./package.json')
 const exec = util.promisify(require('child_process').exec)
 const mkdirp = util.promisify(require('mkdirp'))
 const ecadoc = require('./ecadoc/ecadoc.json')
-require('./optimize')
+// require('./optimize')
 
 let bookFileName = ecadoc.id
 let bookVersion = pack.version
@@ -35,4 +35,4 @@ gulp.task('pdf', async () => {
 })
 
 gulp.task('build', ['book', 'pdf'])
-gulp.task('default', sequence('optimize', 'pre:build', 'build'))
+gulp.task('default', sequence(/*'optimize',*/ 'pre:build', 'build'))
