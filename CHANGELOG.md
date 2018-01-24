@@ -1,3 +1,8 @@
+<a name="1.0.0-beta.2"></a>
+# [1.0.0-beta.2](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2018-01-24)
+
+
+
 <a name="1.0.0-beta.1"></a>
 # [1.0.0-beta.1](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.37...v1.0.0-beta.1) (2018-01-24)
 
