@@ -45,5 +45,5 @@ deploy:
 notifications:
   webhooks:
     urls:
-      - "$NOTIFICATION_URL_1"
+      - secure: "gmozhCxJkiTiilbgl4yR/OqFylNQP5DC97pcV1IOV4W6t0Vu3BIGIA6VitPEhBOzFX3LhJ1/5ViTdZ/6lPfp54MbBQQzXUSvwx3tJ/IEbrOackfjINZ4UQaP5WgDym9fA3HctypOdNsD7rxZcmfhrWnGwC9qvIL/5J/Ak1dkF84IVEzBcahWLJos7Cd0qB/HN5nUs2DayiSQf4b/WtQGyjVi4enBFj1CL98KHiGW//50TCk64HV2iT4l+apsHtwPvniJ6mx6JHhrl+cbD4DZmTC6dCwaviJlasqI7AdccuGHYm8FqxGnm3mmsNEvyhcmxen8IUVEexy3Ao6clFL4p20PXTDc+P3GGnxOJgqLnbgcc1sNU7r49LE5j27pX9pkOoaDCVm3ZrnwdOq45oe0rtIRGbQ+eEAcvmKDZ8cLVHPKPBhdBX6zZtvtZHFb0cxnW4W3LzQnFOsBhJQKMTD/0SeHzEAZ7foZKL+SlcagsUlOpzLtKGaT7Id+6S+opcApJDbvCw7uHtIS/M1S62Vseb4eq603cU30XwjVbTq6oGa0J2KIIlCmkjU+aTf32soNG/2DR8AGijbrMrtXLwStfCi7C7W50cO5hFt/8vosNFlCLy9KhLnHA7vTHRBGU+WwjDaz1QJMOGT4UGXw0YLwfPOyr8IjMMt7zZJESPqLR8M="
     on_start: always
