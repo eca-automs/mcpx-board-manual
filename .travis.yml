@@ -25,8 +25,8 @@ deploy:
     skip_cleanup: true
     upload-dir: mcpx-board-manual-p_it
     local_dir: ecadoc
-    bucket: $PRODUCTION_BUCKET
-    region: $AWS_REGION
+    bucket: "$PRODUCTION_BUCKET"
+    region: "$AWS_REGION"
     acl: private
     on:
       tags: true
@@ -35,15 +35,15 @@ deploy:
     skip_cleanup: true
     upload-dir: mcpx-board-manual-p_it
     local_dir: ecadoc
-    bucket: $TESTING_BUCKET
-    region: $AWS_REGION
+    bucket: "$TESTING_BUCKET"
+    region: "$AWS_REGION"
     acl: private
     on:
       tags: true
       condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc)\.[0-9]+$
 
-notification:
+notifications:
   webhooks:
     urls:
-      - $NOTIFICATION_URL_1
+      - "$NOTIFICATION_URL_1"
     on_start: always
