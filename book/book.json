@@ -1,44 +1,46 @@
 {
-  "title": "Manuale MCP2015X-SMD - P",
-  "description": "Manuale scheda di controllo per ascensori MCP2015X-SMD con firmware P",
-  "author": "Eca",
-  "language": "it",
-  "lunr": {
-    "maxIndexSize": 1000000000
-  },
-  "variables": {
-    "version": "1.0.0-beta.4",
-    "firmware": {
-      "name": "P",
-      "version": "0.2.x",
-      "displayedVersion": "P000200"
-    }
-  },
-  "plugins": [
-    "links",
-    "autocover"
-  ],
-  "pluginsConfig": {
-    "links": {
-      "links": [{
-        "label": "Info documento",
-        "url": "/it/info/mcpx-board-manual-p",
-        "icon": "fa fa-info"
-      }]
-    },
-    "autocover": {
-      "font": {
-        "size": null,
-        "family": "Impact",
-        "color": "#FFF"
-      },
-      "size": {
-        "w": 1800,
-        "h": 2360
-      },
-      "background": {
-        "color": "#09F"
-      }
-    }
-  }
+	"title": "Manuale MCP2015X-SMD - P",
+	"description": "Manuale scheda di controllo per ascensori MCP2015X-SMD con firmware P",
+	"author": "Eca",
+	"language": "it",
+	"lunr": {
+		"maxIndexSize": 1000000000
+	},
+	"variables": {
+		"version": "1.0.0-beta.4",
+		"firmware": {
+			"name": "P",
+			"version": "0.2.x",
+			"displayedVersion": "P000200"
+		}
+	},
+	"plugins": [
+		"linkz@git+https://github.com/dnlup/gitbook-plugin-linkz.git#v1.0.0",
+		"autocover"
+	],
+	"pluginsConfig": {
+		"linkz": {
+			"links": [
+				{
+					"label": "Info documento",
+					"url": "/it/info/mcpx-board-manual-p",
+					"icon": "fa fa-long-arrow-left"
+				}
+			]
+		},
+		"autocover": {
+			"font": {
+				"size": null,
+				"family": "Impact",
+				"color": "#FFF"
+			},
+			"size": {
+				"w": 1800,
+				"h": 2360
+			},
+			"background": {
+				"color": "#09F"
+			}
+		}
+	}
 }
