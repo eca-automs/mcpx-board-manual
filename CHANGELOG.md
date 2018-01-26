@@ -1,3 +1,8 @@
+<a name="1.0.0-rc.1"></a>
+# [1.0.0-rc.1](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2018-01-26)
+
+
+
 <a name="1.0.0-rc.0"></a>
 # [1.0.0-rc.0](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-beta.4...v1.0.0-rc.0) (2018-01-26)
 
