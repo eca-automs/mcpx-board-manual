@@ -1439,6 +1439,28 @@ Il teleruttore o relè PV ha un contatto che viene usato come feedback dalla sch
 
 ---
 
+## Codice 080 {#080}
+Nel ripescamento, è scaduto timer di 10 secondi che controlla lo stato del teleruttore P e del
+teleruttore Y (impianto oleodinamico con avviamento stella triangolo).
+
+#### Descrizione
+Nel ripescaggio viene controllato lo stato del teleruttore P e del teleruttore Y (se sono attratti o meno tramite contatti di feedback in scheda).
+In mancanza di feedback il comando viene ripetuto per 10 secondi, dopodichè il ripescaggio viene annullato e segnalato l'errore.
+Controllare gli errori precedenti a questo nello storico per risalire alla causa del mancato ripescaggio.
+
+#### Cause
+1. teleruttori difettosi
+2. contatto di feedback del teleruttore alla scheda difettoso (vedi schema del quadro)
+3. ingressi di feedback della scheda difettoso (vedi [layout](../../layouts/mcpx.md))
+4. uscite di comando della scheda difettose (vedi [layout](../../layouts/mcpx.md))
+
+#### Soluzioni
+1. cambiare teleruttore/i
+2. cambiare contatto/i di feedback
+3. 4. mandare scheda in assistenza
+
+---
+
 ## Codice 082 {#082}
 Mancata risposta del VVVF all'avvio o in marcia.
 
@@ -1719,7 +1741,7 @@ al piano 4.
 Nel ripescamento, è scaduto timer di 10 secondi che controlla lo stato dei teleruttori.
 
 #### Descrizione
-Nel ripescaggio viene controllato lo stato dei teleruttori di marcia (se sono atratti o meno tramite contatti di feedback in scheda).
+Nel ripescaggio viene controllato lo stato dei teleruttori di marcia (se sono attratti o meno tramite contatti di feedback in scheda).
 In mancanza di feedback il comando viene ripetuto per 10 secondi, dopodichè il ripescaggio viene annullato e segnalato l'errore.
 Controllare gli errori precedenti a questo nello storico per risalire alla causa del mancato ripescaggio.
 
