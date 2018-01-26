@@ -1,3 +1,13 @@
+<a name="1.0.0-rc.2"></a>
+# [1.0.0-rc.2](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2018-01-26)
+
+
+### Features
+
+* **book:** add github links ([da95fd3](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/da95fd3))
+
+
+
 <a name="1.0.0-rc.1"></a>
 # [1.0.0-rc.1](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2018-01-26)
 
