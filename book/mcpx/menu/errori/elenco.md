@@ -1348,18 +1348,6 @@ Questo errore è __escluso__ nell'__impianto oleodinamico__.
 
 ---
 
-## Codice 074 {#074}
-Scaduto timer di sicurezza dell'apertura porte.
-
-#### Descrizione
-Il timer di sicurezza per l'apertura porte è un timer dalla durata fissa di 25 secondi che serve a fermare il comando di apertura porte nel caso in cui tutti i controlli hanno fallito.
-
-#### Cause
-
-#### Soluzioni
-
----
-
 ## Codice 075 {#075}
 Il contatto di controllo del relè AP è rimasto chiuso per oltre 25 secondi.
 
