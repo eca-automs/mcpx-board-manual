@@ -323,7 +323,24 @@ Da implementare.
 
 ## Parametro 045 {#045}
 
-Non usato.
+Gestione manovra uomo presente. Per usare queta modalità si deve collegare
+al bus la [periferica 46](../../../periferiche/indirizzi.md#indirizzo-46).
+
+Valori|Unità di misura|Risoluzione
+---|---|---
+da 0 a 3|nessuna|nessuna
+
+#### Funzioni
+Valore|Funzione
+---|---
+0  | non abilitato
+1  | cabina uomo presente, piani ad impulso
+2  | cabina e piani uomo presente
+3  | cabina e piani ad impulso
+
+Il parametro può essere impostato se i parametri da [31](#031) a [36](#036) sono uaguali a `0` __e__
+il parametro [48](#048) è impostato a `0` oppure `8`.
+Se vengono modificati i parametri 31-36 o 48, il parametro 45 viene azzerato.
 
 ---
 
@@ -895,4 +912,4 @@ P000029
 indica il firmware con nome `P` e versione 0.0.29.
 
 Il primo carattere indica il nome, le 3 coppie di caratteri che seguono indicano ognuna un campo
-della versione in [semver](http://semver.org/lang/it/)
+della versione in [semver](http://semver.org/lang/it/).
