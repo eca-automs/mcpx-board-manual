@@ -7,7 +7,7 @@
 		"maxIndexSize": 1000000000
 	},
 	"variables": {
-		"version": "1.0.0-beta.4",
+		"version": "1.0.0-rc.0",
 		"firmware": {
 			"name": "P",
 			"version": "0.2.x",
@@ -20,13 +20,11 @@
 	],
 	"pluginsConfig": {
 		"linkz": {
-			"links": [
-				{
-					"label": "Info documento",
-					"url": "/it/info/mcpx-board-manual-p",
-					"icon": "fa fa-long-arrow-left"
-				}
-			]
+			"links": [{
+				"label": "Info documento",
+				"url": "/it/info/mcpx-board-manual-p",
+				"icon": "fa fa-long-arrow-left"
+			}]
 		},
 		"autocover": {
 			"font": {

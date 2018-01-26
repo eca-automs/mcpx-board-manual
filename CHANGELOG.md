@@ -1,3 +1,24 @@
+<a name="1.0.0-rc.0"></a>
+# [1.0.0-rc.0](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-beta.4...v1.0.0-rc.0) (2018-01-26)
+
+
+### Bug Fixes
+
+* **book:** fix broken link of doc info ([e4facba](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/e4facba))
+* **book:** rimuove errore 74 ([6e4c66f](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/6e4c66f))
+* **build:** fix gitbook serve not starting ([451833b](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/451833b))
+
+
+### Features
+
+* **book:** aggiunge errore 80 ([701baf1](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/701baf1))
+* **book:** aggiunge errore 81 ([babb6e0](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/babb6e0))
+* **book:** aggiunge parametro 38 ([cef1caf](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/cef1caf))
+* **book:** aggiunge parametro 45 ([4fd1f2e](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/4fd1f2e))
+* **book:** aggiunge periferica 46 ([85034c3](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/85034c3))
+
+
+
 <a name="1.0.0-beta.4"></a>
 # [1.0.0-beta.4](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v0.0.0-alpha.37...v1.0.0-beta.4) (2018-01-24)
 
