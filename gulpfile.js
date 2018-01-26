@@ -45,10 +45,11 @@ gulp.task('watch:jpeg', function () {
   })
 })
 
+gulp.task('gitbook:install', shell.task('gitbook install', { cwd: './book' }))
+
+gulp.task('gitbook:serve', shell.task('gitbook serve', { cwd: './book' }))
+
+gulp.task('serve', sequence('optimize', 'gitbook:install', 'gitbook:serve'))
 gulp.task('watch', ['watch:png', 'watch:jpeg'])
-
-gulp.task('install', sequence('optimize', shell.task(['gitbook install'], { cwd: './book' })))
-
-gulp.task('serve', sequence('install', shell.task('gitbook serve', { cwd: './book' })))
 
 gulp.task('default', ['serve', 'watch'])
