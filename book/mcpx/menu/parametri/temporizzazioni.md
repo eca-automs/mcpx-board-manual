@@ -348,6 +348,7 @@ Valori|Unità di misura|Risoluzione
 da 0 a 255|millisecondi|100 millisecondi
 
 ---
+
 ## Parametro 037 {#037}
 
 Tempo aggiuntivo durata comando apertura porte quando interviene una condizione di riapertura (ad esempio fotocellula).
@@ -359,6 +360,18 @@ Ritardo scambio teleruttore stella con triangolo (in impianti oleodinamici con a
 Valori|Unità di misura|Risoluzione
 ---|---|---
 da 0 a 255|millisecondi|100 millisecondi
+
+---
+
+## Parametro 038 {#038}
+
+Durata comando chiusura porte nell stazionamento a porte chiuse.
+
+Valori | Unità di misura | Risoluzione
+---|---|---
+da 0 a 255|millisecondi|100 millisecondi
+
+Valore di default: 100 (10 secondi)
 
 ---
 
