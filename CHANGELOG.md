@@ -1,3 +1,13 @@
+<a name="1.0.0-rc.3"></a>
+# [1.0.0-rc.3](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2018-01-26)
+
+
+### Bug Fixes
+
+* **ecadoc:** fix open github link in new page ([052a48a](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/052a48a))
+
+
+
 <a name="1.0.0-rc.2"></a>
 # [1.0.0-rc.2](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2018-01-26)
 
