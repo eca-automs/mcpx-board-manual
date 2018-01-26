@@ -14,3 +14,5 @@ I segnali di cabina possono essere gestiti sia con comunicaizione seriale che co
 
 
 In questo manuale vengono spiegati i principi base di funzionamento della scheda, dalla programmazione alla diagnostica guasti.
+
+Il codice sorgente del manuale è disponibile su [GitHub](https://github.com/eca-automs/mcpx-board-manual-p_it/).

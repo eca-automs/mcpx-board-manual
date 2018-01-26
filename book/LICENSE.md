@@ -9,3 +9,7 @@ Fatta eccezione del logo
 e del nome `Eca di Belardi Roberto`.
 
 Copyright (C) 2018  Eca di Belardi Roberto.
+
+----
+
+Il codice sorgente del manuale è disponibile su [GitHub](https://github.com/eca-automs/mcpx-board-manual-p_it/).
