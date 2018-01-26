@@ -2,7 +2,8 @@
 
 # mcpx-board-manual-p_it
 
-Manuale italiano della scheda elettronica per ascensori `MCP2015X-SMD`.
+Manuale italiano della scheda elettronica `MCP2015X-SMD` che controlla i quadri elettronici
+per ascensori serie `mcpx`.
 
 ## Licenza
 

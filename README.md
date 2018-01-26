@@ -2,7 +2,7 @@
 
 # mcpx-board-manual-p_it
 
-Italian manual of the `MCP2015X-SMD` board that controls electric control panels for elevators.
+Italian manual of the `MCP2015X-SMD` board that controls electric control panels for elevators `mcpx` series.
 
 ## License
 
