@@ -1,4 +1,4 @@
-[English](.README.md) | [Italiano](./README_it.md)
+[English](./README.md) | [Italiano](./README_it.md)
 
 # mcpx-board-manual-p_it
 
