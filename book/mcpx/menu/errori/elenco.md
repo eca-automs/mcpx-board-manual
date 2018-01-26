@@ -1461,6 +1461,24 @@ Controllare gli errori precedenti a questo nello storico per risalire alla causa
 
 ---
 
+## Codice 081 {#081}
+Relè RSS o relè RRSS non hanno fatto bypass dei contatti delle sicurezze nella zona di sicurezza di piano.
+
+#### Descrizione
+In impianti oleodinamici, nella zona di sicurezza di piano il relè RSS del quadro e il relè RRSS della scheda (vedi [layout](../../layouts/mcpx.md))
+bypassano i contatti delle porte per permettere il ripescaggio dell'impianto con porte aperte. La scheda controlla per
+10 secondi lo stato dei teleruttori di marcia e, se questi non sono attratti, ne deduce che il bypass non è avvenuto.
+
+#### Cause
+1. relè RSS difettoso
+2. relè RRSS difettoso (vedi [layout](../../layouts/mcpx.md))
+
+#### Soluzioni
+1. sostituire relè
+2. mandare scheda in assistenza
+
+---
+
 ## Codice 082 {#082}
 Mancata risposta del VVVF all'avvio o in marcia.
 

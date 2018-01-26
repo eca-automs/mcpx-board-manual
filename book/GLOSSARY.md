@@ -43,6 +43,9 @@ Induttore di conteggio salita e di fermata.
 Negli impianti oleodinamici è un induttore non polarizzato con 2 conatatti N.O. Lavora con una pista di circa 30cm posta centrata
 ad ogni piano per delimitare la zona di sicurezza in cui l'impianto può ripescare a porte aperte.
 
+## Zona di sicurezza
+Zona in cui la cabina può effettuare il ripescaggio con porte aperte.
+
 ## IAUX
 Induttore usato per gestire piani corti estremi (primo e/o ultimo piano).
 
