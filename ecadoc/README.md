@@ -6,7 +6,7 @@ La scheda `MCP2015X-SMD` viene usata nei quadri elettrici per ascensori serie `m
 *   a prenotazione simplex
 *   a prenotazione duplex
 *   a prenotazione triplex
-*   manovra a prenotazione quadruplex
+*   a prenotazione quadruplex
 *   pompieri
 *   a chiamate prioritarie o selettive
 
