@@ -1851,6 +1851,24 @@ Dopo il comando di fermata ricevuto con la prima pista, il secondo induttore non
 
 ---
 
+## Codice 104 {#104}
+[Periferica 46](../../../periferiche/indirizzi.md#indirizzo-46) assente o guasta.
+
+#### Descrizione
+La periferica non ha comunicato con la scheda madre per un tempo maggiore a 200ms.
+
+#### Cause
+1. periferica difettosa
+2. periferica diconnessa
+3. connessione bus difettosa
+
+#### Soluzioni
+1. cambiare periferica
+2. connettere periferica
+3. controllare connessione [bus locale](../../../bus_seriali/README.md#bus-locale)
+
+---
+
 ## Codice 255 {#255}
 Scaduto il timer WDT (watch dog timer).
 

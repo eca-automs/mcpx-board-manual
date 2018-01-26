@@ -305,7 +305,33 @@ Morsetto | Funzione
 9  |  apertura porte ingresso 2
 10  |  chiusura porte ingresso 1 e 2
 
+---
 
+## Indirizzo 46
+
+#### Funzione
+
+Gestione chiamate cabina, piani e chiave per manovra uomo presente.
+
+Vedi [numerazione morsetti](#numerazione-morsetti).
+
+Morsetto | Funzione
+---|---
+0  |  chiamata cabina piano 0
+1  |  chiamata cabina piano 1
+2  |  chiamata cabina piano 2
+3  |  chiamata cabina piano 3
+4  |  chiamata cabina piano 4
+5  |  chiamata cabina piano 5
+6  |  chiamata cabina piano 6
+7  |  contatto chiave
+8  |  chiamata esterna piano 0
+9  |  chiamata esterna piano 1
+10  |  chiamata esterna piano 2
+11  |  chiamata esterna piano 3
+12  |  chiamata esterna piano 4
+13  |  chiamata esterna piano 5
+14  |  chiamata esterna piano 6
 
 ---
 
