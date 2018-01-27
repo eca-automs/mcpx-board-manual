@@ -141,3 +141,15 @@ Valore impostato|Effetto
 --|--
 S|Le chiamate da pulsanti sono attivate
 N|Le chiamate da pulsanti non sono attivate
+
+#### Chiamate da pulsanti
+
+Una volta attivate le chiamate da pulsanti, quando si esce dal menu manovra verrà visualizzata la seguente schermata.
+
+<img src="../../../../dist/images/chiamate-puls-1.jpeg" style="width: 300px; border-radius: 5%;">
+
+`CH:00` indica il piano a cui verrà fatta la chiamata. Con i tasti UP e SW è possibile cambiare il numero del piano. Premendo SET verrà effetuata la chiamata e schermo si vedrà una cosa simila a questa:
+
+<img src="../../../../dist/images/chiamate-puls-2.jpeg" style="width: 300px; border-radius: 5%;">
+
+nella foto l'impianto è partito in discesa dal piano 8 (`PC:08` indica la posizione della cabina).
