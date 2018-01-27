@@ -1,3 +1,15 @@
+<a name="1.0.0-rc.4"></a>
+# [1.0.0-rc.4](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2018-01-27)
+
+
+### Bug Fixes
+
+* **book:** inserisce spiegazioni eliminate in `chiamate da pulsanti` ([ff01508](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/ff01508))
+* **covers:** use smaller logo ([de8c308](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/de8c308))
+* **ecadoc:** rimuove dicitura `manovra` ridondante in README ([eb11bfe](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/eb11bfe))
+
+
+
 <a name="1.0.0-rc.3"></a>
 # [1.0.0-rc.3](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2018-01-26)
 
