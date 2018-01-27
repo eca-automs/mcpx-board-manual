@@ -2,6 +2,16 @@
 # [1.0.0](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.4...v1.0.0) (2018-01-27)
 
 
+### Bug Fixes
+
+* **CI:** add deploy of produciotn tags to testing artifacts ([ce0c854](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/ce0c854))
+
+
+
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.4...v1.0.0) (2018-01-27)
+
+
 
 <a name="1.0.0-rc.4"></a>
 # [1.0.0-rc.4](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2018-01-27)
