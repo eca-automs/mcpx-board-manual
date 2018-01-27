@@ -40,6 +40,16 @@ deploy:
     acl: private
     on:
       tags: true
+      condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
+  - provider: s3
+    skip_cleanup: true
+    upload-dir: mcpx-board-manual-p_it
+    local_dir: ecadoc
+    bucket: "$TESTING_BUCKET"
+    region: "$AWS_REGION"
+    acl: private
+    on:
+      tags: true
       condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+-(alpha|beta|rc)\.[0-9]+$
 
 notifications:
