@@ -338,7 +338,7 @@ Valore|Funzione
 2  | cabina e piani uomo presente
 3  | cabina e piani ad impulso
 
-Il parametro può essere impostato se i parametri da [31](#031) a [36](#036) sono uaguali a `0` __e__
+Il parametro può essere impostato se i parametri da [31](#031) a [36](#036) sono uguali a `0` __e__
 il parametro [48](#048) è impostato a `0` oppure `8`.
 Se vengono modificati i parametri 31-36 o 48, il parametro 45 viene azzerato.
 

@@ -7,11 +7,11 @@
 		"maxIndexSize": 1000000000
 	},
 	"variables": {
-		"version": "1.0.0",
+		"version": "1.1.0",
 		"firmware": {
 			"name": "P",
-			"version": "0.2.x",
-			"displayedVersion": "P000200"
+			"version": "0.3.x",
+			"displayedVersion": "P000300"
 		}
 	},
 	"plugins": [

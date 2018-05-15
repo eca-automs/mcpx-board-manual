@@ -307,11 +307,38 @@ Morsetto | Funzione
 
 ---
 
+## Indirizzo 45
+
+#### Funzione
+
+Gestione chiamate esterne e posizione per manovra uomo presente.
+
+Vedi [numerazione morsetti](#numerazione-morsetti).
+
+Morsetto | Funzione
+---|---
+0  |  chiamata esterna piano 0
+1  |  chiamata esterna piano 1
+2  |  chiamata esterna piano 2
+3  |  chiamata esterna piano 3
+4  |  chiamata esterna piano 4
+5  |  chiamata esterna piano 5
+6  |  chiamata esterna piano 6
+7  |  non usato
+8  |  segnalazione posizione piano 0
+9  |  segnalazione posizione piano 1
+10  |  segnalazione posizione piano 2
+11  |  segnalazione posizione piano 3
+12  |  segnalazione posizione piano 4
+13  |  segnalazione posizione piano 5
+14  |  segnalazione posizione piano 6
+
+---
 ## Indirizzo 46
 
 #### Funzione
 
-Gestione chiamate cabina, piani e chiave per manovra uomo presente.
+Gestione chiamate cabina, posizione e chiave per manovra uomo presente.
 
 Vedi [numerazione morsetti](#numerazione-morsetti).
 
@@ -325,13 +352,13 @@ Morsetto | Funzione
 5  |  chiamata cabina piano 5
 6  |  chiamata cabina piano 6
 7  |  contatto chiave
-8  |  chiamata esterna piano 0
-9  |  chiamata esterna piano 1
-10  |  chiamata esterna piano 2
-11  |  chiamata esterna piano 3
-12  |  chiamata esterna piano 4
-13  |  chiamata esterna piano 5
-14  |  chiamata esterna piano 6
+8  |  segnalazione posizione piano 0
+9  |  segnalazione posizione piano 1
+10  |  segnalazione posizione piano 2
+11  |  segnalazione posizione piano 3
+12  |  segnalazione posizione piano 4
+13  |  segnalazione posizione piano 5
+14  |  segnalazione posizione piano 6
 
 ---
 
