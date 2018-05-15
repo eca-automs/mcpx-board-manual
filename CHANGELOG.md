@@ -1,3 +1,35 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-beta.0...v1.1.0) (2018-05-15)
+
+
+### Bug Fixes
+
+* **book:** fix broken link of doc info ([e4facba](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/e4facba))
+* **book:** inserisce spiegazioni eliminate in `chiamate da pulsanti` ([ff01508](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/ff01508))
+* **book:** rimuove errore 74 ([6e4c66f](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/6e4c66f))
+* **build:** fix gitbook serve not starting ([451833b](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/451833b))
+* **build:** remove image optimization step in artifacts building ([27755ee](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/27755ee))
+* **CI:** add deploy of produciotn tags to testing artifacts ([ce0c854](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/ce0c854))
+* **CI:** fix travis notifications ([fc0d122](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/fc0d122))
+* **covers:** use smaller logo ([de8c308](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/de8c308))
+* **ecadoc:** fix open github link in new page ([052a48a](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/052a48a))
+* **ecadoc:** rimuove dicitura `manovra` ridondante in README ([eb11bfe](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/eb11bfe))
+* **package:** run version bump in `version` hook ([119fbe5](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/119fbe5))
+* **parametri:** fix descrizione funzioni errata parametro 45 ([8e14dae](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/8e14dae))
+
+
+### Features
+
+* **book:** add github links ([da95fd3](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/da95fd3))
+* **book:** aggiunge errore 80 ([701baf1](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/701baf1))
+* **book:** aggiunge errore 81 ([babb6e0](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/babb6e0))
+* **book:** aggiunge parametro 38 ([cef1caf](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/cef1caf))
+* **book:** aggiunge parametro 45 ([4fd1f2e](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/4fd1f2e))
+* **book:** aggiunge periferica 46 ([85034c3](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/85034c3))
+* **parametri + periferiche:** aggiunge gestiione uomo presente ([6dfec4f](https://github.com/eca-automs/mcpx-board-manual-p_it/commit/6dfec4f))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/eca-automs/mcpx-board-manual-p_it/compare/v1.0.0-rc.4...v1.0.0) (2018-01-27)
 
