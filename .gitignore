@@ -3,6 +3,8 @@
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+.env
+
 ## Dependency directory
 ## Commenting this out is preferred by some people, see
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
@@ -25,3 +27,4 @@ temp
 artifacts
 
 *.log
+package-lock.json

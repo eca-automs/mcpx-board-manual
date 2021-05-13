@@ -1,0 +1,52 @@
+name: Publish Release
+
+on:
+  push:
+    tags:
+      - v*.*.*
+env:
+  CI: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Setup dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++ calibre xvfb jpegoptim optipng
+
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 8.9
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 8.9
+
+      - name: Install
+        run: |
+          npm i -g gitbook-cli gulp-cli
+          gitbook fetch 3.2.3
+          npm i
+
+      - name: Build book
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: npm run build
+          
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 16.x
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Sync artifacts
+        run: |
+          aws s3 sync --acl private ./ecadoc s3://${{ secrets.PRODUCTION_BUCKET }}/mcpx-board-manual-p_it
