@@ -1,0 +1,40 @@
+name: Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
+
+env:
+  CI: true
+
+jobs:
+  book:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Setup dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++ calibre xvfb jpegoptim optipng
+
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 8.9
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 8.9
+
+      - name: Install
+        run: |
+          npm i -g gitbook-cli gulp-cli
+          gitbook fetch 3.2.3
+          npm i
+
+      - name: Build book
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: npm run build
